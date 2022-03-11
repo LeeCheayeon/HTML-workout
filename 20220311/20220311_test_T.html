@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gogle2</title>
+  
+  <style>
+
+    * {padding: 0; margin: 0;}
+    ul {list-style-type: none;}
+    /* <여기에 ul 리스트리스타일타입 없음을 넣어서 li의 점을 없애는 것> */
+
+    /* <body의 첫 자식에게 문서의 크기를 먼저 정리 / 
+    정리 안하면 full화면에서도 스크롤이 생긴다 주의> */
+
+    .root {
+      width: 100vw;
+      height: 100vh;
+      background-color: darksalmon;
+    }
+    /* <class의 종류를 최대한 줄이게 사용하는 것이 좋으니 적게 사용하는 연습> */
+
+      .root > div:nth-child(1) {
+        height: 10vh;
+        background-color: cadetblue;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+    .root > div:nth-child(1) ul {
+      width: 90vw;
+      height: 5vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .root > div:nth-child(1) ul li {
+      margin-right: 1vw;
+    }
+
+    /* .root > div:nth-child(1) ul li {padding: 10px;} 픽셀말고 vw/vh사용하기 */
+
+    /* <메뉴 1234를 li로 써서 해봤는데 .color-one에 display flex를 넣으니까
+    글씨가 사라져서 해결방법을 못 찾고 그냥 li를 p로 변경하면서 바꾸어 해결했음. > */
+    /* 공통적으로 정렬 윗 단계 <부모>에 정렬을 정리해야하는데 까먹고 자식쪽에
+    정렬을 해서 안될때가 있음. 이부분은 잊지않고 부모자식관계를 잘 생각하면 해결 가능  */
+
+    .root > div:nth-child(2) {
+      height: 70vh;
+      background-color: salmon;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    /* .color-two {
+      background-color: coral;
+      width: 100vw;
+      height: 70vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    
+    } */
+
+    .root > div:nth-child(2) h1 {
+      border: 2px solid red;
+    }
+      /* font-weight: bolder; font-size:4vh 
+      h1태그를 사용했기 때문에 폰트 태그를 안써도 됨.
+      border의 픽셀크기나 색상/높이 등은 개인적이니 괜찮을 것 같음...*/
+
+    .root > div:nth-child(2) div:nth-child(2) {
+      border: 2px solid blue;
+      width: 65vw;
+      height: 5vh;
+    }
+
+    .root > div:nth-child(2) div:nth-child(3) {
+      border: 2px solid green;
+      width: 30vw;
+      height: 5vh;
+    }
+
+
+    .root > div:nth-child(3) {
+      background-color: cadetblue;
+      /* width: 100vw; 너비는 동일하면 안써도 된다  */
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .root > div:nth-child(3) p {
+      /* border: 3px solid red; */
+      width: 80vw;
+      text-align: right;
+
+    }
+    /* <텍스트 정렬은 자식(글)이 있는 곳에서 text-align으로 정리하기> */
+
+    .root > div:nth-child(3) p span {
+      color: salmon;
+    }
+
+    /* .salmon {  color: salmon;
+      background-color: none;}
+    나는 span안에 class를 넣어서 만들었지만 강사님은 p 다음 span을 넣어 사용  */
+/* 
+    <텍스트 부분 색상 변경 방법 중 mark방법으로 하는 것은 모르겠음. 
+    span은 예제를 보고 따라하니 해결되긴 했음. >   */
+
+  </style>
+</head>
+<body>
+
+  <div class="root">
+
+      <div>
+    
+        <div>
+          <ul>
+            <li>menu-1</li>
+            <li>menu-2</li>
+            <li>menu-3</li>
+            <li>menu-4</li>
+          </ul>
+        </div>
+    
+        <!-- <div안에 ul을 넣고 li를 넣는다> -->
+
+      </div>
+    
+      <div>
+        <h1>Logo</h1>
+        <div>search-field</div>
+        <div>button</div>
+      </div>
+    
+      <!-- <나는 전부 div를 사용했는데 강사님은 첫 로고는 h1을 사용> -->
+
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur <span>adipisicing elit.</span> Nam cum error dolorem labore nulla dolores nemo fugit aliquid. Repellat maiores enim, itaque sit, unde maxime iusto,<br> rem explicabo aut accusantium nihil? Maiores, nobis voluptatum. 
+        </p>
+      </div>
+
+      <!-- < 나는 <span> 안에 class를 넣었지만 강사님은 위에 따로 지정하심 >  -->
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{padding: 0; margin: 0;}
+    ul {list-style-type: none;}
+
+    .pull { 
+      width: 100vw; height: 100vh;
+      background-color: coral;
+    }
+
+    .pull>div:nth-child(1) {
+      height: 10vh;
+      background-color: cornflowerblue;
+      color: aliceblue;
+      font-size: large;
+
+      display: flex;
+      /* justify-content: center; */
+    }
+
+    /* .pull > div:nth-child(1) > ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    } */
+
+    .pull > div:nth-child(1) > ul:nth-child(1) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      margin-left: 10vw;
+    }
+
+    .pull > div:nth-child(1) > ul:nth-child(1) li {
+      margin: 1vw;
+
+    }
+
+    .pull > div:nth-child(1) > ul:nth-child(2) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      /* justify-content: flex-end; */
+      margin-left: 52vw;
+      /* border: 2px solid saddlebrown; */
+    }
+
+    .pull > div:nth-child(1) > ul:nth-child(2) li {
+      margin: 1vw;
+      te
+
+    }
+
+    .pull > div:nth
+
+  </style>
+</head>
+<body>
+  <main class="pull">
+    <div>
+      <ul>
+        <li>메뉴</li>
+        <li>북마크</li>
+      </ul>
+      
+      <ul>
+        <li>검색</li>
+        <li>장바구니</li>
+        <li>로그인</li>
+      </ul>
+
+    </div>
+    <div>
+      <p></p>
+    </div>
+  </main>
+</body>
+</html>

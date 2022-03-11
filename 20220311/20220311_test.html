@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gogle</title>
+  
+  <style>
+
+    * {padding: 0; margin: 0;}
+
+    .color-one {
+      background-color: cadetblue;
+      width: 100vw;
+      height: 10vh;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .color-one div {
+      /* border: 3px solid salmon; */
+      width: 90vw;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .color-one div p {
+      padding: 10px;
+    }
+
+    /* <메뉴 1234를 li로 써서 해봤는데 .color-one에 display flex를 넣으니까
+    글씨가 사라져서 해결방법을 못 찾고 그냥 li를 p로 변경하면서 바꾸어 해결했음. > */
+    /* 공통적으로 정렬 윗 단계 <부모>에 정렬을 정리해야하는데 까먹고 자식쪽에
+    정렬을 해서 안될때가 있음. 이부분은 잊지않고 부모자식관계를 잘 생각하면 해결 가능  */
+
+    .color-two {
+      background-color: coral;
+      width: 100vw;
+      height: 70vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    
+    }
+
+    .color-two div:nth-child(1) {
+      border: 3px solid red;
+      font-weight: bolder;
+      font-size:4vh
+    }
+
+    .color-two div:nth-child(2) {
+      border: 3px solid blue;
+      width: 65vw;
+      height: 5vh;
+    }
+
+    .color-two div:nth-child(3) {
+      border: 3px solid green;
+      width: 30vw;
+      height: 5vh;
+    }
+
+    /* div {
+      border: 3px solid red;
+    } */
+
+    .color-thr {
+      background-color: cadetblue;
+      width: 100vw;
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .color-thr p {
+      /* border: 3px solid red; */
+      width: 80vw;
+      text-align: right;
+
+    }
+    /* <텍스트 정렬은 자식(글)이 있는 곳에서 text-align으로 정리하기> */
+
+
+    .salmon {
+      color: salmon;
+      background-color: none;
+    }
+/* 
+    <텍스트 부분 색상 변경 방법 중 mark방법으로 하는 것은 모르겠음. 
+    span은 예제를 보고 따라하니 해결되긴 했음. >   */
+
+  </style>
+</head>
+<body>
+
+  <div class="color-one">
+
+    <div>
+      <p>menu-1</p>
+      <p>menu-2</p>
+      <p>menu-3</p>
+      <p>menu-4</p>
+
+    </div>
+
+  </div>
+
+  <div class="color-two">
+    <div>Logo</div>
+    <div>search-field</div>
+    <div>button</div>
+  </div>
+
+  <div class="color-thr">
+    <p>
+      Lorem ipsum dolor sit amet consectetur <span class="salmon">adipisicing elit.</span> Nam cum error dolorem labore nulla dolores nemo fugit aliquid. Repellat maiores enim, itaque sit, unde maxime iusto,<br> rem explicabo aut accusantium nihil? Maiores, nobis voluptatum. 
+    </p>
+  </div>
+
+</body>
+</html>

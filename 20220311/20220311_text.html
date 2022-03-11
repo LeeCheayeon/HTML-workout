@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>selector</title>
+  <style>
+
+    * {padding: 0; margin: 0;}
+
+    .test-one {
+      width: 1920px;
+      height: 1080px;
+      background-color: darkslategrey;
+      display: flex;
+      /* border: 3px solid red; */
+      align-items:center;
+      justify-content: center;
+    }
+
+    .test-one div:nth-child(1) {
+      width: 1000px;
+      height: 700px;
+      border: 4px solid seagreen;
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      /* flex-direction:column; */
+    }
+
+    p {
+
+      width: 700px;
+      color:white;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="test-one">
+    <div>
+      
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt rerum laudantium enim doloribus blanditiis consequuntur optio corporis, totam similique vitae rem voluptatibus modi reiciendis quis dolores, nobis distinctio? Magnam, dolore.
+        <br>
+        Est repudiandae explicabo modi praesentium qui ipsa odit cum quos, adipisci aperiam ullam itaque sequi repellendus quo iste provident quisquam sapiente sint voluptatum, mollitia dicta labore? Ratione deserunt quis et!
+      </p>
+      
+    </div>
+
+  </div>
+</body>
+</html>
