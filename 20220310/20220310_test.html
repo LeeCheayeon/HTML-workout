@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+
+  <style>
+
+    * {margin: 0; padding: 0;}
+
+    ul {
+      background-color: #ccc;
+      list-style-type: none;
+      display: flex;
+      justify-content: flex-end;
+      
+    }
+    
+    ul li {
+      margin: 20px;
+      transition: 1s;
+      cursor: pointer;
+
+    }
+
+    ul li:hover {
+      color: red;
+      margin: 50px;
+
+    }
+
+
+    .test-one {
+      width: 1920px;
+      height: 1000px;
+    }
+
+    .test-one div {
+      border: 3px solid red;
+      display: flex;
+    }
+
+    .test-one div:nth-child(1) {
+      height: 300px;
+      display: flex;
+    }
+
+    
+    .test-one div:nth-child(2) {
+      height: 700px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .test-one div:nth-child(2) main {
+      width: 1000px;
+      height: 700px;
+      background-color:bisque;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .test-one div:nth-child(2) main div {
+      width: 400px;
+      height: 600px;
+      border: 3px solid saddlebrown;
+      margin: 20px;
+      /* justify-content: center; */
+      /* align-items: center; */
+    }
+
+  </style>
+</head>
+<body>
+  
+  <ul>
+    <li>gmail</li>
+    <li>이미지</li>
+    <li>프로필</li>
+    <li>계정</li>
+    <li>로그인</li>
+  </ul>
+
+  <div class="test-one">
+    <div></div>
+    <div>
+      <main>
+        <div></div>
+        <div></div>
+      </main>
+    </div>
+
+  </div>
+
+
+</body>
+</html>

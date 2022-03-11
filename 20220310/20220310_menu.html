@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu</title>
+
+  <style>
+
+    /* reset 브라우저의 기본값을 안쓰겠다 */
+    * {margin: 0; padding: 0;}
+
+    ul {
+    list-style-type:none;
+    /* background-color: antiquewhite; */
+    /* <주석처리> */
+    display: flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+    flex-direction: column;
+}
+    ul li {
+      margin: 20px;
+      cursor: pointer;
+      transition: 1s;
+    }
+    
+    ul li:hover {
+      margin: 40px;
+      color: brown;
+      font-weight:bolder;
+    }
+
+  </style>
+</head>
+
+<body>
+  
+  <ul>
+
+    <li>gmail</li>
+    <li>이미지</li>
+    <li>메뉴</li>
+    <li>프로필</li>
+    <li>이채연</li>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+  </ul>
+</body>
+</html>
