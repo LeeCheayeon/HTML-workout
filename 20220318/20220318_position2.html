@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    
+    .content {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .content>div {
+      width: 70vw;
+      height: 70vw;
+      background-color: gray;
+
+      display: flex;
+      justify-content:flex-start;
+      align-items:baseline;
+      flex-direction: column;
+
+      overflow:hidden;    
+    }
+
+    .content>div>div {
+      width: 40vw;
+      height: 30vh;
+      margin: 1vw;
+    }
+
+    .content>div>div:nth-child(1) {
+      position: relative;
+      left:50vw;
+      background-color: red;
+    }
+
+    .content>div>div:nth-child(1):hover {
+      background-color: blue;
+    }
+
+    .content>div>div:nth-child(2) {
+      width: 60vw;
+    }
+
+    .content>div>div:nth-child(3) {
+      background-color: red;
+      position: absolute;
+      left: 10vw;
+      top: 50vh;
+    }
+
+/* 
+    나도 클릭할때 바뀌는거 해보고싶긴한데... '-` 이른가??? ' 
+    자바사용하던데 찾아보니깍.... 집에가서 연습해볼까?  */
+
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div>
+      <div></div>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi expedita pariatur autem doloremque dignissimos architecto blanditiis voluptatum nemo at dolorum inventore nisi, provident nesciunt veniam corrupti quasi cupiditate deserunt! Minima, aperiam vitae! Beatae enim deleniti aliquid quis unde nemo distinctio dignissimos repudiandae doloremque! Earum totam alias, dolorum debitis corporis obcaecati.
+      </div>
+      <div></div>
+    </div>
+  </div>
+  
+</body>
+</html>

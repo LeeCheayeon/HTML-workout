@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클릭변경</title>
+
+  <!-- https://ts2ree.tistory.com/5 이걸보고 따라했는데 원리를 모르니
+  잘 모르겠다. 다음에 알려주실때 잘 봐야겠당...  -->
+
+  <style>
+    body { font-size: 3rem;}
+    h1 { background-color: #fff000;}
+    .menu {
+        display: flex;   
+        border: 1px solid yellow;
+    }
+    .menu-link {
+        margin: .1em;
+        padding: .3em;
+        color: #fff;
+        text-decoration: none;
+        background: dodgerblue;
+        list-style: none;
+    }
+    .menu-active {
+        background: orange;
+    }
+    .menu {
+        background-color: yellowgreen;
+    }
+</style>
+</head>
+<body>
+  <h1 id="main-title">Event</h1>
+
+    <nav class="menu">
+        <a href="#" class="menu-link" data-menu="1">menu 1</a>
+        <a href="#" class="menu-link" data-menu="2">menu 2</a>
+        <a href="#" class="menu-link" data-menu="3">menu 3</a>
+    </nav>
+
+    <script>
+      var menulinks = document.querySelectorAll('.menu-link');
+      function clickmenuhandeler () {
+        var activemmenu = document.querySelector('menu-active');
+        if (activemmenu){
+          activemmenu.classList.remove('menu-active');
+        }
+        this.classList.add('menu-active');
+      }
+
+      for (var i = 0; i<menulinks.length; i++) {
+        menulinks[i].addEventListener('click',clickmenuhandeler);
+      }
+    </script>
+  
+</body>
+</html>
