@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markup2</title>
+  <style>
+
+    *{padding: 0; margin: 0;}
+
+    body {width: 100vw; height: 100vh;
+    border: 1px solid black;
+    }
+
+    /* 클래스 세팅 */
+    .image-small {
+      background-color: bisque;
+      width: 50%;
+      height: 20vh;
+    }
+
+    .flex-cen-cen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flex-cen-cen-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .flex-cen-cen-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .text-cen-bold {
+      text-align: center;
+      font-weight: bold;
+    }
+    .line-test-red {
+      border: 1px solid red;
+    }
+
+    .line-test-blue {
+      border: 1px solid blue;
+    }
+    /* 끝 */
+
+
+    .tool>div{
+      border: 1px solid red;
+    }
+
+    .tool>div:nth-child(1) {
+      width: 95vw;
+      height: 5vh;
+      margin: 1.5vw;
+      background-color: coral;
+    }
+
+    .tool>div:nth-child(2) {
+      height: 43vh;
+    }
+
+    .tool>div:nth-child(2)>div{
+      margin-left: 1vw;
+      height: inherit;
+    }
+
+    .tool>div:nth-child(2)>div:nth-child(1) {
+      color: blue;
+      width: 45vw;
+    }
+    .tool>div:nth-child(2)>div:nth-child(2) {
+      width: 55vw;
+      margin-left: 2vw;
+    }
+
+    /* .tool>div:nth-child(2)>div:nth-child(2)>div {} */
+
+    .tool>div:nth-child(2)>div:nth-child(2)>div:nth-child(1){
+      background-color: burlywood;
+      height: 20vh;
+      margin-bottom: 2vw;
+    }
+
+    /* .tool>div:nth-child(2)>div:nth-child(2)>div:nth-child(2){
+      border: 1px solid blue;
+    } */
+
+    .tool>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div {
+      margin: 1vw;
+    }
+
+    /* .tool>div:nth-child(3) {} */
+
+    .tool>div:nth-child(3)>div {
+      margin-left: 1vw;
+      margin-right: 1vw;
+    }
+
+    .tool>div:nth-child(3)>div:nth-child(1) {
+      color: blueviolet;
+      font-size: large;
+
+      height: 4vh;
+      margin-top: 1.5vw;
+    }
+
+    .tool>div:nth-child(3)>div:nth-child(2) {
+      height: 40vh;
+    }
+
+    .tool>div:nth-child(3)>div:nth-child(2)>div {
+      background-color: darkgoldenrod;
+      width: 50vw;
+      height: inherit;
+      margin: 1vw;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="tool">
+    <div class="text-cen-bold">타이틀</div>
+    <div class="flex-cen-cen-row ">
+      <div class="line-test-blue">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam nemo magnam enim officiis nesciunt illo quia laboriosam, sequi, molestias in labore eos cupiditate necessitatibus id porro sed blanditiis dolores itaque ratione facere, molestiae modi quo voluptates. Aut, ut! Fuga fugit quas ratione ad recusandae asperiores placeat fugiat nulla, voluptas eligendi? 
+        <br> 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora a quos vitae corrupti ratione, alias at repellat error autem, rerum, quam fugiat maiores laborum expedita rem. Ex optio eaque dolores.
+      </div>
+      <div class="line-test-blue">
+        <div>큰이미지</div>
+        <div class="flex-cen-cen-row line-test-red">
+          <div class="image-small">작은 이미지</div>
+          <div class="image-small">작은 이미지</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="text-cen-bold line-test-blue">작은 타이틀</div>
+      <div class="flex-cen-cen-row line-test-blue">
+        <div>작은이미지</div>
+        <div>작은이미지</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

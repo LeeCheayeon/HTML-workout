@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+
+    .width-vw-1 {width: 1vw;}
+    .width-vw-2 {width: 2vw;}
+    .width-vw-3 {width: 3vw;}
+    .width-vw-4 {width: 4vw;}
+    .width-vw-5 {width: 5vw;}
+    .width-vw-6 {width: 6vw;}
+    .width-vw-7 {width: 7vw;}
+    .width-vw-8 {width: 8vw;}
+    .width-vw-9 {width: 9vw;}
+    .width-vw-10 {width: 10vw;}
+
+
+
+
+
+
+
+
+    /* class setting */
+    .flex-center-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .boder-test-1{
+      border: 1px solid salmon;
+    }
+    .width-1 {
+      width: inherit;
+    }
+
+    .root {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .root>div {
+      width: 100vw;
+      height: 33vh;
+    }
+
+    /*중간부분*/
+    .root>div:nth-child(2) {
+      /* 끝 */
+    }
+    /* 중간부분 두번째 자식 */
+    .root>div:nth-child(2)>div {
+      width: 50vw;
+      height: inherit;
+    }
+/* 중간부분의 둘째 자식의 두번째놈 */
+    .root>div:nth-child(2)>div:nth-child(2)>div:nth-child(1){
+    height: 50%;
+
+    flex-direction: row;
+    }
+    /* 알맹이들 */
+    .root>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div {
+      width: 50%;
+      height: inherit;
+    }
+    /* 텍스트 */
+        .root>div:nth-child(2)>div:nth-child(2)>div:nth-child(2){
+        width: inherit;
+        height: 50%;
+        }
+    </style>
+</head>
+<body>
+  <div class="root boder-test-1">
+    <div id="header"></div>
+
+    <div id="main" class="flex-center-center boder-test-1">
+      <div class="boder-test-1"></div>
+      <div>
+        <div class="flex-center-center width-1 boder-test-1">
+          <div class="boder-test-1">알맹이1</div>
+          <div class="boder-test-1">알맹이2</div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+  </div>
+</body>
+</html>

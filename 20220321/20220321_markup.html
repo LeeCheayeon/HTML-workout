@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markup</title>
+
+  <style>
+
+    *{padding: 0; margin: 0;}
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      border: 1px solid black;
+    }
+
+    .root {
+
+    }
+
+    .root > div:nth-child(1) {
+      background-color: peru;
+      /* height: 10vh; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .root > div:nth-child(1)>div {
+      background-color: cadetblue;
+      width: 95vw;
+      height: 5vh;
+      margin: 2.5vw;
+    }
+
+    .root > div:nth-child(2) {
+      /* background-color: brown; */
+      height: 90vh;
+    }
+
+    .root > div:nth-child(2)>div {
+      /* border: 1px solid red; */
+      height: 50vh;
+      display: flex;
+    }
+
+    .root >div:nth-child(2)>div:nth-child(1) {
+      /* background-color: greenyellow; */
+      /* margin: 3vw; */
+      display: flex;
+      flex-direction: row;
+    }
+
+    .root >div:nth-child(2)>div:nth-child(1)>div:nth-child(1){
+      width: 50vw;
+      height: 50vh;
+      background-color: salmon;
+      margin-left: 3vw;
+      margin-bottom: 2vh;
+      margin-right: 2vw;
+    }
+
+    .root >div:nth-child(2)>div:nth-child(1)>div:nth-child(2) {
+      /* border: 1px solid violet; */
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .root >div:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div {
+      /* background-color: salmon; */
+      /* height: 25vh; */
+      display: flex;
+      flex-direction: row;
+      margin-right: 1vw;
+    }
+
+    .root >div:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div:nth-child(1) {
+      display: flex;
+    }
+
+    .root >div:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div:nth-child(2) {
+      margin-left: 2vw;
+      margin-right: 3vw;
+      font-size: small;
+    }
+
+    .root >div:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div {
+      margin: 2vw;
+      margin-top: 3vh;
+      background-color: salmon;
+      width: 40vw;
+      height: 32vh;
+    }
+
+    .root >div:nth-child(2)>div:nth-child(2){
+      background-color: salmon;
+      /* width: 80vw; */
+      height: 38vh;
+
+      margin: 1.5vw;
+      margin-left: 3vw;
+      margin-right: 3vw;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="root">
+    <div>
+      <div></div>
+    </div>
+    <div>
+      <div>
+        <div></div>
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis non quidem cum alias vitae incidunt! Esse deleniti quibusdam earum, numquam labore nemo mollitia voluptatibus, beatae architecto adipisci, accusamus pariatur quisquam voluptates? Enim ipsa assumenda fugiat nihil vel, quas excepturi asperiores.</div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <!-- <ol>
+    <li>
+      막히는 것 같은 부분은 저기 작은박스2개와 글씨한개...? 나머지는 잘 했는지 잘 모르겠다. 답안지랑 비교해봐야 더 할수있을 것 같고 작은 화면에서는 이렇게 나오는데 큰화면에서는 비율이 이상한데 이게 맞는건가'??? 
+    </li>
+  </ol> -->
+  
+</body>
+</html>
