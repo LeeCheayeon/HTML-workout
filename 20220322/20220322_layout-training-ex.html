@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    .position-absolute {
+      position: absolute;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #warpper {
+      width: 400px;
+      height: 800px;
+    }
+
+    :root {
+      --height-800:800px;
+      --color-teal:teal;
+      --color-grey:grey;
+    }
+
+    nav {
+      width: 200px;
+      height: var(--height-800);
+      background-color:var(--color-teal);
+
+      z-index: 1;
+      /* left: 160px; */
+    }
+
+    main {
+      width: 400px;
+      height: var(--height-800);
+      background-color:var(--color-grey);
+
+      z-index: 0;
+    }
+/* 
+    root이 가진 중앙정렬 값을 nav main이 받지 않도록 하기 위해
+    warpper라는 새로운 태그(부모)를 넣어서 nav와 main에게 center값을
+    받지않도록 함. root>warpper>nav,main 이렇게 상속  */
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="warpper">
+      <nav class="position-absolute"></nav>
+      <main class="position-absolute"></main>
+      
+    </div>
+  </div>
+</body>
+</html>

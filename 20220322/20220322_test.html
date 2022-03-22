@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+
+  <style>
+
+    .flex-cen-cen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .position-absol {
+      position: absolute;
+    }
+
+    .position-fix {
+      position: fixed;
+    }
+
+    #main {
+      width: 428px;
+      height: 926px;
+
+      border: 1px solid red;
+
+      flex-direction: column;
+    }
+
+    #warper {
+      width: inherit;
+      height: inherit;
+    }
+
+    #warper>div {
+      /* border: 1px solid blue; */
+    }
+
+    #warper>div:nth-child(1) {
+      background-color: #ccc;
+      width: inherit;
+      height: 926px;
+
+      z-index: 1;
+    }
+
+    #warper>div:nth-child(2) {
+      background-color: darkgreen;
+      width: inherit;
+      height: 300px;
+      opacity: 0.5;
+
+      z-index: 2;
+      top: 626px;
+      border-radius: 20px;
+    }
+
+    #warper>div:nth-child(3) {
+      background-color: slategray;
+      width: inherit;
+      height: 40px;
+
+      z-index: 3;
+
+      top: 896px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="main" class="flex-cen-cen">
+    <div id="warper">
+      <div class="position-absol"></div>
+      <div class="position-absol"></div>
+      <div class="position-fix"></div>
+    </div>
+  </div>
+</body>
+</html>
