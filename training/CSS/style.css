@@ -1,0 +1,52 @@
+:root {
+  --box-color:#383838;
+}
+
+.flex-cen-cen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-cen-cen-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.flex-cen-cen-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box-2vw {
+  background-color: var(--box-color);
+  width: 2vw;
+  height: 2vw;
+  border-radius: 100%;
+}
+
+.position-absol {
+  position: absolute;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.w-h-inherit {
+  width: inherit;
+  height: inherit;
+}
+
+.w-inherit {
+  width: inherit;
+}
+
+.h-inherit {
+  height: inherit;
+}
