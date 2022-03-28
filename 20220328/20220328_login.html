@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 텍스트 양옆에 선 */
+    .hr-sect {
+      display: flex;
+      /* flex-basis: 100%; */
+      align-items: center;
+      color: #c4c4c4;
+      font-size: 12px;
+      /* margin: 2vw; */
+    }
+
+    .hr-sect::before,
+    .hr-sect::after {
+      content: "";
+      flex-grow: 1;
+      background: rgba(0, 0, 0 , 0.35);
+      height: 1px;
+      font-size: 0px;
+      line-height: 0px;
+      margin: 0px 8px;
+    }
+
+    * {margin: 0; padding: 0;}
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #war {
+      width: 90vw;
+      height: 90vh;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* align-items: center; */
+      
+      border: 1px solid blue;
+    }
+    
+    #war>div {
+      border: 1px solid red;
+    }
+
+    #war>div:nth-child(1) {
+      background-color: #c4c4c4;
+      width: 40vw;
+      height: 8vh;
+    }
+
+    #war>div:nth-child(3) {
+      font-size: large;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="war">
+      <div>logo</div>
+      <div>
+        <div>
+          <div>ID</div>
+        </div>
+        <div>
+          <div>PW</div>
+        </div>
+        <div>
+          forget password?
+        </div>
+        <div>
+          Enter
+        </div>
+      </div>
+      
+      <div class="hr-sect">
+        0000000 login
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>회원가입</div>
+    </div>
+
+  </div>
+</body>
+</html>
