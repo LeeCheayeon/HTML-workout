@@ -1,0 +1,466 @@
+* {margin: 0; padding: 0;}
+:root {
+  --color-1:#9f9f9f;
+  --color-2:#333;
+  --color-3:#c3c3c3;
+  --color-4:#8d8d8d;
+  --color-5:#414141;
+}
+/* - display 정렬 - */
+.flex-cen-cen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-cen-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.flex-cen-start {
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+}
+.flex-between-cen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-between-start {
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-start;
+}
+.flex-between-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.flex-end-cen {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex-end-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.flex-end-start {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.flex-around-cen {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-around-end {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-around-start {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+/* <이번 스타일> */
+
+.menu-title {
+  width: 50vw;
+  color: var(--color-5);
+  font-size: 200%;
+  font-weight: bold;
+  text-align: end;
+}
+
+.menu-box-big {
+  background-color: var(--color-1);
+  width: 26.666666666666668vw;/*<!--콘솔 계산해서 80/3한 값--> */
+  height: 40vh;
+}
+
+.menu-box-big-text {
+  height: 5vh;
+  text-align: center;
+  font-size: 130%;
+  padding-top: 0.5vw;
+
+  color: var(--color-5);
+}
+
+
+#root {
+  width: 100vw;
+  height: 250vh;
+}
+
+/* <!--메뉴 고정--> */
+nav {
+  width: inherit;
+  height: 10vh;
+}
+/* <!--메뉴 상단--> */
+nav>div>div:nth-child(1) {
+  width: inherit;
+  height: 10vh;
+  background-color: var(--color-3);
+
+  position: fixed;
+  top: 0vw;
+
+  display: flex;
+}
+
+/* <!--로고--> */
+nav>div>div:nth-child(1)>div:nth-child(1) {
+  width: 35vw;
+  height: inherit;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav>div>div:nth-child(1)>div:nth-child(1)>div {
+  width: 5vw;
+  height: 5vw;
+  border-radius: 5vw;
+  background-color: var(--color-1);
+
+  margin-left: 2vw;
+}
+/* <!--메뉴--> */
+nav>div>div:nth-child(1)>div:nth-child(2) {
+  width: 65vw;
+  height: inherit;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav>div>div:nth-child(1)>div:nth-child(2)>div {
+  width: 47vw;
+  height: inherit;
+}
+
+ul { 
+  width: 45vw;
+  height: 5vh;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+li {
+  margin-left: 4vw;
+  color: var(--color-5);
+}
+
+/* <!--네모 동그라미--> */
+nav>div>div:nth-child(2) {
+  width: 8vw;
+  height: 8vw;
+  background-color:var(--color-2);
+
+  position: fixed;
+  top: 13vh;
+  left: 88vw;
+}
+
+nav>div>div:nth-child(3) {
+  width: 5vw;
+  height: 5vw;
+  background-color:var(--color-2);
+  border-radius: 10vw;
+  box-shadow: 4px 3px 0px 0px rgba(80, 256, 150, 1);
+
+  position: fixed;
+  top: 50vh;
+  left: 91vw;
+}
+/* <!--메뉴 상단 끝--> */
+
+
+/* <!--헤더=배너--> */
+  header {
+  width: inherit;
+  height: 45vh;
+  background-color: var(--color-4);
+  
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+header>div {
+  background-color: var(--color-3);
+  width: 20vw;
+  height: 2.5vh;
+
+  margin-bottom: 2vw;
+  margin-left: 11vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* <!--배너 하단 표시--> */
+header>div>div:nth-child(1) {
+  color: var(--color-5);
+  font-size: small;
+}
+
+header>div>div:nth-child(2) {
+  width: 6vw;
+  height: 0.3vh;
+  background-color: var(--color-4);
+  margin-left: 1vw;
+}
+
+header>div>div:nth-child(3) {
+  width: 6vw;
+  height: 0.3vh;
+  background-color: var(--color-4);
+  margin-left: 1vw;
+}
+
+header>div>div:nth-child(4) {
+  width: 0.3vw;
+  height: 1.5vh;
+  background-color: var(--color-4);
+
+  margin-left: 1vw;
+}
+
+header>div>div:nth-child(5) {
+  width: 0.3vw;
+  height: 1.5vh;
+  background-color: var(--color-4);
+
+  margin-left: 0.3vw;
+}
+
+/* <!--배너 끝--> */
+
+
+main {
+  width: inherit;
+  height: 200vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main>div {
+  width: 80vw;
+}
+/* <!--공지사항/보도--> */
+main>div:nth-child(1) {
+  width: inherit;
+  height: 6vh;
+  background-color: var(--color-5
+  );
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main>div:nth-child(1)>div {
+  width: 40vw;
+  height: inherit;
+}
+/* <!--세부메뉴-1--> */
+main>div:nth-child(2) {
+  height: 55vh;
+  margin-top: 1vw;
+  margin-bottom: 2vh;
+}
+/* <!--세부메뉴-상단--> */
+main>div:nth-child(2)>div:nth-child(1) {
+  width: inherit;
+  height: 8vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main>div:nth-child(2)>div:nth-child(1)>div:nth-child(2) {
+  width: 30vw;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+main>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div {
+  background-color: var(--color-1);
+  width: 20vw;
+  height: 4vh;
+}
+/* <!--세부메뉴-하단--> */
+main>div:nth-child(2)>div:nth-child(2) {
+  width: inherit;
+  height: 47vh;
+
+  display: flex;
+}
+/* <!--세부메뉴-1 끝--> */
+
+/* <브랜드 소개> */
+main>div:nth-child(3) {
+  width: inherit;
+  height: 35vh;
+  background-color: var(--color-1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: flex-end;
+  
+}
+
+main>div:nth-child(3)>div:nth-child(1) {
+  height: 22vh;
+  width: 40vw;
+  margin-right: 10vw;
+}
+
+h1 {
+  color: var(--color-5);
+  font-weight: normal;
+  font-size: 220%;
+}
+
+h2 {
+  color: var(--color-2);
+  font-size: 280%;
+  font-weight: bolder;
+}
+
+P{
+  color: var(--color-5);
+  font-size: 115%;
+  margin-top: 2vh;
+}
+
+main>div:nth-child(3)>div:nth-child(2) {
+  height: 8vh;
+  width: 40vw;
+  margin-right: 10vw;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main>div:nth-child(3)>div:nth-child(2)>div {
+  width: 10vw;
+  height: 6vh;
+  background-color: var(--color-4);
+}
+
+/* <브랜드 소개 끝> */
+
+/* <!--세부메뉴-2--> */
+main>div:nth-child(4) {
+  height: 55vh;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+}
+
+/* <!--세부메뉴-상단--> */
+main>div:nth-child(4)>div:nth-child(1) {
+  width: inherit;
+  height: 8vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main>div:nth-child(4)>div:nth-child(1)>div:nth-child(2) {
+  width: 30vw;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+main>div:nth-child(4)>div:nth-child(1)>div:nth-child(2)>div {
+  background-color: var(--color-1);
+  width: 20vw;
+  height: 4vh;
+}
+/* <!--세부메뉴-하단--> */
+main>div:nth-child(4)>div:nth-child(2) {
+  width: inherit;
+  height: 47vh;
+
+  display: flex;
+}
+/* <!--세부메뉴-2 끝--> */
+
+
+/* <!--SNS--> */
+main>div:nth-child(5) {
+  height: 40vh;
+  margin-bottom: 3vh;
+}
+
+main>div:nth-child(5)>div:nth-child(1){
+  height: 6vh;
+  color: var(--color-5);
+  font-size: 200%;
+  font-weight: bold;
+  text-align: center;
+}
+
+main>div:nth-child(5)>div:nth-child(2) {
+  height: 34vh;
+  /* border: 1px solid gray; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+main>div:nth-child(5)>div:nth-child(2)>div {
+  width: 16vw;
+  height: 17vh;
+  background-color: var(--color-4);
+}
+
+/* <홈페이지하단> */
+footer {
+  width: inherit;
+  height: 35vh;
+  background-color: var(--color-5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer>div {
+  width: 90vw;
+  height: 25vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer>div>div {
+  width: 25vw;
+  height: inherit;
+  background-color: var(--color-4);
+}
