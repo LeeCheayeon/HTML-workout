@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --color-1:rgb(228, 228, 228);
+      --color-2:rgb(187, 187, 187);
+      --color-3:rgb(124, 124, 124);
+      --color-4:rgb(63, 63, 63);
+    }
+    
+    .text-1 {
+      font-size: 95%;
+      color: var(--color-3);
+      text-align: center;
+    }
+
+    .text-2 {
+      color: var(--color-3);
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    .menu-box {
+      width: 12vw;
+      height: 4vh;
+      background-color: var(--color-2);
+  
+      margin-left: 1vw;
+    }
+
+    .main-box-1 {
+
+      width: 1.5vw;
+      height: 1.5vw;
+      background-color: var(--color-2);
+    }
+
+    .main-box-2 {
+      width: 3vw;
+      height: 3vw;
+      border-radius: 3vw;
+      background-color: var(--color-1);
+    }
+
+    .main-box-3 {
+      width: 11vw;
+      height: 12vh;
+      background-color: var(--color-2);
+
+    }
+
+    .main-box-4 {
+      height: 18vh;
+      width: 12vw;
+      background-color: var(--color-1);
+    }
+
+    .image-box {
+      width: 13vw;
+      height: 10vh;
+      background-color: var(--color-2);
+    }
+
+    .text-box {
+      width: 35vw;
+      height: 10vh;
+      background-color: var(--color-1);
+    }
+
+    * {padding: 0; margin: 0;}    
+
+    body {
+      width: 100vw;
+      height: 365vh; 
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    header {
+      width: inherit;
+      height: 20vh;
+    }
+
+    header>div{
+      height: 15vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header>div>div:nth-child(1){
+      width: 15vw;;
+      height: inherit;
+      background-color: var(--color-2);
+
+      margin-left: 12vw;
+    }
+
+    header>div>div:nth-child(2) {
+      width: 35vw;
+      height: 7vh;
+      background-color: var(--color-2);
+
+      margin: 1vw;
+    }
+
+    header>div>div:nth-child(3) {
+      width: 15vw;;
+      height: inherit;
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+
+      margin-right: 12vw;
+    }
+
+    header>div>div:nth-child(3)>div {
+      margin-left: 0.5vw;
+    }
+
+    header>div>div:nth-child(3)>div:nth-child(2) {
+      width: 1vw;
+      height: 1vw;
+      background-color: var(--color-2);
+      margin-top: 0.1vw;
+    }
+
+    nav {
+      width: inherit;
+      height: 5vh;
+      border-top: 1px solid var(--color-2);
+      border-bottom: 1px solid var(--color-2);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    
+    nav>div {
+      width: 68vw;
+      height: 5vh;
+      color: var(--color-2);
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav>div>div {
+      margin-right: 1vw;
+    }
+
+    /* <헤더 끝> */
+
+    main {
+      border: 1px solid red;
+      height: 305vh;
+      width: 70vw;
+
+      display: flex;
+    }
+
+    main>article {
+      width: 50vw;
+      margin-right: 2vw;
+    }
+    article>div {
+      margin-top: 1vw;
+    }
+
+    #banner {
+      width: inherit;
+      height: 20vh;
+      background-color: var(--color-1);
+    }
+
+    article>div:nth-child(2) {
+      background-color: var(--color-1);
+      border: 1px solid var(--color-2);
+
+      width: inherit;
+      height: 4vh;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    article>div:nth-child(2)>div {
+      width: 10vw;
+      height: 2vh;
+      background-color: var(--color-2);
+    }    
+
+    article>div:nth-child(2)>div:nth-child(1){
+      margin-right: 26vw;
+    }
+
+    article>div:nth-child(3) {
+      height: 36vh;
+    }
+
+    article>div:nth-child(3)>div:nth-child(1) {
+      width: inherit;
+      height: 5vh;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    article>div:nth-child(3)>div:nth-child(1)>div:nth-child(1) {
+      width: 25vw;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    article>div:nth-child(3)>div:nth-child(1)>div:nth-child(1)>div {
+      margin-right: 0.5vw;
+    }
+    
+    article>div:nth-child(3)>div:nth-child(1)>div:nth-child(2){
+      width: 25vw;
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    article>div:nth-child(3)>div:nth-child(1)>div:nth-child(2)>div {
+      margin-right: 0.5vw;
+    }
+
+    article>div:nth-child(3)>div:nth-child(2) {
+      width: 50vw;
+      height: 33vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      flex-wrap: wrap;
+    }
+
+    article>div:nth-child(3)>div:nth-child(2)>div {
+      width: 16.4%;
+      height: 24.4%;
+      border: 1px solid var(--color-1);
+
+    }
+
+    article>div:nth-child(3)>div:nth-child(3) {
+      position: absolute;
+      z-index: 1;
+      top:55vh;
+      left: 13.5vw;
+    }
+
+    article>div:nth-child(4) {
+      height: 40vh;
+      margin-top: 5vh;
+    }
+
+    article>div:nth-child(4)>div:nth-child(1)>div:nth-child(1) {
+      height: 3vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    article>div:nth-child(4)>div:nth-child(1)>div:nth-child(2) {
+      height: 5vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    article>div:nth-child(4)>div:nth-child(1)>div:nth-child(2)>div {
+      height: 5vh;
+      flex-grow: 1;
+      border: 1px solid var(--color-1);
+    }
+
+    article>div:nth-child(4)>div:nth-child(1)>div:nth-child(3) {
+      position: absolute;
+      top: 79.5vh;
+      left: 63.5vw;
+    }
+
+    article>div:nth-child(4)>div:nth-child(2) {
+      height: 30vh;
+
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5vw;
+    }
+
+    article>div:nth-child(4)>div:nth-child(2)>div:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    article>div:nth-child(4)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1){
+      background-color: var(--color-1);
+      width: 24vw;
+      height: 20vh;
+    }
+    
+    article>div:nth-child(4)>div:nth-child(2)>div:nth-child(1)>div:nth-child(2){
+      background-color: var(--color-1);
+      width: 24vw;
+      height: 9vh;
+    }
+    
+
+    article>div:nth-child(4)>div:nth-child(2)>div:nth-child(2){
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    article>div:nth-child(4)>div:nth-child(2)>div:nth-child(2)>div {
+      width: 24vw;
+      height: 9.5vh;
+      background-color:var(--color-1);
+      margin-bottom: 0.5
+    }
+
+    article>div:nth-child(6) {
+      height: 70vh;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+      margin-bottom: 1vw;
+
+    }
+
+    article>div:nth-child(6)>div {
+      width: 50vw;
+      height: 10vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    article>div:nth-child(8) {
+      height: 16vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+
+      margin-bottom: 1vw;
+    }
+
+    article>div:nth-child(8)>div:nth-child(1) {
+      height: 4vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    article>div:nth-child(8)>div:nth-child(2) {
+      width: 50vw;
+      height: 12vh;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    article>div:nth-child(8)>div:nth-child(3) {
+      position: absolute;
+      z-index: 2;
+    }
+
+    article>div:nth-child(8)>div:nth-child(4) {
+      position: absolute;
+      z-index: 2;
+    }
+
+    article>div:nth-child(10) {
+      height: 70vh;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+      margin-bottom: 1vw;
+
+    }
+
+    article>div:nth-child(10)>div {
+      width: 50vw;
+      height: 10vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    article>div:nth-child(12) {
+      height: 20vh;
+    }
+
+    article>div:nth-child(12)>div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    article>div:nth-child(12)>div:nth-child(2) {
+      position: absolute;
+
+    }
+
+    article>div:nth-child(12)>div:nth-child(2)>div {
+      color: var(--color-3);
+      margin-top: 8vh;
+      text-align: center;
+    }
+
+    /* <메인 아티클 끝> */
+
+
+    main>aside {
+      width: 18vw;
+      height: 191vh;
+      border: 1px solid slateblue;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    main>aside>div {
+      border: 1px solid red;
+    }
+
+    main>aside>div:nth-child(1) {
+      width: 18vw;
+      height: 20vh;
+      margin-top: 1vw;
+    }
+
+    main>aside>div:nth-child(1)>div:nth-child(1) {
+      height: 15vh;
+      background-color: var(--color-1);
+    }
+
+    main>aside>div:nth-child(1)>div:nth-child(2) {
+      display: flex;
+    }
+    
+    main>aside>div:nth-child(1)>div:nth-child(2)>div {
+      height: 5vh;
+      width: 20%;
+      border: 1px solid var(--color-2);
+      background-color: var(--color-1);
+    }
+
+    main>aside>div:nth-child(2) {
+      width: 18vw;
+      height: 4vh;
+      border: 1px solid var(--color-2);
+      background-color: var(--color-1);
+    }
+
+
+    main>aside>div:nth-child(3) {
+      height: 20vh;
+      width: 18vw;
+      background-color: var(--color-1);
+    }
+
+    main>aside>div:nth-child(4) {
+      height: 140vh;
+      width: 18vw;
+      background-color: var(--color-1);
+    }
+
+
+
+    footer {
+      height: 40vh;
+      width: 100vw;
+      background-color: var(--color-1);
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div></div>
+      <div></div>
+      <div>
+        <div class="text-1">000000</div>
+        <div></div>
+        <div class="text-1">000000</div>
+        <div class="text-1">0000</div>
+      </div>
+    </div>
+    <nav>
+      <div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div>0000</div>
+        <div class="menu-box">box</div>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <article>
+      <div id="banner"></div>
+      <div>
+        <div></div>
+        <div></div>
+      </div> <!--뉴스한줄-->
+      <div>
+        <div><!--text-->
+          <div>
+            <div class="main-box-1"></div>
+            <div class="text-2">0000000000</div>
+          </div>
+          <div>
+            <div class="main-box-1"></div>
+            <div class="main-box-1"></div>
+            <div class="main-box-1"></div>
+          </div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div><!--이미지-->
+        <div class="main-box-2"></div><!--밖화살표-->
+      </div> <!--뉴스스탠드-->
+      <div>
+        <div><!--제목글-->
+          <div>
+            <div class="text-2">000000000</div>
+            <div class="text-2">000000000</div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="main-box-2"></div>
+        </div>
+        <div><!--세로로나눈2구역-->
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div> <!--글1-->
+      <hr>
+      <div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+      </div> <!--글2-->
+      <hr>
+      <div>
+        <div class="text-2">0000000</div>
+        <div>
+          <div class="main-box-3"></div>
+          <div class="main-box-3"></div>
+          <div class="main-box-3"></div>
+          <div class="main-box-3"></div>
+        </div>
+        <div class="main-box-2"></div>
+        <div class="main-box-2"></div>
+      </div> <!--신차-->
+      <hr>
+      <div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+        <div>
+          <div class="image-box"></div>
+          <div class="text-box"></div>
+        </div>
+      </div><!--글3-->
+      <hr>
+      <div>
+        <div>
+          <div class="main-box-4"></div>
+          <div class="main-box-4"></div>
+          <div class="main-box-4"></div>
+          <div class="main-box-4"></div>
+        </div>
+        <div class="main-box-2">
+          <div>000000</div>
+        </div>
+      </div><!--영상-->
+      <hr>
+    </article>
+    <aside>
+      <div>
+        <div></div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div> <!--login-->
+      <div></div> <!--박스-->
+      <div></div> <!--광고-->
+      <div>
+      </div> <!--쇼핑-->
+    </aside>
+  </main>
+
+  <footer>
+    <div></div>
+    <hr>
+    <div></div>
+    <hr>
+    <div></div>
+    <hr>
+    <div></div>
+  </footer>
+</body>
+</html>
