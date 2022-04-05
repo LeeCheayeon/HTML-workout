@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./CSS/style.css">
+
+  <style>
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #search {
+      width: inherit;
+      height: 4vh;
+      /* border: 1px solid green; */
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-bottom: 1vh;
+    }
+
+    #search>div {
+      width: 95vw;
+      height: 3vh;
+      background-color: var(--color-3);
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+
+    #banner {
+      width: inherit;
+      height: 30vh;
+      background-color: var(--color-1);
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    #banner>div {
+      width: 30vw;
+      height: 3vh;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    main>section:nth-child(3){
+      width: inherit;
+      height: 15vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 1vh;
+      margin-bottom: 1vh;
+    }
+
+    main>section:nth-child(3)>div {
+      width: 20vw;
+      height: 10vh;
+      margin: 5vw;
+    }
+
+    main>section:nth-child(3)>div>div{
+      width: inherit;
+      height: 8vh;
+      background-color: var(--color-3);
+    }
+
+    main>section:nth-child(4) {
+      height: 35vh;
+    }
+
+
+    main>section:nth-child(4)>div:nth-child(1) {
+      width: inherit;
+      height: 5vh;
+      
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-left: 6vw;
+      margin-right: 5vw;
+    }
+
+    main>section:nth-child(4)>div:nth-child(1)>div{
+      width: 16vw;
+      height: 3vh;
+
+      background-color: var(--color-3);
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main>section:nth-child(4)>div:nth-child(2) {
+      width: inherit;
+      height: 30vh;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    main>section:nth-child(4)>div:nth-child(2)>div {
+      border: 1px dashed var(--color-3) ;
+      
+      width: 20vw;
+      height: 20vw;
+
+      margin: 4vw;
+    }
+
+
+
+
+
+  </style>
+</head>
+<body id="root">
+    <header> <!--고정-->
+    <div></div>
+    <nav class="flex-cen-cen"> <!--메뉴-->
+      <div class="flex-cen-cen">
+        <div class="menu-box"></div> <!--뒤로가기-->
+        <div class="menu-box"></div> <!--스크랩-->
+        <div class="menu-box"></div> <!--장바구니-->
+      </div>
+    </nav>
+    <div> <!--하단-->
+      <div> <!--위로가기-->
+        <p>TOP</p>
+      </div>
+      <div class="flex-around-cen"> <!--home버튼-->
+        <div class="botton-3"></div>
+        <div class="botton-3"></div>
+        <div class="botton-3"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="search">
+      <div>
+        <p class="subtext-2">검색</p>
+      </div>
+    </section>
+    <section id="banner">
+      <div>
+        <div class="ellipse-1"></div>
+        <div class="ellipse-1"></div>
+        <div class="ellipse-1"></div>
+        <div class="ellipse-1"></div>
+      </div>
+    </section>
+    <!-- <스토어 고정 메뉴> -->
+    <section>
+      <div>
+        <div></div>
+        <p class="subtext-2">스토어</p>
+      </div>
+      <div>
+        <div></div>
+        <p class="subtext-2">오늘의 할인</p>
+      </div>
+      <div>
+        <div></div>
+        <p class="subtext-2">클래스&DIY</p>
+      </div>
+    </section>
+    <!-- <스토어 바로가기 추가> -->
+    <section>
+      <div>
+        <p class="brand">바로가기</p>
+        <div>
+          <p class="subtext-2">추가하기</p>
+        </div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

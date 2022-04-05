@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/style.css">
+  <style>
+
+    .name {
+      color: var(--color-2);
+      font-size: 160%;
+
+      margin-bottom: 2vw;
+    }
+
+    .brand{
+      color: var(--color-4);
+      font-size: 110%;
+      font-weight: 600;
+    }
+
+    .price {
+      color: var(--color-2);
+      font-size: 180%;
+    }
+
+    .subtext {
+      font-size: 100%;
+      color: var(--color-4);
+      font-weight: bold;
+    }
+
+    .ellipse-1 {
+      background-color: var(--color-3);
+      width: 3vw;
+      height: 3vw;
+      border-radius: 2vw;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* header {
+      height:10vh;
+      width: inherit;
+    }
+    
+    header>div:nth-child(1) {
+      position: fixed;
+
+      height: 5vh;
+      width: 100vw;
+      background-color: white;
+    }
+    
+    nav {
+      width: inherit;
+      height: 5vh;
+      
+      position: fixed;
+      top: 5vh;
+
+      background-color: white;
+    }
+    
+    nav>div>div:nth-child(1) {
+      margin-right: 72vw;
+    } */
+
+    /* header>div:nth-child(3)>div:nth-child(1){
+      width: 8vw;
+      height: 8vw;
+      border-radius: 5vw;
+
+      background-color: var(--color-4);
+
+      position: fixed;
+      top: 89vh;
+      left: 85vw;
+    }
+
+    header>div:nth-child(3)>div:nth-child(1)>p {
+      text-align: center;
+      color: var(--color-3);
+      font-size: smaller;
+      padding-top: 0.7vh;
+    }
+
+    header>div:nth-child(3)>div:nth-child(2) {
+      width: 100vw;
+      height: 5vh;
+      background-color: var(--color-3);
+
+      position: fixed;
+      top: 96vh;
+    }
+
+    header>div:nth-child(3)>div:nth-child(2)>div {
+      margin-left: 2vw;
+      margin-right: 2vw;
+    } */
+
+    /* <!--header>div:nth-child(3)>div:nth-child(2)>div:nth-child(2)의 스타일을 삭제하면 아래 하단 고정바의 버튼이 사라진다. 왜 그럴까...??? 이유를 모르겠다. header>div:nth-child(3)>div:nth-child(2)>div에 border값을 줘서 보면 header>div:nth-child(3)>div:nth-child(2)>div:nth-child(2)박스가 크기가 지정이 안된것으로 나온다. class="botoon-2로 header>div:nth-child(3)>div:nth-child(2)>div:nth-child(3)과 똑같이 클래스를 지정해줬는데 3번째 자식은 잘 나오지만 2번째 자식은 값이 없는걸로 나오다니... " --> */
+
+    /* <해결> 3번째 자식에게 지정했던 클래스를 그대로 복사해서 2번째 자식에게 부여했더니 값이 들어갔다. 좀 전에 안되는 이유는 무엇이였을까?  */
+
+    main {
+      width: inherit;
+      height: 100vh;
+    }
+
+    main>section:nth-child(1)>div {
+      width: inherit;
+      height: 10vh;
+    }
+
+    main>section:nth-child(1)>div:nth-child(1) {
+      width: inherit;
+      height: 35vh;
+      background-color: var(--color-1);
+      /* background-image:url(https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/259137195_852503278779033_3856950647970240630_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=a26aad&_nc_ohc=pFbMjXWrEUAAX8E7yZf&_nc_ht=scontent-ssn1-1.xx&oh=00_AT8dIDVxrwudpqwn2JpVvIPhlGNFq0xYh7AY4MIVyXOXMw&oe=6250BC1C) ;
+      background-size: cover; */
+    }
+
+    main>section:nth-child(1)>div:nth-child(1)>div {
+      width: 20vw;
+      height: 3vh;
+      
+      margin-bottom: 2vh;
+    }
+
+    main>section:nth-child(1)>div:nth-child(2) {
+      height: 15vh;
+      margin: 2vw;
+
+      display: flex;
+    }
+
+
+    main>section:nth-child(1)>div:nth-child(2)>div:nth-child(1) {
+      width: 80vw;
+      height: inherit;
+    }
+
+    main>section:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div {
+      width: 25vw;
+      height: 1.5vh;
+      background-color: var(--color-1);
+
+      margin-top: 1vw;
+      margin-bottom: 5vw;
+    }
+
+    main>section:nth-child(1)>div:nth-child(2)>div:nth-child(2) {
+      width: 20vw;
+      height: inherit;
+      flex-direction: column;
+    }
+
+    main>section:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1) {
+      width: 7vw;
+      height: 7vw;
+      background-color:var(--color-1);
+
+      margin-top: 2vw;
+      margin-bottom: 8vh;
+    }
+
+    main>section:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2) {
+      width: 20vw;
+      height: 3vh;
+      border: 2px solid var(--color-1);
+      border-radius: 1vw;
+    }
+
+    main>section:nth-child(1)>div:nth-child(3) {
+      background-color: var(--color-3);
+    }
+
+    /* <메인상단끝> */
+
+    /* < 메인 하단> */
+
+    main>section:nth-child(2) {
+      width: inherit;
+      height: 60vh;
+    }
+
+    main>section:nth-child(2)>div:nth-child(1)>div {
+      width: 20vw;
+      height: 4vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    main>section:nth-child(2)>div:nth-child(1)>div :hover {
+      opacity: 1;
+      width: 20vw;
+      height: 4vh;
+      border-bottom: 2px solid var(--color-5);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main>section:nth-child(2)>div:nth-child(3) {
+      margin: 1vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      width: inherit;
+      height: 40vh;
+    }
+
+    main>section:nth-child(2)>div:nth-child(3)>div:nth-child(1) {
+      background-color: var(--color-1);
+      /* background-image: url(https://cliimage.commutil.kr/phpwas/restmb_allidxmake.php?idx=999&simg=2022021512535108257204ead079111420111917.jpg); */
+      background-size: 140%;
+      width: 90vw;
+      height: 30vh;
+    }
+    
+    main>section:nth-child(2)>div:nth-child(3)>div:nth-child(2) {
+      border: 1px solid var(--color-1);
+      width: 89.5vw;
+      height: 4vh;
+      text-align: center;
+      padding-top: 1.5vh;
+    }
+
+    main>section:nth-child(2)>div:nth-child(5) {
+      height: 3.5vh;
+      padding-top: 1vh;
+
+      padding-left: 4vw;
+    }
+
+    main>section:nth-child(2)>div:nth-child(7) {
+      height: 3.5vh;
+      padding-top: 1vh;
+
+      padding-left: 4vw;
+    }
+
+    main>section:nth-child(2)>div:nth-child(9) {
+      height: 30vh;
+      width: inherit;
+    }
+
+    main>section:nth-child(2)>div:nth-child(9)>p {
+      padding-left: 4vw;
+      padding-top: 1vh;
+    }
+
+    main>section:nth-child(2)>div:nth-child(9)>div {
+      width: 95vw;
+      height: 20vh;
+      margin-top: 2vh;
+      margin-left: 4vw;
+
+      display: flex;
+      overflow: hidden;
+      /* justify-content: space-between; */
+    }
+    
+    main>section:nth-child(2)>div:nth-child(9)>div>div {
+      width: 20vw;
+      height: 20vw;
+      background-color: var(--color-1);
+      
+      margin: 1vw;
+      /* flex-wrap: wrap; */
+    }
+
+  </style>
+</head>
+<body id="root">
+  <header> <!--고정-->
+    <div></div>
+    <nav class="flex-cen-cen"> <!--메뉴-->
+      <div class="flex-cen-cen">
+        <div class="menu-box"></div> <!--뒤로가기-->
+        <div class="menu-box"></div> <!--스크랩-->
+        <div class="menu-box"></div> <!--장바구니-->
+      </div>
+    </nav>
+    <div> <!--하단-->
+      <div> <!--위로가기-->
+        <p>TOP</p>
+      </div>
+      <div class="flex-around-cen"> <!--구매버튼-->
+        <div class="botton-1"></div>
+        <div class="botton-2"></div>
+        <div class="botton-2"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="flex-cen-end">
+        <div class="flex-between-cen"><!--동그라미사진버튼-->
+          <div class="ellipse-1"></div>
+          <div class="ellipse-1"></div>
+          <div class="ellipse-1"></div>
+          <div class="ellipse-1"></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h2 class="brand">러쉬코리아</h2>
+          <h1 class="name">유니콘 푸프</h1>
+          <div></div> <!--별점-->
+          <h2 class="price">18,000원</h2>
+        </div>
+        <div class="flex-start-end">
+          <div></div> <!--공유하기-->
+          <div>
+            <div class="subtext flex-cen-cen">쿠폰받기</div>
+          </div> <!--할인쿠폰-->
+        </div>
+      </div>
+      <div></div> <!--배너/쿠폰?-->
+    </section>
+    <section>
+      <div class="flex-around-cen">
+        <div>
+          <div class="subtext">상품정보</div>
+        </div>
+        <div>
+          <div class="subtext">리뷰</div>
+        </div>
+        <div>
+          <div class="subtext">문의</div>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <div></div>
+        <div class="subtext">상품 펼쳐보기</div>
+      </div>
+      <hr>
+      <div class="subtext">리뷰</div>
+      <hr>
+      <div class="subtext">문의</div>
+      <hr>
+      <div>
+        <p class="subtext">관련상품</p>
+        <div> <!--이미지-->
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <!-- <div></div> -->
+  </footer>
+</body>
+</html>
