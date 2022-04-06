@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    * {margin: 0; padding: 0;}
+    :root {
+      --color-1:#9f9f9f;
+      --color-2:#333;
+      --color-3:#c3c3c3;
+      --color-4:#8d8d8d;
+      --color-5:#414141;
+      --color-6:#ebebeb; 
+    }
+
+    .text-1 {
+      font-size: 160%;
+      color: var(--color-2);
+      font-weight: bold;
+    }
+
+    .text-2 {
+      font-weight: 600;
+      color: var(--color-2);
+      margin-left: 3vw;
+    }
+
+    .text-3 {
+      font-size: smaller;
+      color: var(--color-5);
+
+      text-align: end;
+      margin-top: 0.5vw;
+    }
+
+    .text-box-1 {
+      width: inherit;
+      height: 3.5vh;
+      background-color: var(--color-3);
+      border-radius: 2vw;
+      padding-top: 2vw;
+    }
+
+    .text-box-2 {
+      width: 40vw;
+      height: 3.5vh;
+      background-color: var(--color-3);
+      border-radius: 5vw;
+      padding-top: 2vw;
+
+      margin-left: 49.5vw;
+    }
+
+    .box-1 {
+      width: 3vw;
+      height: 3vw;
+      background-color: var(--color-3);
+
+      border-radius: 2vw;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    #war {
+      width: inherit;
+      height: 65vh;
+
+      background-color: var(--color-1);
+
+      border-top-right-radius: 10vw;
+      border-top-left-radius: 10vw;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #war>section {
+      width: 90vw;
+      height: 60vh;
+      margin-top: 2vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #war>section>div:nth-child(1) {
+      width: inherit;
+      height: 50vh;
+    }
+
+    #war>section>div:nth-child(1)>div:nth-child(1) {
+      height:6vh;
+    }
+    
+    #war>section>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) {
+      width: 20vw;
+      margin-top: 2vw;
+      display: flex; 
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #war>section>div:nth-child(1)>div:nth-child(2)>div {
+      margin-top: 3vh;
+
+      height: 9vh;
+    }
+
+    span {
+      margin-left: 3vw;
+      color: var(--color-1);
+    }
+
+    p {
+      font-size: 110%;
+      text-align: center;
+      color: var(--color-5);
+    }
+    
+    #war>section>div:nth-child(2) {
+      width: 35vw;
+      height: 1vh;
+      
+      background-color: var(--color-2);
+      border-radius: 1vw;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="war">
+      <section>
+        <div>
+          <div>
+            <div class="text-1">Lorem ipsum</div>
+            <div>
+              <div class="box-1"></div>
+              <div class="box-1"></div>
+              <div class="box-1"></div>
+              <div class="box-1"></div>
+              <div class="box-1"></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="text-2">0000000000</div>
+              <div class="text-box-1"><span>00000000000000</span></div>
+            </div>
+            <div>
+              <div class="text-2">000000000</div>
+              <div class="text-box-1"><span>00000000000000</span></div>
+              <div class="text-3">000000000000000000000</div>
+            </div>
+            <div>
+              <div class="text-box-2">
+                <p>start</p>
+              </div>
+              <div class="text-3">00000000000000000000</div>
+            </div>
+          </div>
+        </div>
+
+        <div></div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

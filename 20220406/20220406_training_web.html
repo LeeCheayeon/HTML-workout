@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {margin: 0; padding: 0;}
+    :root {
+      --color-1:#9f9f9f;
+      --color-2:#333;
+      --color-3:#c3c3c3;
+      --color-4:#8d8d8d;
+      --color-5:#414141;
+      --color-6:#ebebeb; 
+    }
+
+    .box-1 {
+      background-color: var(--color-3);
+      width: 20vw;
+      height: inherit;
+      border-radius: 2vw;
+    }
+
+    .box-2 {
+      width: 0.5vw;
+      height: 0.5vw;
+      border-radius: 2vw;
+      background-color: var(--color-3);
+    }
+    
+    .text-1 {
+      font-size: 300%;
+      font-weight: bolder;
+      color: var(--color-6);
+      opacity: 0.5;
+
+      margin-bottom: 1vw;
+    }
+    .text-2 {
+      color: var(--color-4);
+      text-align: justify;
+      line-height: 1.6vw;
+
+      margin-bottom: 2vh;
+    }
+    .text-3 {
+      color: var(--color-4);
+      text-align: justify;
+      /* line-height: 1.6vw; */
+      
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div:nth-child(1){
+      width: inherit;
+      height: inherit;
+      background-color: var(--color-4);
+    }
+
+    #root>div:nth-child(2){
+      width: inherit;
+      height: 60vh;
+      background-color: var(--color-2);
+      opacity: 0.7;
+
+      position: absolute;
+      z-index: 1;
+      top: 40vh;
+    }
+
+    #war {
+      width: 80vw;
+      height: 70vh;
+
+      position: absolute;
+      z-index: 2;
+      margin-top: 5vh;
+    }
+
+    #war>div:nth-child(1) {
+      width: inherit;
+      height: 40vh;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #war>div:nth-child(1)>div:nth-child(2){
+      width: 59vw;
+      height: inherit;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    #war>div:nth-child(1)>div:nth-child(2)>div:nth-child(2){
+      width: 6vw;
+      height: 2vh;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-left: 23vw;
+      margin-bottom: 1.5vw;
+    }
+
+    #war>div:nth-child(2) {
+      width: inherit;
+      height: 27vh;
+      margin-top: 3vh;
+    }
+
+    #war>div:nth-child(2)>div:nth-child(1) {
+      background-color: var(--color-4);
+      width: inherit;
+      height: 0.8vh;
+      margin-bottom: 2.5vh;
+    }
+
+
+
+
+  </style>
+
+</head>
+<body>
+  <div id="root">
+    <div></div> <!--배경-->
+    <div></div><!--검은그림자박스-->
+    <div id="war"> <!--투명한 박스-->
+      <div>
+        <div class="box-1"></div> <!--이미지1-->
+        <div>
+          <div class="text-1">Lorem ipsum dolor</div>
+          <div>
+            <div class="box-2"></div>
+            <div class="box-2"></div>
+            <div class="box-2"></div>
+            <div class="box-2"></div>
+            <div class="box-2"></div>
+          </div>
+          <div class="text-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quo accusantium cum rerum, laboriosam ad dolores. Blanditiis magni atque aperiam qui recusandae accusantium! Expedita blanditiis dignissimos sequi atque odio, voluptas quaerat aliquid exercitationem ullam. Natus sunt obcaecati quod hic tenetur? magni atque aperiam qui recusandae accusantium! Expedita blanditiis.
+          </div>
+        </div>
+      </div>
+      <div>
+        <div></div> <!--두꺼운실선-->
+        <div class="text-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, eum totam. Aspernatur, doloribus? Ut eum recusandae nemo nihil ullam vero non omnis odio eius ipsum architecto, officiis asperiores quae magni amet nisi sed modi neque ab autem dignissimos aperiam. Odit ullam voluptatum quia molestias, aspernatur mollitia esse maxime laborum quisquam velit corrupti, reiciendis neque distinctio eveniet quo facilis soluta praesentium excepturi ipsa. Consectetur culpa expedita numquam? Eveniet nam veritatis non obcaecati rerum a reprehenderit iusto quasi cupiditate sapiente. Minus, numquam
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, eum totam. Aspernatur, doloribus? Ut eum recusandae nemo nihil ullam vero non omnis odio eius ipsum architecto, officiis asperiores quae magni amet nisi sed modi neque ab autem dignissimos aperiam. Odit ullam voluptatum quia molestias, aspernatur mollitia esse maxime laborum quisquam velit corrupti, reiciendis neque distinctio eveniet quo facilis soluta praesentium excepturi ipsa. Consectetur culpa expedita numquam? Eveniet nam veritatis non obcaecati rerum a reprehenderit iusto quasi cupiditate sapiente. Minus, numquam.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, eum totam. Aspernatur, doloribus? Ut eum recusandae nemo nihil ullam vero non omnis odio eius ipsum architecto, officiis asperiores quae magni amet nisi sed modi neque ab autem dignissimos aperiam. Odit ullam voluptatum quia molestias, aspernatur mollitia esse maxime laborum quisquam velit corrupti, reiciendis neque distinctio eveniet quo facilis soluta praesentium excepturi ipsa. Consectetur culpa expedita numquam? Eveniet nam veritatis non obcaecati rerum a reprehenderit iusto quasi cupiditate sapiente. Minus, numquam.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </div> 
+      </div>
+    </div>
+  </div>
+</body>
+</html>
