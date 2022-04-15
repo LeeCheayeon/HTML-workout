@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/style.css">
+
+  <style>
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #header {
+      width: 90vw;
+      height: 15vh;
+    }
+    
+    #header>div:nth-child(1) {
+      width: 10vw;
+      height: 10vw;
+      background-color: var(--color-3);
+      
+      margin-bottom: 3vh;
+    }
+    
+    #main {
+      width: 90vw;
+      height: 29vh;
+    }
+
+    #main>div:nth-child(1){
+      width: inherit;
+      height: 2vh;
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      margin-bottom: 4vw;
+    }
+
+    #main>div:nth-child(2) {
+      width: inherit;
+      height: 25vh;
+      background-color: var(--color-3);
+      border-radius: 2vw;
+      border: 1px solid var(--color-6);
+      box-shadow: 1px 2px 3px rgba( 0, 0, 0, 0.5);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #main>div:nth-child(2)>div:nth-child(1) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      margin-bottom: 1vh;
+    }
+
+    #main>div:nth-child(2)>div:nth-child(1)>div:nth-child(1) {
+      margin-left: 68vw;
+      margin-top: 1vh;
+    }
+
+    #main>div:nth-child(2)>div:nth-child(2) {
+      width: 80vw;
+      height: 10vh;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #main>div:nth-child(2)>div:nth-child(2)>div:nth-child(1) {
+      width: 55vw;
+      height: 10vh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #main>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div:nth-child(2) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #main>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div:nth-child(1) {
+      margin-right: 14vw;
+    }
+
+    #main>div:nth-child(2)>div:nth-child(2)>div:nth-child(2) {
+      width: 15vw;
+      height: 8vh;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-direction: column;
+    }
+
+    #footer {
+      width: 90vw;
+      height: 36vh;
+      background-color: var(--color-3);
+      border-radius: 2vw;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #footer>div {
+      width: 80vw;
+      height: 34vh;
+    }
+
+    #footer>div>div {
+      margin-bottom: 6vw;
+    }
+
+    #footer>div>div:nth-child(1)>div:nth-child(1) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-top: 2vw;
+    }
+
+    #footer>div>div:nth-child(2)>div:nth-child(1) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #footer>div>div:nth-child(3)>div:nth-child(1) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="header">
+      <div><!--플러스--></div>
+      <div class="title-1">CARD management</div>
+      <div class="subtitle-1">Uber Money designed By for Uber</div>
+    </div>
+    <div id="main">
+      <div><!--동그라미 박스-->
+        <div class="box-2"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+      </div>
+      <div><!--카드-->
+        <div><!--가로 위 글씨-->
+          <div class="subtitle-1">Bold Card</div>
+          <div class="title-2">YOUR CARD</div>
+        </div>
+        <div><!--가로아래-->
+          <div><!--왼쪽박스-->
+            <div class="subtitle-2">0000 1111 2222 3333</div>
+            <div>
+              <div class="subtitle-2">Bold Card</div>
+              <div class="subtitle-2">09/28</div>
+            </div>
+            <div class="subtitle-2">L e e c h a e y e o n</div>
+          </div>
+          <div><!--오른쪽박스-->
+            <div class="box-3"></div>
+            <div class="box-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div>
+        <div><!--막대바 1-->
+          <div><!--맨위박스-->
+            <div class="title-3">
+              Good Habit
+            </div>
+            <div class="subtitle-3">222,333,666.555</div>
+          </div>
+          <div><!--중간박스-->
+            <div class="boxbar-1"></div>
+            <div class="boxbar-2-1   "></div>
+            <div class="boxbar-3">
+              <div class="boxbar-3-1"></div>
+              <div class="subtitle-4">45%</div>
+            </div>
+          </div>
+        </div>
+        <div><!--막대바 2-->
+          <div><!--맨위박스-->
+            <div class="title-3">
+              Duolino
+            </div>
+            <div class="subtitle-3">222,333,666.555</div>
+          </div>
+          <div><!--중간박스-->
+            <div class="boxbar-1"></div>
+            <div class="boxbar-2-2   "></div>
+            <div class="boxbar-4">
+              <div class="boxbar-4-1"></div>
+              <div class="subtitle-4">70%</div>
+            </div>
+          </div>
+        </div>
+        <div><!--막대바 3-->
+          <div><!--맨위박스-->
+            <div class="title-3">
+              Android
+            </div>
+            <div class="subtitle-3">222,333,666.555</div>
+          </div>
+          <div><!--중간박스-->
+            <div class="boxbar-1"></div>
+            <div class="boxbar-2-3   "></div>
+            <div class="boxbar-5">
+              <div class="boxbar-5-1"></div>
+              <div class="subtitle-4">85%</div>
+            </div>
+          </div>
+        </div>
+        <div class="box-4">MORE</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

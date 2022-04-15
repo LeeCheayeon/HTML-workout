@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0; margin: 0;}
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid black;
+    }
+    
+    #root>div {
+      width: 45vw;
+      height: 90vh;
+      
+      border: 1px solid black;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    
+    #root>div>div {
+      width: 40vw;
+      height: 40vh;
+      
+      border: 1px solid black;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div>div>div {
+      width: 18vw;
+      height: 30vh;
+
+      border: 1px solid black;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div>div>div>div {
+      width: 8vw;
+      height: 25vh;
+
+      border: 1px solid black;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div>div>div>div>div {
+      width: 7vw;
+      height: 7vh;
+
+      border: 1px solid black;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div></div>
+    <div>
+      <div></div>
+      <div>
+        <div>
+          <div>
+            <div></div>
+          </div>
+          <div></div>
+        </div><div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
