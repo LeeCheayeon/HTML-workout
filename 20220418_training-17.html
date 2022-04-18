@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{padding: 0; margin: 0;}
+
+    :root {
+      --color-1:#e2e2e2;
+      --color-2:#9c9c9c;
+      --color-3:#4b4b4b;
+      --color-4:#353535;
+    }
+
+    .box-1 {
+      width: 45vw;
+      height: 45vw;
+      border-radius: 30vw;
+      background-color: var(--color-1);
+
+      position: absolute;
+      top: -25vh;
+      left: 68vw;
+
+    }
+    
+    .box-2 {
+      width: 30vw;
+      height: 30vw;
+      border-radius: 30vw;
+      background-color: var(--color-1);
+      
+      position: absolute;
+      top: 20vh;
+      left: -22vw;
+    }
+
+    .box-3 {
+      width: 15vw;
+      height: 60vh;
+      background-color: var(--color-2);
+    }
+
+    .title {
+      font-size: 750%;
+      color: var(--color-3);
+      margin-top: 8vh;
+    }
+
+    .text-1{
+      color: var(--color-3);
+      font-size: 120%;
+      font-weight: 600;
+
+      padding-bottom: 3.5vh;
+    }
+
+    .text-2 {
+      color: var(--color-3);
+      font-size: 110%;
+    }
+
+    .text-3 {
+      color: var(--color-3);
+      width: 45vw;
+      margin-left: 7vw;
+      line-height: 300%;
+    }
+
+    .text-4{
+      color: var(--color-2);
+      font-size: 120%;
+      font-weight: 600;
+      padding-top: 0.5vh;
+
+      width: 80vw;
+    }
+    
+    #root {
+      width: 100vw;
+      height: 200vh;
+    }
+    
+    #root-1 {
+      width: 100vw;
+      height: 100vh;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    header {
+      width: 94vw;
+      height: 5vh;
+
+      position: absolute;
+      top:5vh;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav {
+      width: 22vw;
+      height: inherit;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    main {
+      width: 94vw;
+      height: 55vh;
+    }
+
+    #background {
+      width: 100vw;
+      height: 100vh;
+
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+
+    #root-2 {
+      width: 100vw;
+      height: 100vh;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #root-2>div:nth-child(1) {
+      width: 80vw;
+      height: 60vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      margin-top: 10vh;
+    }
+
+    #root-2>div:nth-child(1)>div:nth-child(2) {
+      width: 64vw;
+      text-align: justify;
+      margin-bottom: 3vh;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="root-1">
+      <header>
+        <div class="text-1">
+          nature.
+        </div>
+        <nav>
+          <ul>
+            <li class="text-2">individual</li>
+            <li class="text-2">deserve</li>
+            <li class="text-2">unfair</li>
+            <li class="text-2">return</li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <h1 class="title">Habit is a second nature.</h1>
+        <p class="text-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo enim ex sequi omnis dolorem, distinctio nihil iure asperiores recusandae facere, quis ipsam voluptatum, sunt quia consectetur tempora facilis culpa tenetur doloribus. Quasi praesentium veritatis ex quia distinctio, sequi dolore! Animi nulla eos aliquid accusantium minus pariatur, voluptatem temporibus fugit repudiandae, totam amet excepturi maxime aut eaque libero. Libero totam dolore, deserunt pariatur sint aspernatur repellat iure blanditiis qui excepturi ratione? Animi nulla eos aliquid accusantium minus pariatur, voluptatem temporibus fugit repudiandae, totam amet excepturi maxime aut eaque libero. quis ipsam voluptatum, sunt quia consectetur tempora facilis culpa tenetur doloribus.
+        </p>
+      </main>
+      <div id="background">
+        <div class="box-1"></div>
+        <div class="box-2"></div>
+      </div>
+    </div>
+    <div id="root-2">
+      <div>
+        <div class="box-3"></div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta odio officiis sunt, commodi facilis incidunt. Sunt tempora nam veniam quas accusantium quam esse, cupiditate officia ducimus eaque omnis voluptatum eius ex soluta est unde odit atque minima voluptatibus dicta qui in saepe incidunt architecto. Inventore quasi quia est consequuntur quod nulla dolore error itaque omnis fugiat, quisquam natus necessitatibus voluptate. Dolorem mollitia natus similique et eveniet ipsum corrupti a consequatur, quis adipisci modi sunt corporis accusantium qui tempora. Necessitatibus voluptatum, voluptatibus recusandae illo quibusdam explicabo aspernatur atque magnam. Cupiditate, debitis! Dolorem mollitia natus similique et eveniet ipsum corrupti a consequatur, quis adipisci modi sunt corporis accusantium qui tempora.
+        </div>
+      </div>
+      <div class="text-4"> LOREM IPSUM </div>
+    </div>
+  </div>
+</body>
+</html>
