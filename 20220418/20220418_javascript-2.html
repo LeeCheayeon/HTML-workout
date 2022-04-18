@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">hello.</div>
+  <script>
+    let root = document.querySelector('#root');
+    let heightValue = 100 ;
+    let heightUnit = "vh" ;
+    console.dir(root);
+    root.style.height = heightValue + heightUnit ;
+    // root.style.color = "blue";
+    let blue = "blue";
+    root.style.color = blue;
+    // 이렇게 작성법이 두가지로 나눠서 작성이 가능하다.
+    // let를 사용하거나 바로 직접 값을 부여하거나?? 
+    root.style.backgroundColor = "green";
+    root.style.fontSize = '300%';
+    root.style.fontWeight = "bold";
+  </script>
+</body>
+</html>

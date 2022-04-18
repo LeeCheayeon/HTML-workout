@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.querySelector("#root");
+    console.log(root); //기록을 볼래
+    //작성을 했다면 반드시 console.log();를 찍는다(확인한다) : 한줄, 한개를 작성하면 편리하다. 
+    console.dir(root); // 구조를 볼래
+
+    let back = 100; //let ()안에는 숫자가 아닌 문자로 적어야 함.
+    // 변수를 초기화 했다. (initial) /변수를 선언했다./초기설정했다.
+    // 초기화했다 = 리셋이 아닌 초기설정했다. (시작했다(?)) 
+    root.style.width = back + "vw";
+    // 할당(assignment)했다. 
+    //구조를 들여다보니, 스타일이라는 어떤 속성에 width값이 있더라 
+    root.style.height = back + "vh";
+    root.style.backgroundColor = "gray";
+  </script>
+</body>
+</html>
