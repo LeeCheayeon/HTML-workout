@@ -1,0 +1,112 @@
+*{margin: 0; padding: 0;}
+
+$color-1:rgb(221, 236, 255);
+$color-2:rgb(170, 192, 221);
+$color-3:rgb(101, 131, 172);
+$color-4:rgb(48, 48, 48);
+
+@mixin flex($flex-j, $flex-a, $flex-d){
+  display: flex;
+  justify-content: $flex-j;
+  align-items: $flex-a;
+  flex-direction:$flex-d;
+}
+
+@mixin text($text-c, $text-s, $text-w) {
+  color: $text-c;
+  font-size: $text-s;
+  font-weight: $text-w;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  // overflow: hidden;
+}
+
+header {
+  width: inherit;
+  height: 10vh;
+
+  @include flex(center,center,none);
+  &>nav{
+    width: 80vw;
+    @include flex (space-between, center,none);
+
+    &>div {
+      @include flex (center, center,column);
+      width: 18vw;
+      height: 10vh;
+
+      &>div:nth-child(1) {
+        background-color: none;
+        width: inherit;
+        height: 8vh;
+
+        @include flex(center,center,none);
+        &>p {
+          @include text($color-4, 100%, 0);
+        }
+      }
+
+      &:nth-child(2)>div:nth-child(1){
+        background-color: $color-3;
+        width: inherit;
+        height: 8vh;
+
+        @include flex(center,center,none);
+
+        &>p {
+          @include text($color-1, 100%, 0);
+        }
+      }
+
+      &>div:nth-child(2){
+        background-color: none;
+        width: inherit;
+        height: 1vh;
+        margin-top: 1vh;
+      }
+      &:nth-child(2)>div:nth-child(2){
+        background-color: $color-3;
+        width: inherit;
+        height: 1vh;
+        margin-top: 1vh;
+      }
+    }
+  }
+
+}
+
+// #menu-box>p:hover #menu-box {
+//   background-color: $color-3;
+//   color: white;
+// }
+
+main {
+  width: 100vw;
+  height: 90vh;
+  border: 1px solid red;
+  overflow: hidden;
+
+  &>div:nth-child(1){
+    width: 5vh;
+    height: 5vh;
+    background-color: $color-3;
+
+    position: absolute;
+    top: 48vh;
+    z-index: 2;
+  }
+
+  &>div:nth-child(2) {
+    width: 80vw;
+    height: 65vh;
+    background-color: $color-2;
+
+    position: absolute;
+    top: 30vh;
+    left: 3vw;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  width: inherit;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: none;
+          flex-direction: none;
+}
+
+header > nav {
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: none;
+          flex-direction: none;
+}
+
+header > nav > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 18vw;
+  height: 10vh;
+}
+
+header > nav > div > div:nth-child(1) {
+  background-color: none;
+  width: inherit;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: none;
+          flex-direction: none;
+}
+
+header > nav > div > div:nth-child(1) > p {
+  color: #303030;
+  font-size: 100%;
+  font-weight: 0;
+}
+
+header > nav > div:nth-child(2) > div:nth-child(1) {
+  background-color: #6583ac;
+  width: inherit;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: none;
+          flex-direction: none;
+}
+
+header > nav > div:nth-child(2) > div:nth-child(1) > p {
+  color: #ddecff;
+  font-size: 100%;
+  font-weight: 0;
+}
+
+header > nav > div > div:nth-child(2) {
+  background-color: none;
+  width: inherit;
+  height: 1vh;
+  margin-top: 1vh;
+}
+
+header > nav > div:nth-child(2) > div:nth-child(2) {
+  background-color: #6583ac;
+  width: inherit;
+  height: 1vh;
+  margin-top: 1vh;
+}
+
+main {
+  width: 100vw;
+  height: 90vh;
+  border: 1px solid red;
+  overflow: hidden;
+}
+
+main > div:nth-child(1) {
+  width: 5vh;
+  height: 5vh;
+  background-color: #6583ac;
+  position: absolute;
+  top: 48vh;
+  z-index: 2;
+}
+
+main > div:nth-child(2) {
+  width: 80vw;
+  height: 65vh;
+  background-color: #aac0dd;
+  position: absolute;
+  top: 30vh;
+  left: 3vw;
+  z-index: 1;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,31 @@
+.info {
+  background: darkgray;
+  -webkit-box-shadow: 0 0 1px rgba(169, 169, 169, 0.25);
+          box-shadow: 0 0 1px rgba(169, 169, 169, 0.25);
+  color: #fff;
+}
+
+.alert {
+  background: darkred;
+  -webkit-box-shadow: 0 0 1px rgba(139, 0, 0, 0.25);
+          box-shadow: 0 0 1px rgba(139, 0, 0, 0.25);
+  color: #fff;
+}
+
+.success {
+  background: darkgreen;
+  -webkit-box-shadow: 0 0 1px rgba(0, 100, 0, 0.25);
+          box-shadow: 0 0 1px rgba(0, 100, 0, 0.25);
+  color: #fff;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body > div {
+  width: 20vw;
+  height: 20vw;
+}
+/*# sourceMappingURL=style.css.map */
