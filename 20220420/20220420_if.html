@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="title">hello.</h1>
+
+  <script>
+    let a = document.getElementById("title");
+    //문서에 아이디값 하나를 가져오고 싶어, 아이디 값이름은 문자열 title이야.
+    //발견했으면 변수에 지정해줄게. 변수 이름은 a야. 
+
+    console.dir(a);
+    //자스야 나 a가 가리키는 뭐 좀 구조를 보고싶어.
+    console.log(a.style);
+    //자스야 내가 구조를 보니까 스타일이라는 키값이 보였어. 이거 뭐야?
+
+    let colorValue = "red";
+    //나 변수 선언할래. 선언은 문자열 뭐뭐뭐("red")야.
+    a.style.color = colorValue;
+    if(a.style.color === "red") {
+      a.style.color = "rgba(158,158,158,0.3)";
+      // 만약 a.style.color가 문자열 "red"가 맞다면
+      //a.style.color를 문자열 "rgba" 로 실행시켜줘.
+    }
+
+  </script>
+</body>
+</html>

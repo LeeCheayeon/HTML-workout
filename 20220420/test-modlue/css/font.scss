@@ -1,0 +1,20 @@
+$color-1:#fff;
+$color-2:#f7f7;
+$font-f:helvetica, sans-serif;
+
+@mixin font($font-s, $font-w, $font-c) {
+  font-size: $font-s;
+  font-weight: $font-w;
+  color: $font-c;
+} 
+
+h1 {
+  @include font (300%, bolder, $color-2);
+}
+
+p {
+  @include font (90%, none, $color-1);
+
+  background-color: $color-2;
+}
+

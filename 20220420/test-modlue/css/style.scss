@@ -1,0 +1,14 @@
+@use 'font.scss';
+
+#root {
+  border: 1px solid 
+  $color-2;
+
+  &>h1 {
+    @include font(100%, bolder, $color-2);
+
+    &>p {
+      font-family: font.$font-f;
+    }
+  }
+}

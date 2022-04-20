@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <h1>hello</h1>
+  </div>
+
+  <script>
+    let a = document.getElementById("root");
+    //변수를 선언할게 이름은 a야. 문서에 아이디값을 가져올래. 그 아이디 값은 문자열 "root"야.
+
+    console.log(a.style);
+    //자스야 내가 구조를 보니까 a의 스타일에 키값이 보였어. 이게 뭐야? 
+
+    let colorRed = "red";
+    //변수를 선언할께. 그 이름은 컬러레드고 그 값은 문자열 레드야.
+    let colorGreen = "green";
+    //변수를 선언할께. 그 이름은 컬러그린이고 그 값은 문자열 그린이야. 
+    
+    a.style.color = colorRed;
+    //a.style의 컬러 값은 변수 컬러레드값이야. (?)
+    if(a.style.color !== "green") {
+      a.style.color = colorGreen;
+      console.log("레드였지만 부정연산자이므로 그린이 아니라서 그린이 되었습니다. :)");
+    }
+// 만약 a.style.color의 값이 그린이 아니라면 아래 중괄호를 실행시켜줘. 
+//중괄호//
+//a.style.color의 값을 컬러그린으로 실행시켜줘. 
+//콘솔로그에 괄호안의 내용을 띄워줘?
+
+  </script>
+</body>
+</html>

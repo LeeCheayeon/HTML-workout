@@ -1,0 +1,21 @@
+@import 'font.css';
+
+#root {
+  border: 1px solid 
+  red;
+
+  width: 70vw;
+  height: 50vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#root>p {
+  width: 60vw;
+  height: 30vh;
+
+  margin-top: 2vh;
+}
