@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <style>
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: coral;
+    }
+  </style> -->
+</head>
+<body>
+  <div id="root">
+  </div>
+
+  <script>
+    const root = document.getElementById("root")
+;
+    // 변수를 선언한다, 그 이름은 root야, 나는 문서에서 id값을 가져올게. 그 id의 이름은 문자열 "root"야.
+
+    // getElementById() 인수(argument)로 문자열(string)로만 받는 규칙이 들어있다.
+    // const date = document.querySelector("#root");
+
+    let back = 100;
+    //변수를 선언할게. 그 이름은 back이야. 그 값은 100이야. 
+
+    console.dir(root);
+    //콘솔에서 dir root를 띄워줘. 
+    root.style.width = back + "vw";
+    //root.style의 가로 값은 변수 back 값과 문자열 "vw"를 합친 값이야. 
+    root.style.height = back + "vh";
+    // root.style의 높이 값은 변수 back 값과 문자열 "vh"를 합친 값이야. 
+    root.style.backgroundColor = "green";
+    //root.style.bgc는 문자열 "green"이야.
+
+    const member = ["개구리", "강아지", "고양이", "꾀꼬리"];
+    //변수를 선언할게. 이름은 member이고, 그 값은 [배열] 문자열("") "개구리", "강아지", '고양이', '꾀꼬리'야.
+    let count = 0;
+    //변수를 선언할게. 이름은 count야. 그 값은 0이야.
+
+    root.addEventListener("click", function() {
+    //root에 이벤트를 줄게. 그 이벤트는 root를 클릭을 하면
+      root.style.backgroundColor = "coral";
+      //root.style의 bgc를 문자열 "coral"로 바꿔줘
+      let result = back * 2;
+      //변수를 선언할게. 그 이름은 result야. 그 값은 back 변수에 2배를 곱한 값으로 바꿔줘.
+      root.style.width = result + "vw";
+      //root.style의 너비는 변수 result값과 문자열 "vw"를 합친 값으로 바꿔줘.
+      root.style.height = result + "vh";
+      //root.style의 높이는 변수 result값과 문자열 "vw"를 합친 값으로 바꿔줘.
+
+      count = count+1;
+      //변수 count의 값이 변수count에서 1를 더한 값으로 바꿔줘.
+      root.textContent = member[count] + "안녕.";
+      //root.texrContent의 값은 변수 member[배열의 값은 변수 count]와 문자열 "안녕."을 합친 값으로 바꿔줘.
+
+      if(count > member.length-1) {
+      //만약 count의 값이 member의 길이값의 -1보다 크다면 
+        count=0;
+        //count의 값을 0으로 바꿔줘.
+      }
+    });
+
+  </script>
+</body>
+</html>
