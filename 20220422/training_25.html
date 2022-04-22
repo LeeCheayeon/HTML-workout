@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="box"></div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    console.log(root);
+    console.dir(root);
+
+    let back = 100;
+
+    root.style.width = back + "vw";
+    root.style.height = back + "vh";
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+    root.style.padding = "0";
+    root.style.margin = "0";
+    // root.style.backgroundColor = "green";
+
+
+    const box = document.getElementById("box");
+    console.log(box);
+    console.dir(box);
+
+    box.style.width = 30 +"vw";
+    box.style.height = 30 +"vw";
+    box.style.backgroundColor = "gray";
+    box.style.borderRadius = 20 + "vw";
+
+
+    box.addEventListener("click", function(){
+      box.style.backgroundColor = "coral"
+    });
+
+
+  </script>
+</body>
+</html>
