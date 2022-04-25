@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div id="foot">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    root.style.display='flex';
+    root.style.justifyContent='center';
+    root.style.alignItems='center';
+    root.style.border='1px solid #333';
+    root.style.marginBottom='10px';
+    
+    const one = root.children[0];
+    const two = root.children[1];
+    const thr = root.children[2];
+
+    console.log(one);
+    console.log(two);
+    console.log(thr);
+
+    one.style.width="100px";
+    one.style.height="100px";
+    one.style.margin="10px";
+    one.style.backgroundColor="#333";
+    
+    two.style.width="100px";
+    two.style.height="100px";
+    two.style.margin="10px";
+    two.style.backgroundColor="#333";
+    
+    thr.style.width="100px";
+    thr.style.height="100px";
+    thr.style.margin="10px";
+    thr.style.backgroundColor="#333";
+
+    // root.addEventListener("click", function(){
+    //   root.style.flexDirection="colum";
+    // });
+
+    // root box를 클릭하면 세로로 되도록 설정을 하고 싶은데 잘 안됩니다. 
+    // 제가 무언가 잘못한게 있을까요? 
+
+
+    const foot = document.getElementById("foot");
+
+    foot.style.display='grid';
+    foot.style.gridTemplateColumns='1fr 1fr 1fr';
+    foot.style.gridGap='10px';
+    foot.style.justifyContent='center';
+    foot.style.alignItems='center';
+    foot.style.border='1px solid #333';
+
+    //여기에서는 그리드를 활용했는데 그리드의 왼족으로 붙어서 정렬이 됩니다.
+    // flex처럼 그리드에서 중앙정렬이 가능하게 할수있나요? 검색을 해봤는데도 잘 모르겠습니다... 
+
+    const one1 = foot.children[0];
+    const two1 = foot.children[1];
+    const thr1 = foot.children[2];
+
+    console.log(one);
+    console.log(two);
+    console.log(thr);
+
+    one1.style.width="100px";
+    one1.style.height="100px";
+    one1.style.backgroundColor="#333";
+    
+    two1.style.width="100px";
+    two1.style.height="100px";
+    two1.style.backgroundColor="#333";
+    
+    thr1.style.width="100px";
+    thr1.style.height="100px";
+    thr1.style.backgroundColor="#333";
+
+
+
+  </script>
+</body>
+</html>
