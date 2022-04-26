@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    @keyframes move-1 {
+      0% {top: 0;}
+      95%{width: 100px;}
+      100%{
+        top: 300px;
+        width: 115px;
+        height: 90px;
+      }
+    }
+
+    @keyframes move-2 {
+      0%{
+        top: 300px;
+        width: 305px;
+        height: 90px;
+      }
+      95%{width: 500px;}
+      100% {top: 0;}
+    }
+  </style>
+
+</head>
+<body>
+  <div id="root">
+    <button>click</button>
+  </div>
+  
+  <script>
+    const root =document.getElementById("root");
+    // const test = document.querySelector("#root>button");
+    const clickBtn = root.children[0];
+
+    console.dir(root);
+    console.log(clickBtn);
+
+    let bgColorValue = 333;
+
+    root.style.width= "100vw";
+    root.style.height= "100vh";
+    root.style.backgroundColor= `#${bgColorValue}`;
+
+    //알고리즘 중에 많이 쓰는거 (=스위치(전등)랑 비슷)
+    let data = true;
+    //on/off 참 > 거짓 > 참 > 거짓 ... 
+
+    // clickBtn.addEventListener("click", function(){
+    //   // console.log("hello");
+    //   // console.log(root.style.backgroundColor);
+    //   if(data === true){
+    //     console.log('data값은 :' + data);
+    //     data =false;
+    //     root.style.backgroundColor="salmon";
+    //     clickBtn.textContent="date";
+    //   } else { // data!== true, data === false
+    //     console.log("지금 else로 data값은 :" + data);
+    //     data = true;
+    //     root.style.backgroundColor="green";
+    //     clickBtn.textContent="night";
+
+    //   }
+    // });
+
+    clickBtn.addEventListener("click", function(){
+      // console.log("hello");
+      // console.log(root.style.backgroundColor);
+      if(data === true){
+        console.log('data값은 :' + data);
+        data =false;
+        root.style.backgroundColor="salmon";
+        root.style.transition="2s";
+        root.style.animation= "move-1 1s ease-in infinite alternate";
+        
+        clickBtn.textContent="date";
+        clickBtn.style.color='red';
+        
+      } else { // data!== true, data === false
+        console.log("지금 else로 data값은 :" + data);
+        data = true;
+        root.style.backgroundColor="green";
+        root.style.transition="2s";
+        root.style.animation= "move-2 1s ease-in infinite alternate";
+        
+        clickBtn.textContent="night";
+        clickBtn.style.color='green';
+
+
+      }
+    });
+
+  </script>
+</body>
+</html>
