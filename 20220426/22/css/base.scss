@@ -1,0 +1,38 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header>div {
+  width: 100vw;
+  height: 5vh;
+
+  position: fixed;
+  top: 0;
+}
+
+nav {
+  width: 90vw;
+  height: 5vh;
+
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav>div{
+  width: 7vw;
+  height: 7vw;
+  background-color: gray;
+}
