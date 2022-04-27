@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>hello javascript.</h1>
+
+  <script>
+    const h1 = document.querySelector("h1");
+    console.log(h1);
+    //확인 완료
+
+    console.dir(h1.style);
+
+    let fontSizeValue = 16;
+    h1.style.fontSize= fontSizeValue + "px";
+    
+    // h1.addEventListener("click", function(){
+    //   fontSizeValue++;
+    //   h1.style.fontSize= fontSizeValue + "px";
+    //   console.log(fontSizeValue);
+    // });
+
+    // h1.addEventListener("click", function(){
+    //   fontSizeValue--;
+    //   h1.style.fontSize = fontSizeValue + "px";
+    // });
+
+    h1.addEventListener("click", function(){
+      for(let fontSizeValue =16; fontSizeValue<=35; fontSizeValue++){
+        h1.style.fontSize = fontSizeValue++ + "vw";
+      }
+      // if (fontSizeValue === 35){
+      //   h1.style.fontSize = fontSizeValue-- + "px";
+      // } else {
+      //   h1.style.fontSize = fontSizeValue++ + "px";
+      // }
+    });
+  </script>
+</body>
+</html>

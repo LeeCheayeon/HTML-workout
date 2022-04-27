@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <button id="click-button">click</button>
+    <div>회색바</div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    console.dir(root);
+    
+    const grayBar = root.children[1];
+    console.dir(grayBar);
+    // grayBar.innerHTML = "<section>hello</section>";
+    // console.log (index);
+    const clickButton = document.getElementById("click-button");
+
+    clickButton.addEventListener("click", function() {
+      let sectionString = "hello";
+    let value = 1;
+    for(let index=0; index<value; index++){
+      let makeSection = document.createElement("section");
+      makeSection.innerHTML = "hello" + index;
+      grayBar.appendChild(makeSection);
+      //버튼안에서 안 생기게 하려면 위의 gratBar를 변수 지정 할때
+      //root의 자식[0]째가 새로운 button을 추가했기때문에 기존에는 회색바 영역이 w자식[0]번째 였지만 현재 버튼을 추가했을때 root의 자식[1]로 바뀌었기 때문에
+      // const grayBar = root.children[0]; 이였던 것을 
+      // const grayBar = root.children[1];로 변경하면 해결이 가능하다.
+      index++;
+      //Q. 클릭할때마다 hello뒤의 숫자가 1씩 증가하게 만드는 법 
+    };
+    });
+    
+    // let sectionString = "hello";
+    // let value = 0;
+    // for(let index=0; index<value; index++){
+    //   let makeSection = document.createElement("section");
+    //   makeSection.innerHTML = sectionString
+    //   makeSection.style.width = "50px";
+    //   makeSection.style.height = "700px";
+    //   makeSection.style.backgroundColor = "#d4d4d4";
+    //   grayBar.appendChild(makeSection);
+
+    //   //실무에서 자주 사용하는 방법 중 하나...
+    // };
+  </script>
+</body>
+</html>

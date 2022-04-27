@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>hello javascript.</h1>
+  <!-- //Q.h1 태그를 클릭할때마다 글씨 크기가 1px씩 커지는 인터렉션 구현 -->
+
+  <script>
+    const text = document.querySelector("body>h1");
+    console.log(text);
+    console.dir(text);
+
+    let opacityValue = 0.1;
+    text.style.opacity= opacityValue;
+
+    let value = 32;
+    let i = 1;
+    text.addEventListener("click", function(){
+      console.log("Qqq");
+      text.style.fontSize = value++ + "px";
+      text.style.opacity = opacityValue*i++ ;
+      //0.1씩 증가하게 만들 수 있을까? opacity보다 컬러값을 넣어서 변경하는게 더 나을까? >> opacity값을 0.1로 고정하고 여기에 i를 넣어 1씩 곱해지도록 하면 0.1*2 =0.2 0.3 0.4 ...  이렇게 증가하므로 곱하기 연산을 넣으면 될 것 같음.
+      //대신 1이 oprcity값의 최대이기 때문에 1이상으로 넘어가도 값은 같다 
+      // 투명도의 값은 1이든 2든 같다.(1=1.1...)
+      //만약 여기에 제어로 1까지만 넣을려면 어떻게 해야할까??? 
+      // for(let i=1; i=10; i++){
+      //   text.style.opacity = opacityValue*i ;
+        
+      // }
+    });
+
+    //개발자 도구에서 h1의 기본 값이 2em이라 단위가 em과 px로 커지게 하고 싶어 하는것이 다르기 때문에 단위를 일단 맞춰야하나...? 
+    //1em = 16px 2em = 32px
+    //클릭할때마다 늘어야하는데 기본적으로 32px이기 때문에 value값을 33으로 지정 후 vale++을 넣어 1씩 증가하게 만들면 되지않을까?? 
+  </script>
+</body>
+</html>
