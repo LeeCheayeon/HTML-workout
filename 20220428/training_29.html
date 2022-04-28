@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- <style>
+
+    *{padding: 0; margin: 0;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container {
+      width: 50vw;
+      height: 50vw;
+      border: 1px solid black;
+    }
+
+    .box1{
+      width: 25vw;
+      height: 25vw;
+      background-color: aquamarine;
+
+      position: absolute;
+      z-index: 0;
+
+      top:20vh;
+      left: 30vw;
+    }
+
+    .box2{
+      width: 25vw;
+      height: 25vw;
+      background-color: darkslategray;
+
+      position: absolute;
+      z-index: 1;
+
+      top:42vh;
+      left: 45vw;
+    }
+
+    #container>div:nth-child(1):active, #container>div:nth-child(1):checked {
+      z-index: 2;
+      background-color: cornflowerblue;
+    }
+
+    /* 클릭한걸 유지하는 방법을 인터넷에 물어보면 거의 자바스크립트로 넘어가서 일단 이부분은 자바스크립트로 넘어가고 CSS만으로 해결이 가능한지에 대해서는 좀 더 생각을 해봐야 할 것. */
+
+
+  </style> -->
+</head>
+<body>
+  <div id="root">
+    <div id="container">
+      <div class="box1"></div>
+      <div class="box2"></div>
+    </div>
+  </div>
+</body>
+
+<script>
+
+  const body = document.querySelector("body");
+  console.log(body);
+  console.dir(body);
+
+  body.style.margin=0;
+  body.style.padding=0;
+
+  const root = document.getElementById("root");
+  console.log(root);
+  console.dir(root);
+  
+  root.style.width="100vw";
+  root.style.height="100vh";
+  root.style.display="flex";
+  root.style.justifyContent="center";
+  root.style.alignItems="center";
+
+  const container = root.children[0];
+  console.log(container);
+  console.dir(container);
+
+  container.style.width="50vw";
+  container.style.height="50vw";
+  container.style.border="1px solid black";
+
+  const a = container.children[0]
+  console.log(a);
+  console.dir(a);
+
+  a.style.backgroundColor="aquamarine";
+  a.style.top="20vh";
+  a.style.left="30vw";
+
+  let avalue = 0;
+  a.style.zIndex=avalue;
+
+  const b = container.children[1]
+  console.log(b);
+  console.dir(b);
+
+  b.style.backgroundColor="darkslategray";
+  b.style.top="42vh";
+  b.style.left="45vw";
+
+  let bvlaue = 1;
+  b.style.zIndex= bvlaue;
+
+  for(i=0; i<container.children.length; i++){
+    container.children[i].style.width="25vw";
+    container.children[i].style.height="25vw";
+    container.children[i].style.position="absolute";
+  }
+  //반복문으로 우선 컨테이너 자식들의 공통적인 부분을 묶어서 스타일 하였다.
+  let data = 2;
+  a.addEventListener("click", function(){
+    console.log("a click");
+    if(a.style.zIndex < b.style.zIndex){
+      a.style.zIndex = avalue+data;
+      b.style.zIndex=1;
+    }
+  });
+  //a를 클릭했을때 a의 값이 b의 값보다 작으면 a의 값을 avalue+data값을 더한 값으로 바꿔줘 그리고 b의 값을 1로 바꿔줘.
+
+  b.addEventListener("click", function(){
+    console.log("b click");
+    if(a.style.zIndex > b.style.zIndex){
+      b.style.zIndex = bvlaue+data;
+      a.style.zIndex=0;
+    }
+  });
+  //b를 클릭했을때 b의 값이 a의 값보다 작으면 b의 값을 bvlaue+data값을 더한 값으로 바꿔줘 그리고 a의 값을 0로 바꿔줘.
+
+</script>
+</html>
