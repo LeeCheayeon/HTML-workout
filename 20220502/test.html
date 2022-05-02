@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    document.body.style.padding = 0;
+    document.body.style.margin = 0;
+    //문서의 바디의 스타일(마진,패딩)의 값을 0으로 지정할게.
+    const root = document.getElementById("root");
+    //변수 root를 선언, 문서의 아이디 중 문자열 "root"
+    let sectionArr = ["피카츄", "라이츄", "파이리", "꼬부기"];
+    // 변수 sectionArr를 선언, 배열인데 문자열 "피카츄, 라이츄, 파이리, 꼬부기"야
+    let sectionColor = ["salmon", "darkgray", "darkblue", "darkcyan"];
+    //변수 sectionColor를 선언, 배열인데 문자열 "살몬, 다크그레이, 다크 블루, 다크 사이안"이야.
+    console.dir(window);
+    //콘솔로그야 윈도우의 dir을 보여줘(?)
+    const viewWidth = window.innerWidth;
+    //변수 v.W선언.그 값은 윈도우의 innerWidth값이야.
+    const viewHeight = window.innerHeight;
+    //변수 v.H선언.그 값은 윈도우의 innerHeigth값이야.
+    console.log(viewWidth);
+    console.log(viewHeight);
+    //콘솔로그야 변수 v.W와 v.H의 값을 로그로 보여줘(?)
+    root.style.width = viewWidth + "px";
+    //변수 root의 스타일의 너비 값은 변수 v.W + 문자열 "px"이야.
+    root.style.height = viewHeight + "px";
+    //변수 root의 스타일의 높이 값은 변수 v.H + 문자열 "px"이야.
+    root.style.backgroundColor = "#c4c4c4";
+    //변수 root의 스타일의 뒷배경 값은 문자열 "#c4c4c4"야
+    root.addEventListener("click", function () {
+      //변수 root에 이벤트를 추가할게. 그 이벤트는 클릭을 하면(할때)
+      for (let i = 0; i < sectionArr.length; i++) {
+        //반복문 / 변수 i 지정, i의 값은 0 / i의 값이 sectionArr의 길이 값보다 작으면/ i의 값을 1씩 증가
+        let sectionElement = document.createElement("section");
+        //변수 sectionElement를 지정, 문서에서 새로운 엘리먼트 문자열 "section" 생성(??)
+        sectionElement.textContent = sectionArr[i];
+        //s.E의 텍스트 컨텐츠의 값은 s.A의 배열 [i]야.
+        sectionElement.style.width = viewWidth + "px";
+        // s.E의 스타일의 너비의 값은 변수 v.H + "px"값이야.
+        sectionElement.style.height = (viewHeight / sectionArr.length) + "px";
+        //s.E의 스타일의 높이값은 (변수 v.H의 값 나누기(/) s.A의 길이값) + "px"이야.
+        sectionElement.style.backgroundColor = sectionColor[i];
+        //변수 s.E의 스타일의 뒷배경은 s.C의 배열 [i]야.
+        root.appendChild(sectionElement);
+        //변수 root에 자식 요소를 추가한다. 변수 s.E를 추가한다. 
+      }
+    });
+  </script>
+
+</body>
+
+</html> 

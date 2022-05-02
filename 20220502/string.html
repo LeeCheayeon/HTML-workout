@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- <script>
+    const root = document.getElementById("root");
+    console.dir(root);
+    // console.log(root.textContent[0]);
+    // console.log(root.innerHTML[0]);
+    // ""가 있다면 배열을 사용할수있다?
+    // root.textContent = "겜";
+    // 부분만 자르는건 가능하지 않다, 전체를 다른 문자로 바꾸는 건 가능하다.
+    // 해결법 자바스크립트에서 제어
+    let text = "텀블러";
+
+    text = "겜블러";
+    root.textContent = text;
+    console.log(text[0]);
+
+    let a = "겜";
+    let b = "블";
+    let c = "러";
+    let originData = "텀";
+    let text = originData + b + c
+
+  </script> -->
+
+  <script>
+    const root = document.getElementById("root");
+    let innerValue = "나는 지금 코딩하고 있다";
+    root.textContent = innerValue;
+
+    // let current = 0;
+    // root.addEventListener("click", function(){
+    //   console.log(current);
+    //   if(current === 1){
+    //     console.log("야호");
+    //     current = 0;
+    //     root.style.color="#fff";
+    //   } else {
+    //     console.log("쭈굴");
+    //     current = 1;
+    //     root.style.color="#000";
+    //   }
+  // });
+
+      //컬러값에 얽매이지 말고 변수값(현재 current)의 값을 기준으로 변수를 준다음 잘 작동이 되는지 확인 후 >> 컬러 및 다른 값을 변경한다.
+
+      // if (current === 0){
+      //   console.log("쭈굴");
+      //   current = 1;
+      // }
+
+      let current = 0;
+      root.addEventListener("click", function(){
+        if(current<30){
+          current++;
+          
+          root.textContent=current;
+          console.log(current);
+        }else{
+          current--;
+          console.log(current);
+        }
+      });
+
+
+    // let colorWhite = "#fff";
+    // let colorBlack = "#000";
+    // root.style.color=colorWhite;
+    // console.dir(root);
+
+    // root.addEventListener("click", function(){
+    //   root.style.color=colorBlack;
+    //   if (root.style.color === "#000"){
+    //     console.log("검은색이다.");
+    //     // root.style.color= colorWhite;
+    //   }
+    // });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0; margin: 0;}
+
+    :root{
+      --color-1:#c4c4c4
+      --color-2:#ffffff
+    }
+
+    body{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root{
+      width: 60vw;
+      height: 76vh;
+
+      margin-bottom: 5vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .box-1{
+      width: 38vw;
+      height: 38vw;
+      background-color: #ffff;
+
+      position: absolute;
+      z-index: 1;
+      left: 14vw;
+    }
+    
+    .box-2{
+      width: 38vw;
+      height: 38vw;
+      border-radius: 30vw;
+      border: 2px solid #c4c4c4;
+
+      position: absolute;
+      z-index: 0;
+      left: 41.8vw;
+    }
+
+    .box-3{
+      width: 38vw;
+      height: 30vw;
+
+      z-index: 2;
+    }
+
+    .box-s{
+      width: 0.5vw;
+      height: 0.5vw;
+      background-color: #c4c4c4;
+      margin: 0.2vw;
+      border-radius: 50%;
+    }
+
+    .box-b-1{
+      width: 15vw;
+      height: 15vw;
+      background-color: #c4c4c4;
+      border-radius: 5vw;
+
+      transform: rotate(40deg);
+      position: relative;
+      z-index: 1;
+      top: 12vh;
+      left: 2vw;
+    }
+    
+    .box-b-2{
+      width: 15vw;
+      height: 15vw;
+      background-color: #c4c4c4;
+      border-radius: 5vw;
+      /* opacity: 0.5; */
+      filter: blur(30px);
+      transform: rotate(40deg);
+
+      position: relative;
+      z-index: 0;
+      top: -23vh;
+      left: 12vw;
+    }
+
+    .text{
+      font-size: 150%;
+      font-weight: lighter;
+      color: #ffff;
+      position: relative;
+      z-index: 2;
+      top: 27vh;
+      left: 10vw;
+    }
+
+    #root>div:nth-child(1){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div:nth-child(1)>div:nth-child(1){
+      width: 8vw;
+      height: inherit;
+
+      display: flex;
+      justify-content: start;
+      align-items: flex-end;
+    }
+
+    #root>div:nth-child(1)>div:nth-child(2){
+      width: 30vw;
+      height: inherit;
+    }
+
+
+    /* <!--우선 다 했는데 자시 차근차근 자바스크립트로 구현하기--> */
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="box-3">
+      <div>
+        <div class="box-s"></div>
+        <div class="box-s"></div>
+        <div class="box-s"></div>
+      </div>
+
+      <div>
+        <div class="text">advenced markup</div>
+        <div class="box-b-1"></div>
+        <div class="box-b-2"></div>
+      </div>
+    </div>
+
+    <div class="box-1"></div>
+    <div class="box-2"></div>
+  </div>
+</body>
+</html>

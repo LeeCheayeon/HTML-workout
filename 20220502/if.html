@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    const root = document.getElementById("root");
+    // root라는 변수를 선언할게. 이것은 문서의 아이디 중에 문자열 "root"야.
+    root.style.fontSize = "5rem";
+    // root.style의 폰트사이즈는 문자열 "5rem"이야.
+    let isStatus = true;
+    // 변수 isStatus를 선언할게, 이 변수의 값은 true야.
+    let current = 0;
+    // 변수 current를 선언할게. 이 변수의 값은 0이야.
+    root.textContent = current;
+    // root의 텍스트컨텐츠는 변수 current야.
+    root.addEventListener('click', function () {
+      // 변수 root의 이벤트를 추가할게. (변수 root를) 클릭을 할때
+      if (isStatus === true) {
+        // 만약 변수 isStatus의 값이 true라면 
+        current++;
+        // 변수 current의 값을 1씩 증가 시켜줘.
+        if (current >= 10) {
+          // 만약 변수 current의 값이 10보다 크거나 같으면
+          isStatus = false;
+          // 변수 isStatus의 값은 false로 바꿔줘.
+        }
+        // 
+        root.textContent = current;
+        // 변수 root의 텍스트 컨텐츠의 값은 변수 current야.
+      } else {
+        // 먼역 변수 isStatus의 값이 true가 아니라면
+        current--;
+        // 변수 current의 값을 1씩 감소시켜줘
+        if (current <= 0) {
+          // 만약 변수 current의 값이 0보다 작거나 같으면
+          isStatus = true;
+          // 변수 isStatus의 값을 true로 바꿔줘.
+        }
+        // 
+        root.textContent = current;
+        // 변수 root의 텍스트 컨텐츠의 값은 변수 current야.
+      }
+    })
+  </script>
+
+</body>
+
+</html>
