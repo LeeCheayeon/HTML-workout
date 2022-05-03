@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>클릭하세요</button>
+  <ul id="root">
+    <li class="items">items-1</li>
+    <li class="items">items-2</li>
+    <li class="items">items-3</li>
+    <li class="items">items-4</li>
+    <li class="items">items-5</li>
+    <li class="items">items-6</li>
+    <li class="items">items-7</li>
+    <li class="items">items-8</li>
+    <li class="items">items-9</li>
+    <li class="items">items-10</li>
+    <li class="items">items-11</li>
+    <li class="items">items-12</li>
+    <li class="items">items-13</li>
+    <li class="items">items-14</li>
+    <li class="items">items-15</li>
+    <li class="items">items-16</li>
+    <li class="items">items-17</li>
+    <li class="items">items-18</li>
+    <li class="items">items-19</li>
+    <li class="items">items-20</li>
+  </ul>
+
+  <script>
+    const root = document.getElementById("root");
+    const items = document.querySelectorAll(".items");
+    const but = document.querySelector("button");
+
+    console.log(root);
+
+    root.style.width="200px";
+    root.style.height="600px";
+    root.style.backgroundColor="#c4c4c4";
+    root.style.listStyle="none";
+    root.style.display="flex";
+    root.style.flexDirection="column";
+    root.style.justifyContent="center";
+    root.style.alignItems="center";
+    root.style.padding=0;
+    root.style.margin=0;
+    
+    console.log(items);
+    for(i=0; i<items.length; i++){
+      items[i].style.margin="0.7vw";
+    };
+    
+    console.log(but);
+    but.style.fontSize="100%"
+    but.style.width="200px";
+    but.style.height="40px";
+    but.style.marginBottom="20px";
+
+    let count=0;
+    but.addEventListener("click", function(){
+      if(count === 1){
+        console.log("클릭했다")
+        count=0;
+        for(let i=0; i<items.length; i++){
+          root.style.display="flex";
+          root.style.backgroundColor="darkgray";
+          
+          items[i].style.display="flex";
+          items[i].style.color="#fff";
+
+          but.textContent="접어두기";
+        }
+      }else{
+        console.log("클릭했다@@")
+        count = 1;
+        for(let i=0; i<items.length; i++){
+          items[i].style.display="none";
+          root.style.display="none";
+          but.textContent="펼치기";
+        }
+      }
+    });
+
+    
+  </script>
+</body>
+</html>

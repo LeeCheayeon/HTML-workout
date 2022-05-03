@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>click</button>
+  <ul id="root">
+    <li class="items">menu-1</li>
+    <li class="items">menu-2</li>
+    <li class="items">menu-3</li>
+    <li class="items">menu-4</li>
+    <li class="items">menu-5</li>
+    <li class="items">menu-6</li>
+    <li class="items">menu-7</li>
+    <li class="items">menu-8</li>
+    <li class="items">menu-9</li>
+    <li class="items">menu-10</li>
+  </ul>
+  
+
+  <!-- 클릭할때마다 목록을 하나씩 나타나게 할수있을까? 
+  새로 만드는 것 말고 기존에 있는 li를 하나씩 보여주는 작업...
+
+  무엇을 해야하는지 재정리
+
+  1. 클릭하기전에 먼저 목록이 눈에서 안보여야함 안보임 > 하나씩 보임
+  2. 클릭한 횟수만큼 목록이 나와줘야한다... 
+  3. 클릭한 횟수 = items[클릭한 횟수]
+  4. 눈에서 안보이게 가려놓은 것을 점차 색을 넣어 보여줘야함
+  여기서 방법이 2가지 라고 생각함 오퍼시티를 사용하던가 색상을 사용하던가??-->
+
+  <script>
+    const but = document.querySelector("button");
+    console.log(but);
+    
+    const root = document.getElementById("root");
+    console.log(root);
+    
+    const items = document.querySelectorAll(".items");
+    console.log(items);
+    
+    for(let i=0; i<items.length; i++){
+      items[i].style.color="#fff";
+    }
+
+    
+    let count= 0;
+    but.addEventListener("click", function(){
+      console.log("클릭");
+      //버튼을 클릭하는 이벤트
+      if (count < items.length){
+        //만약 카운트가 아이템의 길이값보다 작다면
+        items[count].style.color="#000";
+        count++
+      }
+    });
+    // 색상을 뒷배경과 같은 색으로 해서 안보이게 처리를 해서 적용을 했습니다.
+    // 혹시 색상이나 오퍼시티로 처리하는 법 외에 다른 방법이 있을까요?
+    
+    // ** 오퍼시티
+    // for(let i=0; i<items.length; i++){
+      //   items[i].style.opacity= 0;
+      // }
+      // let count=0;
+      // but.addEventListener("click", function(){
+      // console.log("클릭");
+    //   if(count < items.length){
+    //     items[count].style.opacity=1;
+    //     count++
+    //   }
+    // });
+  </script>
+</body>
+</html>

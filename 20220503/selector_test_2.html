@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body id="root">
+  <button>A버튼</button>
+  <button>B버튼</button>
+  <div></div>
+
+  <script>
+    const root = document.getElementById("root");
+    console.log(root);
+    root.style.margin=0;
+    root.style.padding=0;
+    root.style.backgroundColor="#c4c4c4";
+    root.children[2].style.marginLeft="2vw";
+
+    const butAll = document.querySelectorAll("button");
+    console.log(butAll);
+
+    for(let i=0; i<butAll.length; i++){
+      butAll[i].style.margin="2vw";
+      butAll[i].style.fontSize="100%";
+    };
+
+    const aBut= document.querySelector("#root>button:nth-child(1)");
+    console.log(aBut);
+    
+    const bBut= document.querySelector("#root>button:nth-child(2)");
+    console.log(bBut);
+
+    let count=0;
+    aBut.addEventListener("click", function(){
+      console.log("a버튼 클릭");
+      count++;
+      root.style.backgroundColor="#ff6666";
+      root.children[2].textContent="A버튼을 "+ count+ "번 눌렀습니다.";
+      root.children[2].style.color="#fff";
+    });
+    
+    bBut.addEventListener("click", function(){
+      count-1;
+      //카운트에 a버튼을 클릭한 횟수의-1만큼 빼줄수있을까?
+      console.log("b버튼 클릭");
+      root.style.backgroundColor="#c4c4c4";
+      root.children[2].textContent="B버튼을 "+ count+ "번 눌렀습니다.";
+      root.children[2].style.color="#ff6666";
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+
+    body{
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #root{
+      width: 80vw;
+      height: 10vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div:nth-child(2){
+      flex-direction: column;
+    }
+
+    #root>div:nth-child(2)>div:nth-child(1){
+      position: relative;
+      top: 1.8vw;
+    }
+    #root>div:nth-child(2)>div:nth-child(2){
+      position: relative;
+      top:-2.8vw;
+    }
+
+
+    .text-b {
+      font-size: 650%;
+    }
+
+    .rotate{
+      transform: rotate(180deg);
+      margin-bottom: -1.5vw;
+    }
+
+    .box-up{
+      width: 80vw;
+      height: 5vh;
+      background-color: #fff;
+
+      position: relative;
+      z-index: 2;
+      top:1vw;
+    }
+
+    .box-down{
+      width: 80vw;
+      height: 6vh;
+      background-color: #fff;
+
+      position: relative;
+      z-index: 2;
+      top:-1.5vw;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="box-up"><!--글씨 가리는 박스--></div>
+  <div id="root">
+    <div class="text-b">WH<span class="rotate">A</span>TEVERY</div>
+    <div>
+      <div class="text-b">O</div>
+      <div class="text-b">O</div>
+    </div>
+    <div class="text-b"><span class="rotate">U</span>W<span class="rotate">A</span>NT</div>
+  </div>
+  <div class="box-down"><!--글씨 가리는 박스--></div>
+</body>
+</html>

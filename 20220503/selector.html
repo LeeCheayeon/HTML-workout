@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="root">
+    <li class="menu-items">menu-1</li>
+    <li class="menu-items">menu-2</li>
+    <li class="menu-items">menu-3</li>
+    <li class="menu-items">menu-4</li>
+    <li class="menu-items">menu-5</li>
+    <li class="menu-items">menu-6</li>
+    <li class="menu-items">menu-7</li>
+    <li class="menu-items">menu-8</li>
+    <li class="menu-items">menu-9</li>
+    <li class="menu-items">menu-10</li>
+  </ul>
+  <button>click</button>
+
+  <script>
+    const root = document.getElementById("root");
+    // const getTag = document.getElementsByTagName("li");
+    //https://developer.mozilla.org/ko/docs/Web/API/Document/getElementsByTagName
+    // const getClass = document.getElementsByClassName("menu-items");
+    // const queryGet = document.querySelector(".menu-items");
+    const liitems = document.querySelectorAll(".menu-items");
+    //제공한 CSS 선택자를 만족하는 *첫 번째 Element 객체* > 첫번째 자식만 지정??. 결과가 없다면 null.
+    //선택자를 만족하는 모든 요소의 목록이 필요하다면 querySelectorAll()을 대신 사용하세요.
+    // console.dir(root);
+    // console.log(getTag);
+    // console.log(queryGet);
+    const click = document.querySelector("button");
+    console.log(liitems);
+    // getTag[0].style.color="red";
+
+    // for(let i=0; i<getTag.length; i++){
+    //   getTag[i].style.color="red";
+    // };
+    //class의 원형
+
+    root.style.width = "300px";
+    root.style.height = "500px";
+    root.style.backgroundColor = "#c4c4c4";
+    
+    let isStatus = true;
+    click.addEventListener("click", function(){
+      if(isStatus === true){
+        console.log("hello");
+        isStatus =false;
+
+        for(let i =0; i<liitems.length; i++){
+          liitems[i].style.display = "none";
+          root.style.display="none";
+        }
+        
+      }else{
+        console.log("bye");
+        isStatus =true;
+        
+        for(let i =0; i<liitems.length; i++){
+          liitems[i].style.display = "block";
+          root.style.display="block";
+        }
+      }
+    });
+  </script>
+</body>
+</html>

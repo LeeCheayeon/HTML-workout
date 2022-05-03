@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>cilck</button>
+
+  <script>
+    const body = document.querySelector("body");
+    console.log(body);
+    console.dir(body);
+    
+    let backColor = ["#fff", "#c4c4c4" , "#ff6666"]
+    
+    body.style.margin=0;
+    body.style.padding=0;
+    body.style.width="100vw";
+    body.style.height="100vh";
+    body.style.backgroundColor=backColor[0];
+    
+    const button = document.querySelector("body>button");
+    console.log(button);
+    console.dir(button);
+
+    let current = 0;
+    // body.textContent= current;
+
+    count=0;
+    button.addEventListener("click",function(){
+      if(count===0){
+        console.log("클릭!");
+        body.style.backgroundColor = backColor[1]
+        count=1;
+      }else{
+        console.log("클릭?");
+        body.style.backgroundColor = backColor[2]
+        count=0;
+        
+      }
+    });
+
+    //count의 값이 홀수일때 짝수일때 색상을 backColor [1],[2]씩 하다가 일정 횟수가 지나면 다른 색으로 변화를 준다는 것도 가능한지 조금 궁금하다.
+    //인터넷에서는 아래와 같이 결과가 나왔는데 잘 모르겠다.
+//     function solution(num) {
+//     var answer = '';
+    
+//     if(num %2==0){ //짝수인 경우
+//         answer='Even';
+//     } else //홀수인 경우
+//         answer='Odd';
+    
+//     return answer;
+// }
+
+
+  </script>
+</body>
+</html>

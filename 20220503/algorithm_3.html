@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <button>눌러보세요</button>
+    <button>처음으로</button>
+    <h1></h1>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    console.log(root);
+    console.dir(root);
+
+    const button = document.querySelector('button');
+    console.log(button);
+
+    const replay = root.children[1]
+    console.log(replay);
+
+    const text = document.querySelector("h1");
+    console.log(text);
+
+    const practics = ["피카츄", "라이츄", "파이리", "꼬부기", "버터풀", "야도란", "피죤투", "또가스"];
+    const tColor = ["yellow", "orange", "red", "blue", "violet", "pink", "green", "gray", "black"]
+    // text.textContent= practics;
+
+    let count=-1;
+    button.addEventListener("click", function(){
+      if(count <practics.length-1){
+        console.log("눌렀음");
+        count++
+        text.textContent=practics[count];
+        text.style.color=tColor[count];
+        //버튼을 클릭할때마다
+        //h1 태그에 포켓몬들이 하나 씩 나타나게... 
+      }
+      else{
+        text.textContent="포켓몬스터를 다 모았다."
+        text.style.color=tColor[8]
+      }
+    });
+    
+    //추가기능//
+    replay.addEventListener("click", function(){
+      console.log("처음으로");
+      //처음으로 버튼을 누르면 다시 첫 화면으로 돌아가기 
+      //피카츄부터 시작 = count=0; / 빈화면부터 = count=-1;
+      count=-1;
+      text.textContent=practics[count];
+      text.style.color=tColor[count];
+    });
+
+  </script>
+</body>
+</html>
