@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>버튼을 눌러보세요</h1>
+  <button>start</button>
+  <button>finsh</button>
+
+  <script>
+    const text =document.body.children[0];
+    const start =document.body.children[1];
+    const finsh =document.body.children[2];
+    console.log(text);
+    console.log(start);
+    console.log(finsh);
+
+    let name = ["피카츄", '라이츄', '파이리', '꼬부기', '버터플' , '야도란', '피존투', '또가스', '롱스톤', '파치리스', '펭도리', '치코리타', '또르박쥐', '이어롭','라프리스','이브이','쥬피썬더', '부스터','님피아','글레시아','블래키']
+
+    // 내가 하고 싶었던 것
+    // 변수 name의 배열을 차례대로 시간이 지나면 넘어가는 것 
+    // 끝 버튼을 누르면 멈추는 것 
+
+    // 우선 버튼을 누르면 name이 순서대로 나오는 것 부터?? 
+
+    // start.addEventListener()
+    
+    // let count=0;
+    
+    start.addEventListener("click", function(){
+      if(count <name.length-1){
+        console.log('진실');
+        text.textContent = name[count];
+        count++;
+      } else {
+        console.log('거짓');
+        text.textContent= name[count];
+        count = 0;
+      }
+    });
+
+      // 클릭할때마다 순서대로 이름이 나온다. 이제 이것을 시간이 지나면 나오게 하는 메서드로 변경을 해보자... 
+
+      let count = 0;
+      start.addEventListener("click", function(){
+        let timer = setInterval(function(){
+          if(count <name.length){
+          // console.log('진실');
+          text.textContent = name[count];
+          count++;
+        } else {
+          count = 0;
+        }
+        finsh.addEventListener("click", function(){
+          clearInterval(timer);
+        });
+        },500);
+      });
+
+    
+  </script>
+</body>
+</html>

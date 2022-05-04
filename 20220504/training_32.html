@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="menu-box"></div>
+      <div class="menu-box"></div>
+      <div class="menu-box"></div>
+      <div class="menu-box"></div>
+      <div class="menu-box"></div>
+      <div class="menu-box"></div>
+    </nav>
+  </header>
+  <main>
+    <section id="up">
+      <div>BIGFONT</div>
+      <div></div>
+      <div></div>
+    </section>
+    <section id="under">
+      <div>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero debitis fugit dolore nesciunt amet, iste doloribus error magni saepe neque, repellendus ratione ex cupiditate exercitationem natus quidem quaerat alias maxime fugiat eos iure facilis inventore. Quas facilis voluptates eaque iure eveniet eos et, alias nostrum quam distinctio! Magnam itaque sed quidem quas ab, asperiores consectetur placeat perspiciatis harum corporis suscipit tempore at dignissimos assumenda illo excepturi illum accusamus reprehenderit ea incidunt quos sit dolorem cupiditate? Nostrum quidem facilis quia eos? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto perspiciatis libero dolorem obcaecati deserunt, recusandae officiis, ea architecto voluptatibus dignissimos enim repellat. Architecto nisi, laborum delectus hic possimus tempore fugit.</div>
+      </div>
+      <div>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero debitis fugit dolore nesciunt amet, iste doloribus error magni saepe neque, repellendus ratione ex cupiditate exercitationem natus quidem quaerat alias maxime fugiat eos iure facilis inventore. Quas facilis voluptates eaque iure eveniet eos et, alias nostrum quam distinctio! Magnam itaque sed quidem quas ab, asperiores consectetur placeat perspiciatis harum corporis suscipit tempore at dignissimos assumenda illo excepturi illum accusamus reprehenderit ea incidunt quos sit dolorem cupiditate? Nostrum quidem facilis quia eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, sunt non, quasi sit facere beatae ratione nisi sed ex quam similique minus. Exercitationem pariatur aspernatur quam eius voluptas nulla earum.</div>
+      </div>
+      <div>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero debitis fugit dolore nesciunt amet, iste doloribus error magni saepe neque, repellendus ratione ex cupiditate exercitationem natus quidem quaerat alias maxime fugiat eos iure facilis inventore. Quas facilis voluptates eaque iure eveniet eos et, alias nostrum quam distinctio! Magnam itaque sed quidem quas ab, asperiores consectetur placeat perspiciatis harum corporis suscipit tempore at dignissimos assumenda illo excepturi illum accusamus reprehenderit ea incidunt quos sit dolorem cupiditate? Nostrum quidem facilis quia eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quo corrupti officiis in temporibus veritatis ab a autem velit itaque? Cum rerum possimus, laborum voluptates enim sequi obcaecati nisi excepturi.</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    //함수
+    function widthHeight (target, width, height) {
+      target.style.width = width;
+      target.style.height = height;
+    }
+
+    function displayjustalignDirec (target, display, justifyContent, alignItems, flexDirection){
+      target.style.display = display;
+      target.style.justifyContent = justifyContent;
+      target.style.alignItems = alignItems;
+      target.style.flexDirection = flexDirection;
+    }
+
+    function borderR (target, bTLR, bTRR, bBLR, bBRR){
+      target.style.borderTopLeftRadius= bTRR;
+      target.style.borderTopRightRadius= bTRR;
+      target.style.borderBottomLeftRadius= bBLR;
+      target.style.borderBottomRightRadius= bBRR;
+    }
+
+    //body style
+    widthHeight (document.body, "100vw", "100vh");
+    displayjustalignDirec (document.body, "flex", "center", "center");
+    document.body.style.margin=0;
+    document.body.style.padding=0;
+
+
+    //header style
+    const header = document.body.children[0];
+    console.log(header);
+    widthHeight(header, "8vw", "100vh");
+    displayjustalignDirec(header, "flex", "center", "center");
+    header.style.backgroundColor="#d7d7d7";
+    
+    //nav style
+    const nav = document.querySelector("nav");
+    console.log(nav);
+    widthHeight(nav, "6vw", "90vh");
+    displayjustalignDirec(nav, "flex", "flex-start", "center", "column");
+    
+    //menu-box style
+    const menuBox = document.querySelectorAll(".menu-box");
+    console.log(menuBox);
+    for(let i =0; i<menuBox.length; i++){
+      widthHeight(menuBox[i], "5vw", "5vw");
+      menuBox[i].style.backgroundColor='#6d6d6d';
+      menuBox[i].style.marginBottom='1vw';
+    };
+
+    //main style
+    const main = document.body.children[1];
+    console.log(main);
+    widthHeight (main, "92vw", "100vh");
+    displayjustalignDirec(main, "flex", "center", "center");
+    
+    //up style
+    const up =document.getElementById("up");
+    console.log(up);
+    widthHeight(up, "50vw", "70vh");
+    displayjustalignDirec (up, "flex", "center", "center");
+    up.style.position="absolute";
+    up.style.zIndex=2;
+
+    console.log(up.children[0]);
+    up.children[0].style.fontSize="900%";
+    up.children[0].style.fontWeight="600";
+    up.children[0].style.color="#fff";
+
+    function poZinlefttop(target, position, zindexV, topV , leftV){
+      target.style.position = position;
+      target.style.zIndex = zindexV;
+      target.style.top = topV;
+      target.style.left = leftV;
+    };
+
+    poZinlefttop (up.children[0], "absolute", 2,"20vh", "4vw");
+    
+    console.log(up.children[1]);
+    widthHeight(up.children[1], "50vw", "55vh");
+    borderR(up.children[1], "10vw", "17vw", "9vw", "17vw");
+    up.children[1].style.backgroundColor="#373737";
+    up.children[1].style.transform="rotate(25deg)";
+    up.children[1].style.opacity=0.9;
+    
+    poZinlefttop (up.children[1], "absolute", 1,"3vh");
+    
+    console.log(up.children[2]);
+    widthHeight(up.children[2], "50vw", "55vh");
+    borderR(up.children[2], "10vw", "17vw", "9vw", "17vw");
+    up.children[2].style.backgroundColor="#373737";
+    up.children[2].style.transform="rotate(25deg)";
+    up.children[2].style.filter="blur(20px)"
+    up.children[2].style.opacity=0.7;
+    
+    poZinlefttop (up.children[2], "absolute", 0,"12vh");
+    
+    //under style
+    const under =document.getElementById("under");
+    console.log(under);
+    widthHeight(under, "92vw", "100vh");
+    under.style.backgroundColor="green";
+    under.style.display="flex";
+    
+    const a = under.children[0];
+    console.log(a);
+    widthHeight(a, "28vw")
+    displayjustalignDirec(a, "flex", "center", "flex-start");
+    a.style.backgroundColor="#cccccc";
+
+    widthHeight(a.children[0], "25vw");
+    a.children[0].style.textAlign="justify";
+    a.children[0].style.color="#525252";
+    a.children[0].style.marginTop="2vw";
+
+    
+    const b = under.children[1];
+    console.log(b);
+    widthHeight(b, "31vw");
+    displayjustalignDirec(b,"flex", "center", "flex-end");
+    b.style.backgroundColor="#9f9f9f";
+    
+    widthHeight(b.children[0], "25vw");
+    b.children[0].style.textAlign="justify";
+    b.children[0].style.color="#fff";
+    b.children[0].style.marginBottom="4vw";
+    
+
+    const c = under.children[2];
+    console.log(c);
+    widthHeight(c,"33vw");
+    displayjustalignDirec(c, "flex", "center","center");
+    c.style.backgroundColor="#6d6d6d";
+    
+    widthHeight(c.children[0], "25vw");
+    c.children[0].style.textAlign="justify";
+    c.children[0].style.color="#fff";
+  </script>
+</body>
+</html>

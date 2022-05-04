@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>A</button>
+  <button>B</button>
+  <div></div>
+
+  <script>
+    const text = document.body.children[2];
+    const abut = document.body.children[0];
+    console.log(abut);
+
+
+
+    let count = true;
+    abut.addEventListener("click", function(){
+      let timer = setInterval(function(){
+        if(count === true){
+          console.log("똑");
+          text.textContent="똑";
+          count= false;
+        }else{
+          console.log("딱");
+          text.textContent="딱";
+          count=true;
+        }
+        bbut.addEventListener("click", function(){
+          clearInterval(timer);
+        });
+      }, 500)
+      console.log("클릭");
+    });
+
+
+    const bbut = document.body.children[1];
+    console.log(bbut);
+  </script>
+</body>
+</html>
