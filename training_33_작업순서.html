@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0; margin: 0; box-sizing: border-box;}
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid blue;
+
+      position: relative;
+      /* <!--앱솔루트는 부모가 스태틱이면 무시 부모가 스태틱이 아니면 부모를 따른다.--> */
+    }
+
+    #root>div>section{
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+
+      position: absolute;
+    }
+
+    #root>div>section:nth-child(1){
+      top: 0px;
+      left: 0px;
+      background-color: #ddd;
+      z-index: 3;
+    }
+    #root>div>section:nth-child(2){
+      top: 30px;
+      left: 30px;
+      background-color: #222;
+      z-index: 2;
+
+    }
+    #root>div>section:nth-child(3){
+      top:50px;
+      left: 50px;
+      background-color: #777;
+      z-index: 1;
+
+    }
+    
+    /* 큰 덩어리를 눈에 알아볼수있도록 식별하는 간단한 스타일 지정 (2) */
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <section>
+        <button id="close-button">close</button>
+      </section>
+      <section>2</section>
+      <section>3</section>
+
+    </div>
+  </div>
+
+  <!-- 큼직하게 커다란 박스(덩어리)부터 만들기 (1)-->
+
+
+  <script>
+
+    const root = document.getElementById("root");
+    console.log(root);
+    console.dir(root);
+
+    const sections = root.children[0].children;
+    console.log(sections);
+
+    //식별 먼저 한다. (3)
+
+    const clickBtn = document.getElementById('close-button');
+    console.log(clickBtn);
+
+    clickBtn.addEventListener("click", function(){
+      // alert('hello');
+      sections[0].style.display="none";
+      sections[1].style.display="none";
+    });
+    // 식별 후 인터렉션 기능 추가 (4)
+    // 이후 스타일링 (5)
+
+  </script>
+</body>
+</html>

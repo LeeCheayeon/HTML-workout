@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="./css/style.css"> -->
+  <title>Document</title>
+
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+
+    </style>
+    
+</head>
+<body>
+  <div id = "root">
+    <section>
+      <div>
+        <div id="mainbox">
+          <div><!--일자 > 엑스표-->
+            <div class="border"></div>
+            <div class="border"></div>
+            <div class="border"></div>
+          </div>
+          <div>LOREM <br> IPSUM</div>
+          <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dolor porro asperiores ipsum inventore adipisci voluptate omnis ad doloribus nulla sint minima quis, deleniti earum. Nemo aperiam placeat voluptatum. Corrupti id impedit voluptatibus autem. Veniam eos iste quam aliquam. Aliquam porro, inventore provident eum commodi facere suscipit labore tenetur rem fugiat accusamus cupiditate vel eligendi ipsum illum eos quidem ratione!
+          </div>
+          <button id="click-button">close</button>
+        </div>
+      </div>
+      <div></div>
+      <div><!--블러--></div>
+    </section>
+    <div>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, eligendi? Laboriosam odit voluptatum totam unde similique quisquam voluptas illum quis nam nisi! Accusamus explicabo, assumenda natus ullam maiores quam optio, facilis possimus aspernatur voluptatem tempore aliquam ducimus perferendis at. Ea sequi eaque veritatis non iusto et quisquam nam mollitia, reprehenderit modi unde eos officia voluptate iure provident laborum autem! Unde porro dolore inventore ea cupiditate iure cum? Modi laboriosam fuga sit, tempora beatae rem ullam illo deleniti labore quidem consectetur magnam, voluptas aliquam animi assumenda ducimus odio consequuntur nemo quas asperiores, repudiandae est dignissimos! Unde omnis vero cupiditate delectus deserunt. Ea molestias quaerat velit quisquam modi itaque corporis neque quibusdam laboriosam, dolorem esse culpa odit quas sed. Laudantium, similique totam!
+      <!--text박스-->
+    </div>
+  </div>
+
+  <script>
+
+    function disjualdeco (target, display, justC, alignI, flexD){
+      target.style.display = display;
+      target.style.justifyContent = justC;
+      target.style.alignItems = alignI;
+      target.style.flexDirection = flexD;
+    };
+
+    function Widthheight (target, width, height){
+      target.style.width = width + "vw";
+      target.style.height = height + "vh";
+    };
+
+    function position (target, position, zindex, top, left){
+      target.style.position = position;
+      target.style.zIndex = zindex;
+      target.style.top = top + "vh";
+      target.style.left= left + "vw";
+    };
+    
+    
+    Widthheight(document.body, 100, 100);
+    disjualdeco(document.body, "flex", "center", "center");
+    
+    const root = document.getElementById("root");
+    console.log(root);
+    Widthheight(root, 50, 60);
+    disjualdeco(root, "flex");
+    
+    
+    // front box ---------------------------------------
+    const section = root.children[0];
+    console.log(section);
+    // Widthheight(section, 25, 70);
+    position (section, "absolute", 2, 15, 33)
+    disjualdeco(section, "flex", "center", "center")
+
+
+    //글 박스 --------------------------------------------
+    Widthheight(section.children[0], 23, 55);
+    position (section.children[0], "absolute", 2, 0,0);
+    disjualdeco(section.children[0], "flex", "center", "center")
+
+
+    // 글 뒷박스 반투명----------------------------------
+    Widthheight(section.children[1], 23, 55);
+    section.children[1].style.backgroundColor= "rgba(295,295,295,0.6)";
+    section.children[1].style.border = "2px solid #636363";
+    section.children[1].style.borderRadius = "3vw";
+    position (section.children[1], "absolute", 1, -1,0);
+
+
+    //블러 박스 -----------------------------------------------
+    Widthheight(section.children[2], 23, 55);
+    section.children[2].style.backgroundColor= "rgba(0,0,0,0.5)";
+    position (section.children[2], "absolute", 0, 5,4);
+    section.children[2].style.filter = "blur(30px)"
+
+    //main box
+    const mainbox = document.getElementById("mainbox");
+    console.log(mainbox);
+    Widthheight(mainbox, 20, 50);
+
+    //mainbox > border box (0)
+    const over = mainbox.children[0];
+    Widthheight (over, 20, 2)
+    disjualdeco(over, "flex", "center", "end", "column",)
+    
+    //border
+    const border = document.querySelectorAll(".border");
+    console.log(border);
+    for(let i =0; i <border.length; i++){
+      Widthheight(border[i], 1)
+      border[i].style.border= "1px solid gray";
+      border[i].style.marginBottom= "0.2vw";
+    };
+    
+    //mainbox > div(1) 제목
+    Widthheight(mainbox.children[1], 20, 27);
+    mainbox.children[1].style.fontSize= '500%';
+    mainbox.children[1].style.color= '#333';
+    
+    //mainbox > div(2) 글문단
+    Widthheight(mainbox.children[2], 20, 15);
+    mainbox.children[2].style.fontSize= '68%';
+    mainbox.children[2].style.textAlign= 'justify';
+    mainbox.children[2].style.color= '#414141';
+
+    // mainbox > button (3) 버튼
+    const button = document.getElementById("click-button");
+    console.dir(button);
+    Widthheight(button, 6.5,3.5);
+    button.style.borderStyle="none";
+    button.style.backgroundColor="rgba(170,170,170,1)";
+    button.style.fontSize = '100%';
+    button.style.borderRadius="0.6vw";
+    button.style.color="#414141";
+    button.style.marginLeft="13.5vw";
+
+    // 폰트도 함수로 정리할 수 있으면 정리해봐야겠다.
+
+
+
+
+    
+    // under text --------------------------------------------
+    const textbox = root.children[1];
+    console.log(textbox);
+    Widthheight(textbox, 25, 30);
+    position (textbox, "relative", 0, 15, 25);
+
+    textbox.style.fontSize= '90%';
+    textbox.style.textAlign= 'justify';
+    textbox.style.color= '#414141';
+    
+
+
+
+    let opacityValue = 0;
+    //인터렉션------------------------------------------------
+
+    // close 버튼을 누르면 section 사라짐
+    button.addEventListener("click", function(){
+      console.log("WWW");
+      // disjualdeco(section, 'none');
+      section.style.opacity = 0;
+    });
+    
+    // textbox 클릭하면 section가 나타남
+    // textbox.addEventListener("click", function(){
+    //   console.log('ㅍㅍ');
+    //   disjualdeco(section, "flex");
+    // });
+
+    // 서서히 나타나는 인터렉션을 넣고싶다.
+    textbox.addEventListener("click", function(){
+      console.log('ㅍㅍ');
+      let fadein = setInterval(function(){
+        if(opacityValue < 1.5 ){
+          opacityValue = opacityValue + 0.4;
+          section.style.opacity = opacityValue;
+        }else {
+          clearInterval(fadein);
+          section.style.opacity = 1;
+        }
+      }, 200);
+    });
+
+    // Q. 여기서 다시 2번째에 다시 txet box를 클릭하면 fadein 효과가 안 나타나는데 아래 else 값에 opacity 값을 1로 해줘서 위의 if 문에 
+        // else {
+        //   clearInterval(fadein);
+        //   section.style.opacity = 1;
+        // }
+
+    // opacity값이 1보다 작을때라서 fadein효과가 안 나타나는 건가해서
+    // if(opacity <= 1 ) 라고 적어보았는데도 똑같습니다. 
+    // 혹시 더 큰 숫자를 해야하나 해서 if문 뒤의 1을 좀 더 큰 숫자로 바꿔봐도 그대로 입니다. 원래 그런건가요?
+
+
+    // 상단에 막대기 마우스 오버하면 엑스표로 바뀜(?)
+    over.addEventListener("mouseover", function(){
+      console.log("over");
+      border[0].style.transform = "rotate(-45deg)";
+      position(border[0], "relative", 0 , 0.5, 0);
+      border[1].style.transform = "rotate(45deg)";
+      border[2].style.display = "none";
+    });
+
+    // 마우스를 떼면 다시 일자로 돌아오는 인터렉션
+    over.addEventListener("mouseout", function(){
+      border[0].style.transform = "rotate(0deg)";
+      position(border[0], "none", 0 , 0, 0);
+      border[1].style.transform = "rotate(0deg)";
+      border[2].style.display = "flex";
+    });
+
+  </script>
+</body>
+</html>
