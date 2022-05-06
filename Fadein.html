@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <button id ="click-button">click</button>
+
+  <script>
+    const root = document.getElementById("root");
+
+    function Widthheight (target, width, height) {
+      target.style.width = width + "px";
+      target.style.height = height + "px";
+    }
+    
+    let hun = 100;
+    Widthheight (root, hun, hun);
+    root.style.backgroundColor = "#333";
+
+    const clickBtn = document.getElementById("click-button");
+
+    let opacityValue = 0;
+
+    root.style.opacity = opacityValue;
+
+    // clickBtn.addEventListener("click", function(){
+      // opacityValue = 1;
+      // root.style.opacity = opacityValue;
+
+    //   let isStatus = true;
+    //   let fade = setInterval(function(){
+    //     if(isStatus === true){
+          
+    //     }
+    //     if(opacityValue < 1){
+    //       //1 보다 작으면
+    //       opacityValue = opacityValue + 0.1;
+    //       // 오퍼시티밸류의 값은 오퍼시티밸류에 0.1를 합친 값이다.
+    //       root.style.opacity = opacityValue;
+    //       // 변수 루트의 스타일의 오퍼시티의 값은 오퍼시티밸류값(if 안에 있는 오퍼시티 밸류)이다. 
+    //     } else {
+    //       clearInterval(fade);
+    //     }
+    //   },20);
+    // });
+
+    // /----------------------------------------------------------
+
+    let isStatus = true;
+    clickBtn.addEventListener("click", function(){
+      if(isStatus === true){
+        //isstatus의 값이 true라면?
+      let fade = setInterval(function(){
+          if(opacityValue < 1){
+            opacityValue = opacityValue + 0.1;
+            root.style.opacity = opacityValue;
+            hun = hun + 20;
+            Widthheight (root, hun, hun);
+          } 
+          else {
+            clearInterval(fade);
+            isStatus = false;
+          }
+        },20);
+      }
+      else {
+        // isstatus의 값이 true가 아니라면?
+        let out = setInterval(function(){
+          if(opacityValue > 0){
+            opacityValue = opacityValue - 0.1;
+            root.style.opacity = opacityValue;
+            hun = hun - 20;
+            Widthheight (root, hun, hun);
+          }
+          else {
+            clearInterval(out);
+            isStatus= true;
+          }
+        },20)
+
+      }
+    });
+    
+  </script>
+</body>
+</html>
