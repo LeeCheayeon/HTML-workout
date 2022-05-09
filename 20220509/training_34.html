@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="container">
+      <div class="items"></div>
+      <div class="items"></div>
+      <div class="items"></div>
+    </div>
+
+  </div>
+
+  <script>
+
+    function widheight(target, width, height) {
+      target.style.width = width + "vw";
+      target.style.height = height + "vh";
+    }
+
+    function topLeft (target, top, left){
+      target.style.top = top +"vh";
+      target.style.left = left + "vw";
+    }
+    
+    function disjual(target, display, justifyContent, alignItems){
+      target.style.display = display;
+      target.style.justifyContent = justifyContent;
+      target.style.alignItems = alignItems;
+    }
+    
+    const root = document.getElementById("root");
+    root.style.padding =0;
+    root.style.margin =0;
+    widheight(root, 100, 100);
+    disjual (root, "flex", "center", "center");
+    
+    const container = document.getElementById("container");
+    console.log(container);
+    container.style.border = "1px solid #333";
+    container.style.width = "300px";
+    container.style.height = "300px";
+    disjual (container, "flex", "center", "center");
+    container.style.overflow = "hidden";
+    
+    const items = document.querySelectorAll(".items");
+    console.log(items);
+    for(let i =0; i <items.length; i++){
+    items[i].style.width = "200px";
+    items[i].style.height = "200px";
+    items[i].style.backgroundColor="#c4c4c4";
+    items[i].style.margin="10px";
+    }
+
+    // 왜 다시 천천히 자바스크립트로 제어를 해도 위의 container의 display 설정을 하기 전까지만 해도 200px 200px 의 박스가 container안에 hidden까지 잘 되어있었는데 dispaly를 넣으니 가로의 폭이 300px 안에 3 박스가 전부 들어가졌습니다. 왜 이렇게 바뀌는지 이해가 안 갑니다.  
+    // 제가 무언가를 잘못해서 그런거라면 이유를 찾을려고 개발자 도구를 켜도 알수없었습니다. 
+    </script>
+</body>
+</html>
+<!-- // document.body.style.padding = 0;
+// document.body.style.margin = 0;
+// widheight (document.body, 100, 100);
+
+// document.body.style.display= "flex";
+// document.body.style.justifyContent = "center";
+// document.body.style.alignItems = "center";
+
+// const container = document.body.children[0];
+// console.log(container);
+// widheight (container, 25);
+// container.style.height = 25 + "vw";
+// container.style.border = "1px solid #333";
+
+// container.style.display= "flex";
+// container.style.justifyContent = "center";
+// container.style.alignItems = "center";
+
+// container.style.overflow = "hidden";
+
+// const items = container.children;
+// console.log (items);
+// for(let i =0; i<items.length; i++){
+//   items[i].style.width = 200 + "px";
+//   items[i].style.height = 200 + "px";
+//   items[i].style.margin = 10 + "px";
+//   items[i].style.backgroundColor="#c3c3c3";
+// };
+
+
+// 자바스크립트로 제어를 했는데 강사님이 css로 스타일을 해준것과 비교를 해보면 다른게 없어보이는데 컨테이너 안의 아이템요소들이 이상하게 나옵니다... 개발자 도구를 봐도 잘 모르겠습니다.  -->
