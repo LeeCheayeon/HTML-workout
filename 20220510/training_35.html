@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+  <nav>
+    <div> <!--menu-->
+      menu-1
+    </div>
+    <ul><!--submenu-->
+      <li>menu-item-1</li>
+      <li>menu-item-1</li>
+      <li>menu-item-1</li>
+      <li>menu-item-1</li>
+    </ul>
+  </nav>
+
+
+  <script>
+
+    function WidthHeightColor (target, width, height, colorV){
+      target.style.width=width + "vw";
+      target.style.height =height + "vh";
+      target.style.backgroundColor = colorV;
+    }
+
+    function display (target, display, justC, alignI){
+      target.style.display = display;
+      target.style.justifyContent = justC;
+      target.style.alignItems = alignI;
+    }
+
+    document.body.style.margin=0;
+    document.body.style.padding=0;
+    document.body.style.flexDirection=0;
+
+    const nav = document.querySelector("nav");
+    console.log(nav);
+    WidthHeightColor (nav, 100, 100, '#c4c4');
+    display (nav, "flex", "center", "center");
+    nav.style.flexDirection = "column";
+
+    const menu = nav.children[0];
+    console.log(menu);
+    WidthHeightColor(menu, 30,7,"#d4d4d4");
+    display(menu, "flex", "center", "center");
+    menu.style.flexDirection = "column";
+    
+    WidthHeightColor(nav.children[1], 30, 30)
+    display(nav.children[1], "flex", "center", "center")
+    nav.children[1].style.flexDirection = "column";
+    nav.children[1].style.listStyleType = "none";
+    nav.children[1].style.padding= 0;
+    
+    const submenu = document.querySelectorAll('li');
+    console.log(submenu);
+    for(let i =0; i<submenu.length; i++){
+      display(submenu[i], "none")
+      WidthHeightColor (submenu[i], 30, 7, '#333')
+      submenu[i].style.margin = "1vw";
+      submenu[i].style.color = "#fff";
+      submenu[i].style.textAlign = "center";
+    }
+
+    let istatus = true;
+    menu.addEventListener("click", function(){
+      if(istatus === true){
+        console.log("click");
+        for(let i=0; i<submenu.length; i++){
+          display(submenu[i], "flex");
+        }
+        istatus =false;
+      }else {
+        for(let i=0; i<submenu.length; i++){
+          display(submenu[i], "none");
+        }
+        istatus = true;
+      }
+    });
+  </script>
+</body>
+</html>

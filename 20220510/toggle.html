@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    div>div:nth-child(1){
+      font-size: 130%;
+    }
+
+    .colorC {
+      color: tomato;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>Lorem ipsum</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae non culpa ratione sit quibusdam quasi voluptas laborum id accusamus repudiandae soluta minima, ducimus esse incidunt a, inventore nostrum placeat mollitia.</div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    console.log(root);
+
+    const title = root.children[0];
+    console.log(title);
+
+    
+    const subtitle = root.children[1];
+    console.log(subtitle);
+
+    // classlist 기본
+    // title.addEventListener("click",function(){
+    //   console.log("click");
+    //   if(subtitle.classList.contains('colorC')){
+    //     subtitle.classList.remove("colorC");
+    //   }else {
+    //     subtitle.classList.add("colorC");
+    //   }
+    // });
+
+    //toggle
+    title.addEventListener("click",function(){
+      console.log("click");
+      subtitle.classList.toggle("colorC");
+    });
+
+    // toggle 안에는 위의 기본 형태 contains, add, remove가 함께 있는 것과 같다. 
+  </script>
+
+
+</body>
+</html>
