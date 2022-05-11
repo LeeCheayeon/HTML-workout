@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0; margin: 0;}
+
+    #root {
+      width: 100vw;
+      height: 500vh;
+      
+      background-color: #ff6666;
+    }
+
+    #root>div{
+      width: 5vw;
+      height: 5vw;
+
+      background-color: #ccc;
+
+      position: sticky;
+      top: 90vh;
+      left: 85vw;
+
+      color: #fff;
+      text-align: center;
+      padding: 1vh;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="click">Top</div>
+  </div>
+
+  <!--스크롤값 = 0  버튼이 안보인다 / 버튼을 누르면 맨 위로 올라간다.-->
+
+  <script>
+    const topBtn = document.getElementById("click");
+    console.log(topBtn)
+
+    let windowscrValue = window.scrollY;
+    console.log(windowscrValue);
+    let docTotalscrHeight = document.body.scrollHeight;
+    console.log(docTotalscrHeight);
+
+
+    //이 위에 먼가를 해야하나? 어떻게 넣어야하지??? 
+    // window.addEventListener("wheel", function(){
+    //   if(windowscrValue === 0){
+    //     //현재 윈도우 스크롤의 값이 0이라면
+    //     //버튼을 숨겨줘
+    //     topBtn.style.display = "none";
+    //   }
+    //   else {
+    //     topBtn.style.display = "block"
+    //   }
+
+    // });
+
+
+    topBtn.addEventListener("click", function(){
+      console.log("click");
+      if(windowscrValue > 0 ){
+        window.scrollTo({
+          top:0,
+          behavior: 'smooth'
+        })
+      }
+    });
+
+  </script>
+</body>
+</html>

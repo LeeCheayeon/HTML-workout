@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{padding: 0; margin: 0;}
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    #root>div:nth-child(1){
+      width: 30vw;
+      height: 30vh;
+
+      font-size: 700%;
+      font-weight: 900;
+      line-height: 18%;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+    }
+    #root>div:nth-child(2){
+      width: 30vw;
+      height: 30vh;
+
+      font-size:11pt;
+      color: #c4c4c4;
+      
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      
+
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div> 
+      <p class="color">function</p> <br> 
+      <p class="color">variable</p> <br> 
+      <p class="color">index</p> <br> 
+      <p class="color">constsnt</p> <br>
+      <p class="color">object</p> <br>
+      <p class="color">array</p></div>
+    <div>The greatest glory in living lies not in never falling, but in rising every time we fall.</div>
+  </div>
+
+  <script>
+    const color = document.querySelectorAll(".color");
+    console.log(color);
+
+    const root = document.getElementById("root");
+    const textbox = root.children[0];
+    console.log(textbox);
+
+
+    let textColor = ["#F29BAB", "#91A646", "#F2A950", "#BF9BAF", "#A0B9D5","#8EBFBF"];
+    for(let i =0; i<color.length; i++){
+      color[i].style.color=textColor[i];
+      color[i].style.opacity=0.5;
+      color[i].style.mixBlendMode="multiply";
+    }
+
+    textbox.addEventListener("click", function(){
+      console.log("vv");
+      
+    });
+  </script>
+</body>
+</html>

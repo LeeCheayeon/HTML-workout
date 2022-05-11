@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0; margin: 0;}
+
+    #root {
+      width: 100vw;
+      height: 3000px;
+      background:linear-gradient(0deg, #ccc, #333);
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    console.log(window);
+    console.log(document.body.scrollHeight);
+
+    
+    const root = document.getElementById("root");
+    console.dir(root);
+    
+    let offsetHeight = document.body.offsetHeight;
+    console.log(offsetHeight);
+    console.log(offsetHeight/2);
+    
+    // ---------------------------------------------------------
+    let docTotalscrHeight = document.body.scrollHeight;
+    // let scrollValue = window.scrollY;
+    
+    window.addEventListener("scroll", (event)=>{
+      if(window.scrollY > 0) {
+        console.log("당신은 방금 스크롤을 내렸다");
+        console.log(window.scrollY);
+        console.log("전체값" + docTotalscrHeight)
+      }
+
+      if(window.scrollY >= 2048){
+        console.log("야호");
+      }
+    });
+
+      //지금 현재의 높이가 offset높이의 절반 보다 크다면 으로 해야하나?
+      // 그렇다면 현재의 높이를 어떻게 지정을 해야하지??
+      // 그냥 offset높이의 절반으로 써볼까? >> 안된다. if(offsetHeight/2)
+      
+
+    // window.addEventListener("wheel", (event)=>{
+      // console.log(event.offsetY);
+      // offset 시작점 (맨처음에 했던 내용)
+      // if(event.offsetY > 500){
+      //   // alert("스크롤 너무 많이 내렸어");
+      //   // 스크롤을 내려서 일정숫자 일때 배경색 변경
+      // }
+    // });
+  </script>
+</body>
+</html>
