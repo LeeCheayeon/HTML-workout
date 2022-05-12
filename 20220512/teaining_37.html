@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <!--이번에는 scss와 script를 같이 써봤다. 스크립트만으로 스타일을 지정해도 편하지만 scss와 섞어서 스타일 시트를 넣는 방법도 좋은 것 같다.-->
+  <div id="root">
+    <section><!--앞-->
+      <div>
+        <div class="title">
+          BORDERLINE <br>
+          DESIGN
+        </div>
+      </div>
+      <div class="button">gooood?</div>
+      <div>
+        <div class="sub-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est corporis hic, repellendus dolorem obcaecati quo? Obcaecati recusandae, distinctio exercitationem debitis repellendus nisi qui ullam dolor, cupiditate odit esse beatae delectus, quod vitae ut excepturi a adipisci eius mollitia explicabo velit officia similique. Cum officia maiores itaque inventore veniam odio nemo incidunt voluptates facilis quo, consectetur recusandae saepe deleniti non, nisi reiciendis debitis vero accusamus perferendis asperiores molestiae minima! Placeat accusamus quaerat, ab molestiae esse odit animi, doloribus magnam odio fugiat quia magni, similique illum iste. Laboriosam nulla laborum quae perferendis.nisi reiciendis debitis vero accusamus perferendis asperiores molestiae minima! Placeat accusamus quaerat, ab molestiae esse odit animi, doloribus magnam odio fugiat quia magni, similique illum iste. Laboriosam nulla laborum quae perferendis.
+        </div>
+
+      </div>
+    </section>
+    <section><!--뒤-->
+      <div>BODERN <br> DESIGN</div>
+      <div>goooood</div>
+      <div class="min-text">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus ut illo sequi, placeat facere vel vitae quidem dolorem voluptate labore, sint facilis voluptatibus tempore, ipsum sit magni debitis odio optio earum alias! Consequatur consequuntur eaque adipisci placeat debitis sapiente neque laboriosam dolor explicabo soluta, officia expedita cupiditate omnis quod molestias suscipit quidem aspernatur provident, magni vero nihil ducimus enim fuga.  Consequatur consequuntur eaque adipisci placeat debitis sapiente neque laboriosam dolor explicabo soluta, officia expedita cupiditate omnis quod molestias suscipit quidem aspernatur provident, magni vero nihil ducimus enim fuga. Consequatur consequuntur eaque adipisci placeat debitis sapiente neque laboriosam dolor
+      </div>
+
+    </section>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+
+    const sectionone = root.children[0];
+    const sectiontwo = root.children[1];
+
+    const button = document.querySelector(".button");
+    console.log(button);
+
+    let status = true;
+    button.addEventListener("click", function(){
+      console.log("click");
+      if(status === true){
+        sectionone.style.display = "none"
+        status = false;
+      }
+    });
+
+    sectiontwo.addEventListener("click", function(){
+      console.log("click-b");
+      if(status === false){
+        sectionone.style.display="flex";
+      }
+      status = true;
+    });
+
+
+  </script>
+</body>
+</html>

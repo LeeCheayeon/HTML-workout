@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="menu">
+    <li class="items"data-targeting="1">items-1</li>
+    <li class="items"data-targeting="2">items-2</li>
+    <li class="items"data-targeting="3">items-3</li>
+    <li class="items"data-targeting="4">items-4</li>
+  </ul>
+
+  <div data-targeting="4"></div>
+  <script>
+    const menu = document.getElementById("menu");
+    const items = document.getElementsByClassName("items");
+    console.log(menu);
+    console.log(items);
+    // 잘 식별했는지 확인했다.
+    // 메서드마다 리턴 '데이터타입'이 다르다?
+
+    menu.addEventListener("click", (evnet)=>{
+      let getdataset = evnet.target.dataset.targeting;
+      console.log(getdataset);
+
+      for(let i=0; i<items.length; i++){
+        if(items[i].dataset.targeting === getdataset){
+          items[i].style.color='blue';
+        }
+        else{
+          items[i].style.color='red';
+
+        }
+      } 
+    //   if(getdataset === "2"){
+    //     evnet.target.style.color = "blue";
+    //   }else{
+    //     for(let i =0; i<items.length; i++){
+    //     items[i].style.color= "red";
+    //   }
+    //   }
+    });
+    
+    // menu.addEventListener("click", (evnet)=>{
+    //   // 이벤트는 자식이 아니라 부모 컨테이너에 넣어야한다.
+    //   console.log(evnet.target);
+    //   for(let i =0; i<items.length; i++){
+    //     items[i].style.color= "red";
+    //   }
+    //   evnet.target.style.color="blue"
+    // });
+
+  </script>
+</body>
+</html>

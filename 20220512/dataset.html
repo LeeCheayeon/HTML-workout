@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- //data-* : 사용자 지정 노드 -->
+  <div id="a" class="b" data-ahjin="1">1</div>
+  <div id="a" class="b" data-ahjin="2">2</div>
+  <div id="a" class="b" data-ahjin="3">3</div>
+  <div id="a" class="b" data-ahjin="2">4</div>
+  <button id="click">click</button>
+
+  <script>
+    const b =document.getElementsByClassName("b");
+    console.dir(b);
+    // console.log(b.dataset.ahjin);
+    const click = document.getElementById("click");
+
+    click.addEventListener("click", ()=>{
+      // console.log("hello");
+      for(let index=0; index<b.length; index++){
+        b[index].style.color = "red";
+
+        if(b[index].dataset.ahjin === "2"){
+          b[index].style.color = "blue";
+        }else{
+          b[index].style.opacity=0.5;
+        }
+      }
+    });
+
+    
+  </script>
+</body>
+</html>

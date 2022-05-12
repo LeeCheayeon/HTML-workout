@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div class="menu" data-menu="1">menu-1</div>
+    <div class="menu" data-menu="2">menu-2</div>
+    <div class="menu" data-menu="3">menu-3</div>
+    <div class="menu" data-menu="4">menu-4</div>
+  </div>
+
+  <script>
+    function display (targrt, display, justC, alinI, flexD){
+      targrt.style.display = display;
+      targrt.style.justifyContent = justC;
+      targrt.style.alignItems = alinI;
+      targrt.style.flexDirection = flexD;
+    }
+    const root = document.getElementById("root");
+    console.log(root);
+
+    display(root, "flex", "center", "center")
+    
+    const menus = document.getElementsByClassName("menu");
+    console.log(menus);
+
+    for(let i=0; i<menus.length; i++){
+      menus[i].style.width = "20vw";
+      menus[i].style.height = "3vh";
+      menus[i].style.backgroundColor = '#ccc';
+      menus[i].style.textAlign = 'center';
+    }
+
+
+    // console.dir(menus[0].dataset);
+
+
+    // dataset으로 사라지는 것 까지 만듦. 다시 돌아오는 버튼 제작 
+    // menus[0].addEventListener("click", ()=>{
+    //   //메뉴 1번째를 클릭하면
+    //   console.log("click");
+    //   for(let i =0; i<menus.length; i++){
+    //     //반복문 변수 i=0, i가 메뉴의 길이값보다 작다면 1씩 증가
+    //     // menus[i].style.color="red";
+    //     // 반복문 작동 확인용 >> ok
+    //     if(menus[i].dataset.menu === "1"){
+    //       // 만약 변수 메뉴[i]의 데이터셋의 메뉴가 문자열 "1"이라면?
+    //       menus[i].style.opacity=1;
+    //       // 메뉴[i]의 스타일의 오퍼시티의 값을 1로 바꿔줘
+    //     }
+    //     else{
+    //       // 만약 변수 메뉴[i]의 데이터셋의 메뉴가 문자열 "1"이 아니라면?
+    //       menus[i].style.opacity=0;
+    //       // 메뉴[i]의 스타일의 오퍼시티의 값을 0로 바꿔줘
+    //     }
+    //   }
+    // });
+    
+    // 이부분이 껏다 켰다... 누른 부분만 보였다가 다시 보이는 부분을 누르면 원래대로 메뉴가 다 보이는 것.
+    // let isStatus = true;
+    // menus[0].addEventListener("click", () => {
+    //   if(isStatus === true){
+    //     //만약 스테이터스가 트루라면?
+    //     console.log("true");
+    //     for(let i =0; i<menus.length; i++){
+    //       if(menus[i].dataset.menu === "1"){
+    //         menus[i].style.opacity=1;
+    //       }else{
+    //         menus[i].style.opacity=0;
+    //       }
+    //     }
+    //     isStatus = false;
+    //   }
+    //   else{
+    //     //만약 isstatus가 true가 아니라면?
+    //     console.log("not true");
+    //   }
+    //     for(let i =0; i<menus.length; i++){
+      //       menus[i].style.opacity=1;
+      //     }
+      //     isStatus = true;
+      // });
+
+
+      // 이벤트 타겟을 가지고 새로 만든 것
+      //위에서는 if와 else에 각각 for문을 써서 이번에는 for문안에 if문을 넣어보았다. 
+      
+      root.addEventListener("click", (event)=>{
+        let getdataset = event.target.dataset.menu
+        console.log(getdataset);
+        
+        let isStatus = true;
+        for(let i=0; i<menus.length; i++){
+          if(isStatus === true){
+            if(menus[i].dataset.menu === getdataset){
+              console.log("true");
+              // menus[i].style.opacity =1;
+              menus[i].style.backgroundColor ='#333';
+              menus[i].style.color ='#fff';
+            }
+            else {
+              // menus[i].style.opacity =0;
+              menus[i].style.backgroundColor ='#ff6666';
+            }
+            isStatus =false;
+          }
+          else{
+            //만약 isstatus의 값이 true가 아니라면
+            if(menus[i].dataset.menu === getdataset){
+              console.log("원래대로");
+            }
+            isStatus =true;
+        }
+      }
+    });
+    
+    // 위의 이벤트에서 isStatus로 스위치처럼 만들어서 딸깍거리고 싶었는데
+    // else위의 isStatus = false를 넣어야 아래 만약 아닐때 원래대로 다시 색이 돌아오도록 하고싶은데 무언가 오류가 생겼다... 2,4번의 색상이 바뀌지 않는데 이유가 뭘까?
+
+    
+  </script>
+</body>
+</html>
