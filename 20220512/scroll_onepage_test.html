@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0; margin: 0;}
+
+
+    #root {
+      width: 100vw;
+    }
+
+    #root>div {
+      width: inherit;
+      height: 100vh;
+    }
+
+    button{
+      width: 10vw;
+      height: 5vh;
+
+      position: fixed;
+      z-index: 2;
+      top: 90vh;
+      left : 85vw;
+    }
+  </style>
+</head>
+<body>
+  <button>Top</button>
+  <div id="root">
+    <div class="section">1</div>
+    <div class="section">2</div>
+    <div class="section">3</div>
+    <div class="section">4</div>
+    <div class="section">5</div>
+    <div class="section">6</div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    console.log(root);
+    const sections = document.getElementsByClassName("section");
+    console.log(sections);
+    const topBtn = document.querySelector("button");
+    console.log(topBtn);
+
+    console.dir(root.offsetHeight);
+    console.dir(sections[0].offsetHeight);
+    console.dir(window.scrollY)
+    // 식별 ----------------------------------------------------------------
+
+    // for문 ---------------------------------------------------------------
+    let colorValue = ["#ff6666", "orange", "rgb(240, 240, 51)","green", "skyblue","violet"]
+    for(let i =0; i<sections.length; i++){
+      sections[i].style.backgroundColor=colorValue[i];
+    }
+
+    // 휠을 움직이면 1>2>3>4> ...  움직이는 것
+    let heightValue = 0;
+    let isstatus = true;
+
+    window.addEventListener("scroll", function(){
+      console.log("scroll");
+      if(isstatus===true){
+        heightValue = heightValue + sections[0].offsetHeight;
+        console.log(heightValue);
+
+        window.scrollBy({
+          top:heightValue,
+          behavior:"smooth"
+        });
+      }
+    });
+    
+    // window.addEventListener("click", function(){
+    //   console.log("scroll");
+    //   // 클릭 작동 확인
+    //   if(isstatus === true){
+    //     heightValue = heightValue + sections[0].offsetHeight;
+    //     console.log(heightValue);
+        
+    //     window.scrollTo({
+    //       top:heightValue,
+    //       behavior:"smooth"
+    //     });
+    //     // 클릭하여 section[0].offsetHeight의 값만큼 내려감 확인
+        
+    //     if(heightValue > root.offsetHeight){
+    //       isstatus = false;
+    //       console.log("false")
+    //       //false 반응 확인
+    //     }
+        
+    //   }else{
+    //     // 만약 isStatus의 값이 트루가 아니라면?
+    //     window.scrollTo({
+    //       top:0,
+    //       behavior:"smooth"
+    //     });
+    //     console.log('맨위로 올라간다.');
+    //     isstatus = true;
+    //     heightValue = 0;
+    //     // 반응 확인 
+    //     console.log("true");
+    //   }
+    // });
+    // Q.마우스 휠을 위로하면 윗페이지로 올라가게 하는 건 어떻게 하는걸까?
+    // Q. 클릭이벤트나 휠 이벤트에서는 괜찮았는데 스크롤 이벤트를 넣으면 혼자서 왔다갔다를 반복한다. 어떻게 해야할까? 처음부터 다시 클릭이 아닌 스크롤이벤트로 다시 작성해야하나?? 
+
+
+    // top버튼 클릭하면 위로 올라가는 버튼 -------------------------------
+    topBtn.addEventListener("click", function(){
+      //탑버튼을 누르면
+      console.log("click");
+      //클릭 반응 확인
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+      heightValue = 0;
+      //탑버튼을 누른뒤 다시 휠을 내리면 전의 높이값이 남아잇어서 그런지 2번이 아닌 4-5번으로 이동한다. 그래서 눌렀을때 높이 값이 다시 0으로 변하게 제어.
+    });
+
+    // top 버튼이 1번째 화면에서는 안보이도록 제어
+    //Q. 제어가 안된다. 문서의 제일 첫화면부터 없어야하니까 처음에는 none이였다가
+    // 높이가 0이 보다 크면 등의 조건을 걸고서 flex나 inlineBlock을 주면 될 것 같은데.... 이상하게 잘 되지 않는다. 
+    // topBtn.style.display="none";
+    // window.addEventListener("wheel", function(){
+    //   if(heightValue === 0){
+    //     //만약 높이값이 0이라면
+    //     topBtn.style.display="inlineBlock";
+    //   }
+    //   else{
+    //     topBtn.style.display="none";
+    //   }
+    // });
+
+  </script>
+</body>
+</html>

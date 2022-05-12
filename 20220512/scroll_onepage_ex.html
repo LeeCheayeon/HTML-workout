@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    #root {
+      width: 100vw;
+    }
+
+    #root>section{
+      width: inherit;
+      height: 100vh;
+      border: 1px solid red;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+    <section>4</section>
+    <section>5</section>
+  </div>
+
+
+  <script>
+    const root = document.querySelector("#root");
+    console.log(root);
+    const sections = document.querySelectorAll("#root>section");
+    console.log(sections);
+    console.dir(root);
+    console.log("이 문서의 전체 높이값은" + root.offsetHeight);
+    
+    console.dir(sections[0]);
+    console.log("이 section[0](section 태그 하나)의 높이값은" + sections[0].offsetHeight);
+
+    console.log(window.scrollY);
+
+    // 식별 및 문서 전체의 높이값과 섹션 하나당의 높이 ------------------------
+
+    let heightValue = 0;
+    // 변수 높이값은 0;
+    let switchValue = true;
+    // 변수 스위치값은 true;
+
+    // 변수 지정 -----------------------------------------------------------
+
+    window.addEventListener("click", function(){
+      //윈도우를 클릭하면
+      // switchValue의 값이 트루일때 --------------------------------------
+      if(switchValue === true){
+        //만약 변수 스위치의 값이 트루라면
+        heightValue = heightValue + sections[0].offsetHeight;
+        //변수 높이값은(=) (이전에 지정된 값)변수 높이값의 섹션[0]의 오프셋높이 값의 합이야. (0(heightValue)+section[0].offsetHeight)
+        console.log("변수 핸들러 heighValue의 현재 값 입니다. : "+ heightValue);
+        
+        window.scrollTo({
+          top: heightValue,
+          //top은 높이값
+          behavior: "smooth"
+          // 행동은 부드럽게
+        });
+        
+        if( heightValue >= root.offsetHeight){
+          //만약 변수 높이값의 크기가 변수 루트의 오프셋높이보다 크거나 같으면
+          switchValue = false;
+          // 스위치값은 false로 바꿔줘
+        }
+        
+        // switchValue의 값이 트루가 아닐 때 -------------------------------
+      }else{
+        // 만약 스위치값이 트루가 아니라면
+        heightValue=0;
+        //변수 높이값은 0으로 바꿔줘
+        window.scrollTo({
+          top:0,
+          // top의 높이는 0이 되고
+          behavior:"smooth"
+        });
+        switchValue=true;
+        // 변수 스위치의 값은 true로 바꿔줘.
+      }
+    });
+
+    
+
+  </script>
+</body>
+</html>
