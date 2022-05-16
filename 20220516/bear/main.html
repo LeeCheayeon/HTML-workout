@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <div id ="emptybox" ></div><!--상단 빈박스-->
+    <nav>
+      <ul id= "menu">
+        <li>얼굴</li>
+        <li>눈</li>
+        <li>코</li>
+        <li>입</li>
+        <li>상의</li>
+        <li>하의</li>
+        <li>손</li>
+        <li>발</li>
+        <li>장식1</li>
+        <li>장식2</li>
+        <li>배경</li>
+      </ul> <!--메뉴박스-->
+      <div id = "submenu"> <!-- 그리드영역-->
+        <div></div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id = "button">
+      <div></div><!--뒤로가기-->
+      <div></div><!--앞으로-->
+    </section>
+    <section><!--이미지-->
+      <div class="head"><img src="images/red-02.svg"></img></div>
+      <div><img src="images/base-01.svg"></img></div>
+    </section>
+  </main>
+</body>
+
+<script>
+  const menu = document.querySelector("#menu");
+  console.dir(menu.style);
+  // 메뉴 가로 스클롤 없애볼까?? 다른 인터렉션 방법 생각 
+</script>
+</html>
