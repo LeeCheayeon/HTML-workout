@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+
+    #root{
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #root>div:nth-child(1){
+      width: 80vw;
+      height: 60vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .one{
+      width: 6vw;
+      height: 6vw;
+      background-color: #c4c4c4;
+      border-radius: 5vw;
+      margin: 1vw;
+      text-align: center;
+    }
+
+    #button {
+      width: 15vw;
+      height: 4vh;
+
+      background-color: #c4c4c4;
+
+      text-align: center;
+      padding-top: 1vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div class="one" data-one="1">1</div>
+      <div class="one" data-one="2">2</div>
+      <div class="one" data-one="3">3</div>
+      <div class="one" data-one="4">4</div>
+      <div class="one" data-one="5">5</div>
+      <div class="one" data-one="6">6</div>
+      <div class="one" data-one="7">7</div>
+      <div class="one" data-one="8">8</div>
+      <div class="one" data-one="9">9</div>
+    </div>
+    <div id="button">click</div>
+  </div>
+
+  <script>
+    const one = document.getElementsByClassName("one");
+    console.log(one);
+    console.log(one[0].dataset.one);
+
+    const button =document.querySelector("#button");
+    console.log(button);
+
+    function move(marginT, marginB, transformV){
+      marginTop = marginT;
+      marginBottom = marginB;
+      transform = transformV;
+    }
+
+    // 애니메이션 추가
+    const moveUp = {
+      // function move ('1vw', '200px',"rotate(0deg)" )
+      marginBottom: "0px", transform: "rotate(0deg)" ,
+      marginBottom: "200px", transform: "rotate(360deg)" 
+    }
+    const RemoveUp = {
+      marginBottom: "1vw", transform: "rotate(360deg)" 
+    }
+
+    const moveDown = {
+      marginTop: "0px", transform: "rotate(0deg)" ,
+      marginTop: "200px", transform: "rotate(360deg)"
+    }
+    const RemoveDown = {
+      marginTop: "1vw", transform: "rotate(360deg)" 
+    }
+
+    const moveTime = {
+      duration: 2000,
+      fill: "forwards"
+    }
+
+    // 버튼을 누를때마다 앞에서부터 하나씩 반응 
+    let count=-1;
+    button.addEventListener("click",function(){
+      console.log("click");
+      console.log(count);
+      count++;
+      //클릭할때마다 1씩 올려줘...
+      for(let i =0; i<one.length; i++){
+        console.log(i);
+        if(count === i){
+          //count === i 같다면
+          console.log("같습니다.")
+          one[i].style.backgroundColor = "#ff6666";
+          if(i%2===0){
+            console.log("짝수");
+            one[i].animate(moveUp, moveTime);
+            }else{
+              console.log("홀수")
+              one[i].animate(moveDown, moveTime);
+          }
+        }else{
+          //count !== i 같지않다면
+          console.log("다릅니다.")
+          one[i].style.backgroundColor = "#333";
+          
+        } if (count > one.length-1){
+          //만약 count의 값이 one.length-1값보다 크다면... 
+          for(let i =0; i<one.length; i++){
+            if(i%2===0){
+              console.log("짝수");
+              one[i].animate(RemoveUp,moveTime);
+            }else{
+              console.log("홀수")
+              one[i].animate(RemoveDown,moveTime);
+                }
+              }
+              console.log("원래대로");
+          count=-1;
+        }
+      }
+    });
+
+  </script>
+</body>
+</html>
