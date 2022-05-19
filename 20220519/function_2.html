@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <span id="test">this is span</span>
+
+  <script>
+    const test = document.getElementById('test');
+    console.dir(test);
+
+    function tagNameMaker(element){
+      if(element.tagName !== "" && element.tagName !== null){
+        //엘리먼트의 태그네임이 비어있고 null이 아니라면
+        return element.tagName.toLowerCase();
+        // toLowerCase() 소문자로 만들어준다.
+      }
+    };
+
+    console.log(tagNameMaker(test));
+
+    let testV = tagNameMaker(test);
+    console.log(testV.length);
+
+    const makeSpan = document.createElement(tagNameMaker(test));
+    // = const makeSpan = document.createElement('span');
+  </script>
+</body>
+</html>

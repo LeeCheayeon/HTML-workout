@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="root"> click</button>
+  <h1 id="h1">test</h1>
+  <h2 id="h2">이것은 h2 입니다.</h2>
+  <script>
+    const root = window.document.querySelector("#root");
+    const h1 = document.getElementById("h1");
+    const h2 = document.getElementById("h2");
+    // root.addEventListener("click", function(){
+      // console.log(this);
+      // this.style.color='red';
+      // 이것(this)을 바꿀거야..  유연하다. 
+      // 해당 지역안에서만 this가 root로 지칭된다. 밖에서는 안된다.
+
+    //   root.style.color='red';
+    // });
+
+    function thisEvent (element, color){
+      element.addEventListener ("click", function(){
+        this.style.color=color;
+      });
+
+      element.addEventListener("mouseover", function(){
+        this.style.backgroundColor = color;
+      });
+    };
+    // this를 이용해서 클릭과 마우스 오버를 동시에 제어할수있다.
+    // 타겟팅을 동적으로 우리가 정할수있다.
+
+    thisEvent(root, 'red');
+    thisEvent(h1, "blue");
+    thisEvent(h2, "green");
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="root">click</button>
+
+  <script>
+    const button = document.getElementById("root");
+    button.addEventListener("click", () => {
+      console.log(this);
+    });
+    // this --> button
+    
+    button.addEventListener("click",function(){
+      console.log(this);
+    });
+    // this --> window (상위 스코프)
+    
+    // function testOne(a){
+    //   function testTwo(){
+    //     console.log(a);
+    //   }
+    //   testTwo();
+    // }
+    function testOne(a){
+      const testTwo = () => {
+        console.log(this);
+      }
+      testTwo();
+    };
+    testOne(1);
+  </script>
+</body>
+</html>
