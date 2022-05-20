@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0; margin: 0;}
+
+    /* nav>ul>li:nth-child(1){ order: 1;}
+    nav>ul>li:nth-child(2){ order: 2;}
+    nav>ul>li:nth-child(3){ order: 3;}
+    nav>ul>li:nth-child(4){ order: 4;}
+    nav>ul>li:nth-child(5){ order: 5;} */
+  </style>
+</head>
+<body>
+  <div id="root">
+    <nav>
+      <div id="button-L"></div>
+      <ul>
+        <li class="slid" data-slid="1">1</li>
+        <li class="slid" data-slid="2">2</li>
+        <li class="slid" data-slid="3">3</li>
+        <li class="slid" data-slid="4">4</li>
+        <li class="slid" data-slid="5">5</li>
+      </ul>
+      <div id="button-R"></div>
+    </nav>
+  </div>
+
+  <script>
+    //함수
+    function box(target, width, height, backgrounColor){
+      target.style.width=width;
+      target.style.height=height;
+      target.style.backgroundColor=backgrounColor;
+    }
+
+    function display(target, display, jc, aI, fD){
+      target.style.display=display;
+      target.style.justifyContent=jc;
+      target.style.alignItems=aI;
+      target.style.flexDirection=fD;
+    }
+
+    //body style
+    display(document.body, "flex", "center", "center");
+    
+    //root style
+    const root = document.getElementById("root");
+    display(root, "flex", "center", "center");
+    box (root, "100vw", "100vh");
+
+    //nav style
+    const nav = root.children[0];
+    console.log(nav);
+    display(nav, "flex", "center", "center");
+    box (nav, "90vw", "10vh", "#c4c4c4");
+
+    //button style
+    const buttonL = document.querySelector("#button-L");
+    box (buttonL, "6vw", "6vw", "#333");
+    const buttonR = document.querySelector("#button-R");
+    box (buttonR, "6vw", "6vw", "#333");
+
+    //ul style
+    nav.children[1].style.listStyleType= "none";
+    box (nav.children[1], "80vw", "5vh");
+    display(nav.children[1], "flex", "center", "center");
+    
+    // li style
+    const slids = document.getElementsByClassName("slid");
+    console.dir(slids);
+    console.log(slids[0].dataset.slid);
+
+    let arr = [];
+    for(let i =0; i<slids.length; i++){
+      slids[i].style.margin='5vw';
+      slids[i].style.fontSize='150%';
+      
+      let slidList =(slids[i].dataset.slid);
+      console.log(slidList);
+    }
+    
+
+    
+    // buttonL.addEventListener("click", function(){
+    //   console.log("왼쪽 클릭");
+    //   console.log(slids[0].style.order);
+    //   if(slids[0].style.order < 6){
+      //     console.log("6보다 작다");
+      //     slids[0].style.order = 6;
+      //     slids[4].style.order = 5;
+      
+      //   }else{
+        //     console.log("6보다 크거나 같다");
+        //       slids[0].style.order = 1;
+        //       slids[4].style.order = 6;
+        //   }
+        // });
+        
+        // buttonR.addEventListener("click", function(){
+    //   console.log("오른쪽 클릭");
+    //   if(slids[4].style.order < 6){
+      //     console.log("4-6보다 작다");
+      //     slids[0].style.order = 1;
+      //     slids[4].style.order = 6;
+      //   }else{
+        //     console.log("4-6보다 크거나 같다");
+        //     slids[0].style.order = 1;
+        //     slids[4].style.order = 0;
+        //   }
+        // });
+
+        let temp;
+        
+        // ** 인터렉션 ** 
+        // 1. 버튼을 누르면 반응 
+        // 2. 왼쪽버튼을 누르면 1번이 맨뒤로
+        // 3. 오른쪽버튼을 누르면 5번이 맨앞으로
+    buttonL.addEventListener("click",function(){
+      console.log("left");
+      temp = slids[0];
+      console.log(temp);
+      slids.shift();
+      console.log(slids)
+      slids.push(temp);
+    });
+    </script>
+</body>
+</html>
