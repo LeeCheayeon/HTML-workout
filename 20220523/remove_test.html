@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>삭제되는 곳 입니다.</div>
+
+  <script>
+    const div = document.querySelector("div");
+    console.log(div);
+
+    //아이디생성
+    function createId() {
+      const newelement =document.createElement("div");
+      newelement.id = 'remove';
+
+      div.appendChild(newelement);
+    }
+
+    // 삭제하는
+    function Deletediv() {
+      const rediv = document.getElementById("remove");
+      rediv.remove();
+    }
+
+    issat = true;
+    div.addEventListener("click", function () {
+      if (issat === true) {
+        console.log("true");
+        createId();
+
+        issat = false;
+      } else {
+        console.log("false")
+        Deletediv();
+        issat = false;
+      }
+    });
+
+    // 여기서는 작동이 잘 됨. >> test에서는 왜 그럴까?? 
+  </script>
+</body>
+
+</html>
