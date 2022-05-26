@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+      /* background-color: #333; */
+      color:#ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <h1>111</h1>
+    <h2>222</h2>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+
+    console.dir(root);
+    let totalHeight = root.offsetHeight;
+
+    // let Heightvan = Math.round((totalHeight*50)/100);
+    // console.log(Heightvan);
+
+    
+    let Heightvan = Math.round((255*100)/100);
+    console.log(Heightvan);
+
+    let van = Math.round((root.offsetHeight*27)/100);
+    console.log(van);
+    
+    root.addEventListener("mousemove", (event) => {
+      console.log(event.offsetX);
+      console.log(event.offsetY);
+      // if(event.offsetY === 0){
+        // 만약 이벤트 오프셋의 값이 00과 같다면 
+        let bgColorValue = event.offsetY;
+        let bgColor = `rgb(${bgColorValue}, ${bgColorValue}, ${bgColorValue})`;
+        root.style.backgroundColor = bgColor;
+      // }
+      // else if (event.offsetY >0){
+      //   let  = Math.round(event.offsetY * (1+3/100));
+      // }
+      // 만약 offsetY의 값이 점점 낮아진다면 
+    });
+
+    // ========================================================================
+
+    // function percentTwo (total, percent){
+    //   let result = (total*percent)/100;
+    //   // console.log()
+    //   return result;
+    // }
+
+    // console.log(255/30);
+    // 전체값에서 반올림으로 정수값 구하기 
+    // let serValue = Math.round((255*35)/100);
+    // console.log(serValue);
+
+    // root.addEventListener("mousemove", (event) => {
+      // console.log(event.offsetX);
+      //왼쪽이 0; 오른쪽 끝은 최대값
+      // console.log(event.offsetY);
+      // 위쪽이 0; 아래쪽 끝은 최대값 
+
+      // root.children[0].textContent = event.offsetX;
+      // root.children[1].textContent = event.offsetY;
+
+    // });
+  </script>
+</body>
+</html>
