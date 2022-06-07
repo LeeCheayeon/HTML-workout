@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0; margin: 0;}
+
+    header{
+      width: 100vw;
+      height: 10vh;
+      background-color: #333;
+
+      display: flex;
+      justify-content:space-around;
+      align-items: center;
+    }
+
+    header>div:nth-child(1){
+      width: 20vw;
+      height: 7vh;
+      background-color: #fff;
+    }
+
+    header>div:nth-child(2){
+      width: 50vw;
+      height: 20vh;
+      background-color: #fff;
+    }
+
+      header>div:nth-child(3){
+      width: 10vw;
+      height: 10vw;
+      background-color: #333;
+      color: #fff;
+
+      position: fixed;
+      top: 70vh;
+      left: 95vw;
+      }
+
+    main{
+      width: 100vw;
+      height: 75vh;
+      /* background-color: aquamarine; */
+    }
+
+    main>section:nth-child(1){
+      width: inherit;
+      height: 30vh;
+      background-color: #c4c4c4;
+      
+      display: flex;
+      justify-content:space-around;
+      align-items: center;
+      
+    }
+    
+    .button {
+      width: 10vw;
+      height: 10vw;
+      background-color: #fff;
+    }
+
+    main>section:nth-child(1)>div:nth-child(2) {
+      /* border: 1px solid red; */
+      width: 20vw;
+      height: 3vh;
+      margin-top: 25vh;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .box1{
+      width: 3vw;
+      height: 3vw;
+      border-radius: 5vw;
+      background-color: #fff;
+    }
+
+    main>section:nth-child(2){
+      /* border: 1px solid red; */
+      width: inherit;
+      height: 45vh;
+    }
+    #two {
+      display: flex;
+      justify-content: space-around;
+      align-items:center;
+    }
+
+    footer {
+      width: 100vw;
+      height: 15vh;
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div></div> <!--logo-->
+    <div></div> <!--ul/li (menu)box-->
+    <div>TOP</div> <!--top button-->
+  </header>
+  <main>
+    <section>
+      <div class="button"></div>
+      <div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+      </div>
+      <div class="button"></div>
+    </section>
+    <section id="two"></section>
+  </main>
+  <footer></footer>
+
+  <script>
+
+    function box (target, width, height, backgroundColor){
+      target.style.width = width;
+      target.style.height = height;
+      target.style.backgroundColor = backgroundColor;
+    }
+    const sectionTwo = document.getElementById("two")
+    console.log(sectionTwo);
+
+    let divArr = [1,2,3];
+
+    for(let i=0; i<divArr.length; i++){
+      const div = document.createElement("div");
+      //======================================
+      const testbox = document.createElement("div");
+      div.appendChild(testbox);
+      box(div, "25vw", "30vh" , "#c4c4c4");
+      box(testbox, "25vw", "15vh" , "#333");
+      const h1 = document.createElement("h1");
+      const p = document.createElement("p");
+      h1.textContent = "Lorem";
+      p.textContent = "Lorem";
+      testbox.appendChild(h1);
+      testbox.appendChild(p);
+      sectionTwo.appendChild(div);
+    }
+  </script>
+</body>
+</html>
