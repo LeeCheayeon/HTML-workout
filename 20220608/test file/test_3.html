@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <style>
+    *{padding: 0; margin: 0;}
+    #submenu>article{
+      /* width: 100vw;
+      height: 53vh; */
+
+      border: 1px solid red;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5,1fr);
+
+    }
+    #submenu>article>div{
+      display: flex;
+    }
+  </style> -->
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    
+    function box(target,width,height,backgroundColor){
+      target.style.width = width;
+      target.style.height = height;
+      target.style.backgroundColor = backgroundColor;
+    }
+
+    function newtag (tagname, attributename, dataName, parentTag){
+      tagname.setAttribute(attributename, dataName)
+      parentTag.appendChild(tagname);
+    }
+    // --------------------------------------------
+
+    const root = document.getElementById("root");
+    const menus = document.querySelectorAll('#menu>li');
+
+    const ul = document.createElement("ul");
+    // ul.setAttribute("id", "menu")
+    // root.appendChild(ul);
+    newtag(ul,"id", "menu", root);
+    // --------------------------------------------
+    const menuArr = ["기본", "눈", "코입", "눈썹", "뒷머리", "앞머리" , "귀", "의상","장식1","장식2","뒷장식"];
+    
+    for(let i=0; i<menuArr.length; i++){
+      const li = document.createElement("li");
+      li.textContent=menuArr[i];
+      newtag(li,"data-menus", menuArr[i], ul);
+      // li.setAttribute("data-menus", menuArr[i]);
+      // ul.appendChild(li);
+    }
+    // --------------------------------------------
+    
+    const submenu = document.createElement('section');
+    // submenu.setAttribute("id", "submenu");
+    // root.appendChild(submenu);
+    newtag(submenu,"id", "submenu", root);
+    
+    
+    // --------------------------------------------
+    
+    const menu = document.getElementById("menu");
+    console.log(menu);
+    
+    for(let i =0; i<menuArr.length; i++){
+      const clickContainer = document.createElement('article');
+      newtag(clickContainer,"data-menus", menuArr[i], submenu);
+      clickContainer.textContent=menuArr[i];
+      clickContainer.style.display="none";
+      
+      // clickContainer.setAttribute("data-menus", menuArr[i]);
+      // submenu.appendChild(clickContainer);
+      // console.log(clickContainer);
+    }
+    // ---------------------------------------------
+
+    const submenus = submenu.children;
+    console.log(submenu);
+
+    //-------------------------------------------------
+
+    const subData = {
+      "기본": ["base_기본.svg"],
+      "눈": ["base_눈_1.svg","base_눈_2.svg"],
+      "코입": ["base_코입.svg","이미지-2","이미지-3"],
+      "눈썹": ["base_눈썹_1.svg","base_눈썹_2.svg"], 
+      "뒷머리": ["base_뒷머리.svg","이미지-2"],
+      "앞머리": ["base_앞머리.svg","이미지-2","이미지-3"],
+      "귀": ["base_귀.svg","이미지-2"],
+      "의상": ["base_의상.svg","이미지-2","이미지-3"],
+      "장식1": ["base_장식1.svg","이미지-2"],
+      "장식2": ["base_장식2.svg","이미지-2","이미지-3"],
+      "뒷장식": ["base_뒷장식.svg","이미지-2"]
+    }
+
+    const subDataArr = Object.values(subData);
+    console.log(subDataArr.length);
+
+    //-------------------------------------------------
+    function Deletediv(){
+      const deletediv = document.getElementById("delete");
+      // 변수 removediv는 문서의 아이디 중 "delete"를 가진 아이
+      deletediv.remove();
+    }
+
+    function Deleteimg(){
+      const deletediv = document.getElementById("deleteimg");
+      // 변수 removediv는 문서의 아이디 중 "deleteimg"를 가진 아이
+      deletediv.remove();
+    }
+
+    function deleteEle(idName){
+      const deleteEle = document.getElementById(idName);
+      deleteEle.remove();
+    }
+    //-------------------------------------------------
+    // newdiv 전용
+    function createnewdiv(parentDiv, innerHTMLValue, classIdDataName, Name){
+      const newdiv= document.createElement("div");
+      newdiv.innerHTML = innerHTMLValue;
+      newdiv.setAttribute(classIdDataName, Name)
+      newdiv.setAttribute("data-menus", event.target.dataset.menus )
+      parentDiv.appendChild(newdiv);
+      newdiv.style.display="flex";
+      if(newdiv.innerHTML === "undefined"){
+        console.log("값이 없습니다.");
+        newdiv.style.display="none";
+      }else {
+        console.log("값이 있습니다.")
+        box( newdiv,'10vw','10vw', '#333');
+      }
+    }
+    //-------------------------------------------------
+    
+    let isstatus =true;
+    menu.addEventListener("click", function(event){
+      console.log("click")
+      for(let i=0; i<submenus.length; i++){
+        if(submenus[i].dataset.menus === event.target.dataset.menus){
+          // console.log("같다")
+          submenus[i].style.display="block";
+          if(isstatus === true){
+            console.log(isstatus);
+            for(let j=0; j<subDataArr.length; j++){
+              createnewdiv(submenu.children[i], subData[event.target.dataset.menus][j], 'id', "delete");
+              
+              //newdiv 생성 및 undefined display = none이 들어간 함수 
+          }
+          isstatus = false;
+          console.log(isstatus);
+        } 
+        else {
+            console.log(isstatus);
+            // 만약 isstatus !== true가 아니라면 
+            const submenuschild = document.querySelectorAll("#submenu>article>div");
+            // console.log(submenuschild);
+            for(let i=0; i<submenuschild.length; i++){
+              Deletediv(submenuschild);
+            }
+            // 기존에 있던 newdiv 삭제
+            // 다시 newdiv 생성
+            for(let j=0; j<subDataArr.length; j++){
+              createnewdiv(submenu.children[i], subData[event.target.dataset.menus][j], 'id', "delete");
+              //newdiv 생성 및 undefined display = none이 들어간 함수 
+          }
+            // isstatus = true;
+            // true로 돌아가면 3번 클릭시 중복생성이 되므로 돌아가지 않는다. 
+          }
+        }else{
+          // console.log("다르다")
+          submenus[i].style.display="none";
+        }
+      }
+    });
+
+    // ====================================================
+    // main 생성
+    const main = document.createElement("section");
+    main.setAttribute("id" , "main");
+    root.appendChild(main);
+    
+    // ====================================================
+    let zindexArr =[2,7,8,9,1,4,5,3,6,10,0];
+    console.log(zindexArr);
+    // ====================================================
+    // main>article 생성
+    for(let i =0; i<menuArr.length; i++){
+      const imageContainer = document.createElement("article");
+      imageContainer.setAttribute("data-menus" , menuArr[i]);
+      imageContainer.style.position = "absolute";
+      imageContainer.style.zIndex = zindexArr[i];
+      box (imageContainer, "500px", "500px");
+      main.appendChild(imageContainer);
+      
+      const imagediv = document.createElement("img");
+      imageContainer.appendChild(imagediv);
+      // box (imagediv, "50px", "50px");
+      imagediv.setAttribute("id", "deleteimg");
+      
+      // const imagediv = document.createElement("div");
+      imagediv.setAttribute("data-menus", menuArr[i]);
+      imageContainer.appendChild(imagediv);
+    }
+
+    // ====================================================
+    // submenu click event
+
+    submenu.addEventListener("click", function(event){
+      // 서브메뉴에 이벤트를 추가 (클릭할때)
+      console.log("click")
+        for(let i=0; i<submenus.length; i++){
+          // 변수 i=0; i가 서브메뉴들의 길이값보다 작다면 i++
+          for(let j=0; j<1; j++){
+            // console.dir(main.children[i].dataset.menus);
+            // console.dir(event.target.dataset.menus);
+            // console.dir(main.children[i].children[j].dataset.menus);
+
+            if(main.children[i].dataset.menus === event.target.dataset.menus && event.target.dataset.menus === main.children[i].children[j].dataset.menus){
+              // 만약 메인의자식들[i]번째의 데이터셋의 메뉴와 이벤트타겟의 데이터셋의 메뉴와 main.children[i].children의 데이터 셋의 이름이 같으면
+              console.log("같다");
+              // main.children[i].children[j].style.backgroundColor = "red";
+                const imgText = event.target.innerHTML;
+                main.children[i].children[j].src = `./images/${imgText}`;
+            }
+          }
+      }
+    });
+  </script>
+</body>
+</html>
