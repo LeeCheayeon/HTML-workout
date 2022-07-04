@@ -1,0 +1,173 @@
+.upButBox {
+  width: 100vw;
+  height: 10vh;
+  background-color: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.upButBox > div {
+  width: 3vw;
+  height: 3vw;
+  background-color: none;
+  margin: 1.5vw;
+}
+
+.upButBox > div:nth-child(2) {
+  margin-right: 80vw;
+}
+
+#Google, #Github {
+  border: 1px solid #333;
+  border-radius: 2vw;
+}
+
+#popUp {
+  width: 100vw;
+  height: 90vh;
+  background-color: #ff6666;
+  position: absolute;
+}
+
+#popUp > div:nth-child(2) {
+  border: 1px solid green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#LB {
+  width: 1.5vw;
+  height: 1.5vw;
+  border-top: 4px solid #333;
+  border-right: 4px solid #333;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+
+#RB {
+  width: 1.5vw;
+  height: 1.5vw;
+  border-top: 4px solid #333;
+  border-right: 4px solid #333;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.esc {
+  margin-left: 90vw;
+  margin-bottom: 3vh;
+  display: inline-block;
+  width: 3vw;
+  height: 3vw;
+}
+
+.esc:after, .esc:before {
+  margin-left: 1.5vw;
+  position: absolute;
+  content: ' ';
+  height: 2.5vw;
+  width: 3px;
+  background-color: #333;
+}
+
+.esc:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.esc:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#downBox {
+  width: 100vw;
+  height: 90vh;
+  background-color: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#downBox > div:nth-child(1) {
+  width: 40vw;
+  height: 80vh;
+  background-color: #d4d4d4;
+}
+
+#downBox > div:nth-child(2) {
+  margin-left: 1vw;
+  width: 50vw;
+  height: 80vh;
+  background-color: #d4d4d4;
+}
+
+#downBox > div:nth-child(2) > div:nth-child(1) {
+  width: 50vw;
+  height: 30vh;
+  background-color: none;
+}
+
+#downBox > div:nth-child(2) > div:nth-child(2) {
+  width: 50vw;
+  height: 7vh;
+  background-color: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#downBox > div:nth-child(2) > div:nth-child(2) > div {
+  width: 8vw;
+  height: 4vh;
+  background-color: #333;
+  margin: 2vw;
+}
+
+#downBox > div:nth-child(2) > div:nth-child(3) {
+  width: 50vw;
+  height: 43vh;
+  background-color: none;
+}
+/*# sourceMappingURL=probase.css.map */
