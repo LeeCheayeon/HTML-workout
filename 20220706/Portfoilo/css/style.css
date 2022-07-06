@@ -1,0 +1,466 @@
+.upButBox {
+  width: 100vw;
+  height: 10vh;
+  background-color: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.upButBox > div {
+  width: 3vw;
+  height: 3vw;
+  background-color: none;
+  margin: 2vw;
+  margin-top: 3vw;
+}
+
+.upButBox > div:nth-child(2) {
+  margin-right: 78vw;
+}
+
+#Google, #Github {
+  border: 1px solid #333;
+  border-radius: 2vw;
+}
+
+#popUp {
+  width: 100vw;
+  height: 90vh;
+  background-color: #ff6666;
+  position: absolute;
+}
+
+#popUp > div:nth-child(2) {
+  border: 1px solid green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#LB {
+  width: 1.5vw;
+  height: 1.5vw;
+  border-top: 4px solid #333;
+  border-right: 4px solid #333;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+
+#RB {
+  width: 1.5vw;
+  height: 1.5vw;
+  border-top: 4px solid #333;
+  border-right: 4px solid #333;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.esc {
+  margin-left: 90vw;
+  margin-bottom: 3vh;
+  display: inline-block;
+  width: 3vw;
+  height: 3vw;
+}
+
+.esc:after, .esc:before {
+  margin-left: 1.5vw;
+  position: absolute;
+  content: ' ';
+  height: 2.5vw;
+  width: 3px;
+  background-color: #333;
+}
+
+.esc:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.esc:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#downBox {
+  width: 100vw;
+  height: 90vh;
+  background-color: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#downBox > div:nth-child(1) {
+  width: 40vw;
+  height: 80vh;
+  background-color: #d4d4d4;
+}
+
+#downBox > div:nth-child(2) {
+  margin-left: 1vw;
+  width: 50vw;
+  height: 80vh;
+  background-color: #d4d4d4;
+}
+
+#downBox > div:nth-child(2) > div:nth-child(1) {
+  width: 50vw;
+  height: 30vh;
+  background-color: none;
+}
+
+#downBox > div:nth-child(2) > div:nth-child(2) {
+  width: 50vw;
+  height: 7vh;
+  background-color: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#downBox > div:nth-child(2) > div:nth-child(2) > div {
+  width: 8vw;
+  height: 4vh;
+  background-color: #333;
+  margin: 2vw;
+}
+
+#downBox > div:nth-child(2) > div:nth-child(3) {
+  width: 50vw;
+  height: 43vh;
+  background-color: none;
+}
+
+#divbox {
+  overflow: hidden;
+}
+
+#none {
+  width: 100vw;
+  height: 100vh;
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-size: cover;
+}
+
+.items {
+  background-color: #333;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  will-change: transform;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid teal;
+}
+
+.items.active {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+@-webkit-keyframes fadeup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+}
+
+@keyframes fadeup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+}
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 100vh;
+}
+
+.item {
+  -webkit-animation: fadeup 1.5s;
+          animation: fadeup 1.5s;
+  width: 18vw;
+  height: 55vh;
+  position: relative;
+  margin: 1vw;
+  margin-top: 35vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.item:hover {
+  margin-bottom: 10vh;
+}
+
+.itemSub {
+  -webkit-animation: fadeup 1.5s;
+          animation: fadeup 1.5s;
+  width: 18vw;
+  height: 55vh;
+  position: relative;
+  margin: 1vw;
+}
+
+.inline {
+  width: 16vw;
+  height: 50vh;
+  border: 2px solid #fff;
+}
+
+#Title {
+  margin: 1vw;
+  width: 14vw;
+  color: #fff;
+  font-size: 160%;
+}
+
+#subT {
+  margin: 1vw;
+  width: 14vw;
+  color: #fff;
+  font-size: 300%;
+}
+
+#Six {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+#Esc {
+  margin: 1.5vw;
+  margin-left: 91.8vw;
+}
+
+.conImgL {
+  width: 4vw;
+  height: 4vw;
+  background-color: #c4c4c4;
+  position: fixed;
+  top: 20vh;
+  left: 17vw;
+}
+
+.conImgR {
+  width: 4vw;
+  height: 4vw;
+  background-color: #c4c4c4;
+  position: fixed;
+  top: 20vh;
+  left: 79vw;
+}
+
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  height: 47vh;
+  background-color: #fff;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+#container > p {
+  font-size: 4rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 5vh;
+  margin-bottom: 12vh;
+}
+
+#container p span.typed-text {
+  font-weight: normal;
+  color: #dd7732;
+}
+
+#container p span.cursor {
+  display: inline;
+  vertical-align: middle;
+  border-right: .05em solid #333;
+  -webkit-animation: blink-caret 0.7s infinite;
+          animation: blink-caret 0.7s infinite;
+}
+
+#container p span.cursor .typing {
+  -webkit-animation: blink-caret 1s infinite;
+          animation: blink-caret 1s infinite;
+}
+
+@-webkit-keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+}
+
+#else {
+  width: 100vw;
+  height: 30vh;
+  background-color: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 14vh;
+  text-align: end;
+  font-size: 120%;
+}
+
+#else > div {
+  width: 5vw;
+  height: 5vw;
+  background-color: #c4c4c4;
+  margin-right: 6vw;
+}
+
+#else > p {
+  margin-right: 3vw;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+/*# sourceMappingURL=style.css.map */

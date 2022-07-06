@@ -1,0 +1,81 @@
+@import "./mixin.scss";
+
+#Six{
+  @include flex(center, center, column);
+  overflow: hidden;
+}
+
+#Esc{
+  margin: 1.5vw;
+  margin-left: 91.8vw;
+  // margin-bottom: 1vw;
+}
+
+.conImgL{
+  @include boxstyle(4vw,4vw,#c4c4c4);
+  position: fixed;
+  top:20vh;
+  left: 17vw;
+}
+.conImgR{
+  @include boxstyle(4vw,4vw,#c4c4c4);
+  position: fixed;
+  top:20vh;
+  left: 79vw;
+}
+
+#container{
+  @include flex(center, center, column);
+  @include boxstyle(100vw, 47vh, #fff);
+  // border: 1px solid red;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  > p {
+    font-size: 4rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 5vh;
+    margin-bottom: 12vh;
+  }
+}
+
+#container p span.typed-text{
+  font-weight: normal;
+  color: #dd7732;
+}
+
+#container p span.cursor{
+  display: inline;
+  vertical-align: middle;
+  border-right: .05em solid #333;
+  animation: blink-caret 0.7s infinite;
+}
+
+#container p span.cursor .typing{
+  animation: blink-caret 1s infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #333 }
+}
+
+#else{
+  @include boxstyle(100vw, 30vh, none);
+  @include flex(end,center, row);
+  // border: 1px solid red;
+  // margin-top: 10vh;
+  margin-bottom: 14vh;
+  text-align:end;
+  font-size: 120%;
+  >div{
+    @include boxstyle(5vw,5vw,#c4c4c4);
+    margin-right: 6vw;
+  }
+  >p{
+    margin-right: 3vw;
+  }
+}

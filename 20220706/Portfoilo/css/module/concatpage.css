@@ -1,0 +1,141 @@
+#Six {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+#Esc {
+  margin: 1.5vw;
+  margin-left: 91.8vw;
+}
+
+.conImgL {
+  width: 4vw;
+  height: 4vw;
+  background-color: #c4c4c4;
+  position: fixed;
+  top: 20vh;
+  left: 17vw;
+}
+
+.conImgR {
+  width: 4vw;
+  height: 4vw;
+  background-color: #c4c4c4;
+  position: fixed;
+  top: 20vh;
+  left: 79vw;
+}
+
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  height: 47vh;
+  background-color: #fff;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+#container > p {
+  font-size: 4rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 5vh;
+  margin-bottom: 12vh;
+}
+
+#container p span.typed-text {
+  font-weight: normal;
+  color: #dd7732;
+}
+
+#container p span.cursor {
+  display: inline;
+  vertical-align: middle;
+  border-right: .05em solid #333;
+  -webkit-animation: blink-caret 0.7s infinite;
+          animation: blink-caret 0.7s infinite;
+}
+
+#container p span.cursor .typing {
+  -webkit-animation: blink-caret 1s infinite;
+          animation: blink-caret 1s infinite;
+}
+
+@-webkit-keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+}
+
+#else {
+  width: 100vw;
+  height: 30vh;
+  background-color: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 14vh;
+  text-align: end;
+  font-size: 120%;
+}
+
+#else > div {
+  width: 5vw;
+  height: 5vw;
+  background-color: #c4c4c4;
+  margin-right: 6vw;
+}
+
+#else > p {
+  margin-right: 3vw;
+}
+/*# sourceMappingURL=concatpage.css.map */

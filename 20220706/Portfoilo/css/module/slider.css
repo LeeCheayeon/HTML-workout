@@ -1,0 +1,135 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-size: cover;
+}
+
+.items {
+  background-color: #333;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  will-change: transform;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid teal;
+}
+
+.items.active {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+@-webkit-keyframes fadeup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+}
+
+@keyframes fadeup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+}
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 100vh;
+}
+
+.item {
+  -webkit-animation: fadeup 1.5s;
+          animation: fadeup 1.5s;
+  width: 18vw;
+  height: 55vh;
+  position: relative;
+  margin: 1vw;
+  margin-top: 35vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.item:hover {
+  margin-bottom: 10vh;
+}
+
+.itemSub {
+  -webkit-animation: fadeup 1.5s;
+          animation: fadeup 1.5s;
+  width: 18vw;
+  height: 55vh;
+  position: relative;
+  margin: 1vw;
+}
+
+.inline {
+  width: 16vw;
+  height: 50vh;
+  border: 2px solid #fff;
+}
+
+#Title {
+  margin: 1vw;
+  width: 14vw;
+  color: #fff;
+  font-size: 160%;
+}
+
+#subT {
+  margin: 1vw;
+  width: 14vw;
+  color: #fff;
+  font-size: 300%;
+}
+/*# sourceMappingURL=slider.css.map */
