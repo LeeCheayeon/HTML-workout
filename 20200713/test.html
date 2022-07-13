@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0; margin: 0;}
+
+    #root{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #imgbotm{
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+    }
+    
+    #imgtop{
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      z-index: 2;
+    }
+    #imgtop>div{
+      width: inherit;
+      height: inherit;
+      /* background-color: azure; */
+    }
+    #imgtext{
+      position: absolute;
+      width: 100vw;
+      height: 30vh;
+      z-index: 1;
+    }
+
+    img{
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="imgtop">
+      <div></div>
+      <img>
+    </div>
+    <div id="imgtext">2</div>
+    <div id="imgbotm">
+      <img>
+    </div>
+  </div>
+</body>
+<script>
+  const root = document.getElementById("root");
+  const imgTop = document.getElementById("imgtop");
+  const imgBotm = document.getElementById("imgbotm");
+  const imgT = document.getElementById("imgtext");
+
+root.style.display='flex';
+imgT.style.backgroundColor = "#d4d4d4";
+
+window.addEventListener("load",()=>{
+  imgBotm.children[0].src=`./img/img-3.png`;
+  imgTop.children[1].src=`./img/img-1.png`;
+  imgT.style.display = "none";
+
+  imgTop.children[0].addEventListener("click",(e)=>{
+    // if(e.target.id === 'imgtop'){
+      console.log(e.target);
+      console.log("top");
+      imgT.style.display = "block";
+    // }
+  })
+})
+</script>
+</html>
